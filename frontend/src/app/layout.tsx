@@ -99,7 +99,7 @@ function Footer() {
           </a>
           <span className="text-border">|</span>
           <a
-            href={`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/feed/rss`}
+            href="/api/feed/rss"
             className="hover:text-foreground transition-colors"
           >
             RSS

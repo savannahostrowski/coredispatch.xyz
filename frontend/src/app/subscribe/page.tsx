@@ -16,7 +16,7 @@ export default function SubscribePage() {
       <p className="mt-6 text-xs text-muted">
         Prefer RSS?{" "}
         <a
-          href={`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/feed/rss`}
+          href="/api/feed/rss"
           className="underline hover:text-foreground transition-colors"
         >
           Grab the feed
