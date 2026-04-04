@@ -17,6 +17,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Ensure directories exist
+        run: |
+          mkdir -p editions
+          mkdir -p drafts
+
       - name: Setup bun
         uses: oven-sh/setup-bun@v2
 
