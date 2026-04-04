@@ -13,6 +13,8 @@ export const metadata = {
   robots: "noindex, nofollow",
 };
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   return getAllDrafts().map((draft) => ({
     number: String(draft.number),

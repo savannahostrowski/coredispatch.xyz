@@ -10,6 +10,8 @@ import { QuoteOfTheWeek } from "@/components/QuoteOfTheWeek";
 import { SectionBlock } from "@/components/SectionBlock";
 import { SubscribeForm } from "@/components/SubscribeForm";
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   return getAllIssues().map((issue) => ({
     number: String(issue.number),
