@@ -3,7 +3,7 @@ import { IssueCard } from "@/components/IssueCard";
 import { SubscribeForm } from "@/components/SubscribeForm";
 
 export const metadata = {
-  title: "Archive — Core Dispatch",
+  title: "Editions",
 };
 
 export default function IssuesPage() {
@@ -11,8 +11,8 @@ export default function IssuesPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-6 py-10">
-      <h1 className="text-3xl font-bold tracking-tight mb-2">Archive</h1>
-      <p className="text-muted mb-8">Every issue of Core Dispatch, ever.</p>
+      <h1 className="text-3xl font-bold tracking-tight mb-2">Editions</h1>
+      <p className="text-muted mb-8">Every edition of Core Dispatch.</p>
 
       {issues.length === 0 ? (
         <p className="text-muted">No issues published yet. Stay tuned.</p>
@@ -26,9 +26,9 @@ export default function IssuesPage() {
 
       <div className="mt-14 rounded-xl bg-gradient-to-r from-gradient-start to-gradient-end p-[1px]">
         <div className="rounded-[11px] bg-surface p-6">
-          <h2 className="font-semibold">Never miss an issue</h2>
+          <h2 className="font-semibold">Never miss an edition</h2>
           <p className="mt-1 mb-4 text-sm text-muted">
-            Delivered to your inbox every week.
+            Delivered to your inbox.
           </p>
           <SubscribeForm />
         </div>

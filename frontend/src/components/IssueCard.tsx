@@ -13,7 +13,7 @@ export function IssueCard({ issue }: IssueCardProps) {
 
   return (
     <Link
-      href={`/issues/${issue.number}`}
+      href={`/editions/${issue.number}`}
       className="group block rounded-lg border border-border bg-surface p-5 transition-all hover:border-accent/40 hover:shadow-sm"
     >
       <div className="flex items-baseline justify-between gap-4">

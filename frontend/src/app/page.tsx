@@ -17,7 +17,7 @@ export default function Home() {
           </span>
         </h1>
         <p className="mt-4 text-lg text-muted max-w-md mx-auto">
-          A regular digest of what{"'"}s happening in CPython — from merged PRs
+          A regular digest of what{"'"}s happening in Python core development — from merged PRs
           and PEP decisions to community discussions and upcoming events.
         </p>
         <div className="mt-8 mx-auto max-w-sm">
@@ -37,7 +37,7 @@ export default function Home() {
           {issues.length > 4 && (
             <div className="mt-6 text-center">
               <Link
-                href="/issues"
+                href="/editions"
                 className="text-sm text-accent hover:text-accent-hover transition-colors"
               >
                 View all {issues.length} issues {"\u2192"}

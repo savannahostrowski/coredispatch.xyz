@@ -14,13 +14,36 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Core Dispatch",
+  title: {
+    default: "Core Dispatch",
+    template: "%s — Core Dispatch",
+  },
   description:
-    "This Week in Python — a weekly roundup of Python core development",
+    "A regular digest of what's happening in CPython — from merged PRs and PEP decisions to community discussions and upcoming events.",
+  metadataBase: new URL("https://coredispatch.xyz"),
+  openGraph: {
+    title: "Core Dispatch",
+    description:
+      "A regular digest of what's happening in CPython — from merged PRs and PEP decisions to community discussions and upcoming events.",
+    url: "https://coredispatch.xyz",
+    siteName: "Core Dispatch",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary",
+    title: "Core Dispatch",
+    description:
+      "A regular digest of what's happening in CPython — from merged PRs and PEP decisions to community discussions and upcoming events.",
+  },
   alternates: {
     types: {
       "application/rss+xml": "/api/feed/rss",
     },
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -40,10 +63,10 @@ function Header() {
         </Link>
         <div className="flex items-center gap-5 text-sm">
           <Link
-            href="/issues"
+            href="/editions"
             className="text-muted hover:text-foreground transition-colors"
           >
-            Archive
+            Editions
           </Link>
           <Link
             href="/subscribe"
@@ -65,7 +88,7 @@ function Footer() {
           Core Dispatch
         </p>
         <p className="mt-1">
-          A weekly roundup of what&apos;s happening in Python core development.
+          A regular digest of what&apos;s happening in CPython.
         </p>
         <div className="mt-4 flex items-center justify-center gap-4">
           <a

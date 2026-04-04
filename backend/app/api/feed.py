@@ -93,15 +93,15 @@ async def rss_feed():
     fg.title("Core Dispatch")
     fg.link(href=settings.site_url)
     fg.description(
-        "A weekly roundup of Python core development: merged PRs, PEP updates, discussions, and community picks."
+        "A regular digest of what's happening in CPython — from merged PRs and PEP decisions to community discussions and upcoming events."
     )
     fg.language("en")
 
     for issue in _load_published_issues()[:20]:
         fe = fg.add_entry()
         fe.title(issue.get("title", ""))
-        fe.link(href=f"{settings.site_url}/issues/{issue.get('number', '')}")
-        fe.id(f"{settings.site_url}/issues/{issue.get('number', '')}")
+        fe.link(href=f"{settings.site_url}/editions/{issue.get('number', '')}")
+        fe.id(f"{settings.site_url}/editions/{issue.get('number', '')}")
         fe.content(_render_issue_html(issue), type="html")
 
     return Response(content=fg.rss_str(pretty=True), media_type="application/rss+xml")

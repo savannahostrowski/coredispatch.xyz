@@ -9,7 +9,7 @@ export default function SubscribePage() {
     <div className="mx-auto max-w-xl px-6 py-10">
       <h1 className="text-3xl font-bold tracking-tight mb-2">Subscribe</h1>
       <p className="text-muted mb-8">
-        Get Core Dispatch delivered to your inbox every week. No spam, just
+        Get Core Dispatch delivered to your inbox. No spam, just
         Python.
       </p>
       <SubscribeForm />

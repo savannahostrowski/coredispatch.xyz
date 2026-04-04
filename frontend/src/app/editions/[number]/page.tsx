@@ -49,7 +49,7 @@ export default async function IssuePage({
         href="/issues"
         className="inline-flex items-center gap-1 text-sm text-muted hover:text-foreground transition-colors"
       >
-        {"\u2190"} Archive
+        {"\u2190"} Editions
       </Link>
 
       <div className="mt-6 mb-10">
@@ -90,12 +90,12 @@ export default async function IssuePage({
       {/* Prev / Next nav */}
       <div className="mt-14 flex items-center justify-between border-t border-border pt-6">
         {prev ? (
-          <Link href={`/issues/${prev.number}`} className="text-sm text-muted hover:text-accent transition-colors">
+          <Link href={`/editions/${prev.number}`} className="text-sm text-muted hover:text-accent transition-colors">
             {"\u2190"} {prev.title}
           </Link>
         ) : <span />}
         {next ? (
-          <Link href={`/issues/${next.number}`} className="text-sm text-muted hover:text-accent transition-colors text-right">
+          <Link href={`/editions/${next.number}`} className="text-sm text-muted hover:text-accent transition-colors text-right">
             {next.title} {"\u2192"}
           </Link>
         ) : <span />}
@@ -105,7 +105,7 @@ export default async function IssuePage({
         <div className="rounded-[11px] bg-surface p-6">
           <h2 className="font-semibold">Enjoyed this issue?</h2>
           <p className="mt-1 mb-4 text-sm text-muted">
-            Get Core Dispatch in your inbox every week.
+            Get Core Dispatch in your inbox.
           </p>
           <SubscribeForm />
         </div>
