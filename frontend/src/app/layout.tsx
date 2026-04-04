@@ -69,7 +69,7 @@ function Footer() {
         </p>
         <div className="mt-4 flex items-center justify-center gap-4">
           <a
-            href="https://github.com/savannahostrowski/coredispatch/issues/new?template=submit-link.yml"
+            href="https://github.com/savannahostrowski/coredispatch.xyz/issues/new?template=submit-link.yml"
             className="hover:text-foreground transition-colors"
           >
             Submit a link
@@ -83,7 +83,7 @@ function Footer() {
           </a>
           <span className="text-border">|</span>
           <a
-            href="https://github.com/savannahostrowski/coredispatch"
+            href="https://github.com/savannahostrowski/coredispatch.xyz"
             className="hover:text-foreground transition-colors"
           >
             GitHub

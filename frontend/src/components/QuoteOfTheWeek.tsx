@@ -32,7 +32,7 @@ export function QuoteOfTheWeek({ quote }: QuoteOfTheWeekProps) {
       <p className="mt-3 text-xs text-muted">
         Have a great quote?{" "}
         <a
-          href="https://github.com/savannahostrowski/coredispatch/issues/new?template=submit-link.yml&title=%5BQuote%5D+"
+          href="https://github.com/savannahostrowski/coredispatch.xyz/issues/new?template=submit-link.yml&title=%5BQuote%5D+"
           className="text-accent hover:text-accent-hover transition-colors"
         >
           Submit one for next edition

@@ -10,7 +10,7 @@ editorial_notes: |
 
   On Discourse, PEP 829 on startup configuration via `.site.toml` files is on fire with 49 new replies this week, and PEP 803's stable ABI discussion is picking up steam too.
 
-  We're still figuring out the format — if you have feedback, open an issue on [GitHub](https://github.com/savannahostrowski/coredispatch).
+  We're still figuring out the format — if you have feedback, open an issue on [GitHub](https://github.com/savannahostrowski/coredispatch.xyz).
 quote:
   text: "Just a friendly reminder that if you want sweet #PyConUS, #PyConCharlas and/or #pyladies t-shirts this year, you have to pre-order by April 14, 2026! To add a t-shirt to your ticket, login to your PyConUS dashboard and t-shirts are under \"Add to your Registration\"."
   author: "Elaine Wong"
