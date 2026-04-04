@@ -4,16 +4,17 @@ import { formatDateRange } from "@/lib/format";
 
 interface IssueCardProps {
   issue: Issue;
+  basePath?: string;
 }
 
-export function IssueCard({ issue }: IssueCardProps) {
+export function IssueCard({ issue, basePath = "/editions" }: IssueCardProps) {
   const editorial = issue.editorial_notes
     ?.replace(/<!--[\s\S]*?-->/g, "")
     .trim();
 
   return (
     <Link
-      href={`/editions/${issue.number}`}
+      href={`${basePath}/${issue.number}`}
       className="group block rounded-lg border border-border bg-surface p-5 transition-all hover:border-accent/40 hover:shadow-sm"
     >
       <div className="flex items-baseline justify-between gap-4">

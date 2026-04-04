@@ -34,33 +34,51 @@ def week_slug(d: date) -> str:
     return f"{year}-w{week:02d}"
 
 
-def _last_issue_date(issues_dir: Path) -> date | None:
-    """Find the period_end of the most recent issue."""
-    latest_number = 0
-    latest_end: date | None = None
-    for f in issues_dir.glob("*.yml"):
+def _scan_yml_dir(directory: Path) -> list[dict]:
+    """Load all YAML issue files from a directory."""
+    results = []
+    if not directory.exists():
+        return results
+    for f in directory.glob("*.yml"):
         if f.name.startswith("_"):
             continue
         try:
             data = yaml.safe_load(f.read_text())
-            if (
-                data
-                and isinstance(data.get("number"), int)
-                and data["number"] > latest_number
-            ):
-                latest_number = data["number"]
-                end = data.get("period_end", "")
-                if end:
-                    latest_end = date.fromisoformat(end)
+            if data and isinstance(data.get("number"), int):
+                results.append(data)
         except Exception:
             continue
-    return latest_end
+    return results
+
+
+def _last_issue_date(repo_root: Path) -> date | None:
+    """Find the period_end of the most recent issue across editions/ and drafts/."""
+    all_issues = _scan_yml_dir(repo_root / "editions") + _scan_yml_dir(
+        repo_root / "drafts"
+    )
+    if not all_issues:
+        return None
+    latest = max(all_issues, key=lambda d: d.get("number", 0))
+    end = latest.get("period_end", "")
+    return date.fromisoformat(end) if end else None
+
+
+def _next_issue_number(repo_root: Path) -> int:
+    """Find the next issue number across editions/ and drafts/."""
+    all_issues = _scan_yml_dir(repo_root / "editions") + _scan_yml_dir(
+        repo_root / "drafts"
+    )
+    if not all_issues:
+        return 1
+    return max(d.get("number", 0) for d in all_issues) + 1
 
 
 async def run_pipeline(issues_dir: Path, since: date | None = None):
+    repo_root = issues_dir.parent
+
     if since is None:
         # Look back to the last issue's end date, or default to 14 days
-        last_end = _last_issue_date(issues_dir)
+        last_end = _last_issue_date(repo_root)
         if last_end:
             since = last_end
         else:
@@ -106,19 +124,7 @@ async def run_pipeline(issues_dir: Path, since: date | None = None):
         deduped.append(item)
     all_items = deduped
 
-    # Find next issue number
-    existing = sorted(issues_dir.glob("*.yml"))
-    existing = [f for f in existing if not f.name.startswith("_")]
-    max_number = 0
-    for f in existing:
-        try:
-            data = yaml.safe_load(f.read_text())
-            if data and isinstance(data.get("number"), int):
-                max_number = max(max_number, data["number"])
-        except Exception:
-            continue
-
-    issue_number = max_number + 1
+    issue_number = _next_issue_number(repo_root)
 
     issue = {
         "number": issue_number,
@@ -146,9 +152,9 @@ async def run_pipeline(issues_dir: Path, since: date | None = None):
 
 def main():
     repo_root = Path(__file__).resolve().parents[3]  # backend/app/pipeline -> repo root
-    issues_dir = repo_root / "issues"
-    issues_dir.mkdir(exist_ok=True)
-    asyncio.run(run_pipeline(issues_dir))
+    drafts_dir = repo_root / "drafts"
+    drafts_dir.mkdir(exist_ok=True)
+    asyncio.run(run_pipeline(drafts_dir))
 
 
 if __name__ == "__main__":

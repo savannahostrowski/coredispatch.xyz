@@ -9,7 +9,7 @@ from app.config import settings
 
 router = APIRouter()
 
-ISSUES_DIR = Path(settings.issues_dir)
+EDITIONS_DIR = Path(settings.editions_dir)
 
 SECTION_LABELS = {
     "upcoming_releases": "Upcoming Releases",
@@ -38,7 +38,7 @@ SECTION_ORDER = [
 
 def _load_published_issues() -> list[dict]:
     issues = []
-    for path in ISSUES_DIR.glob("*.yml"):
+    for path in EDITIONS_DIR.glob("*.yml"):
         if path.name.startswith("_"):
             continue
         try:

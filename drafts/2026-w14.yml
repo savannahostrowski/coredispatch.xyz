@@ -1,0 +1,333 @@
+number: 1
+title: 'Core Dispatch #1'
+slug: 2026-w14
+period_start: '2026-03-20'
+period_end: '2026-04-03'
+editorial_notes: |
+  Welcome to the very first issue of Core Dispatch!
+
+  Three CPython releases land on Monday — 3.13.13, 3.14.4, and 3.15.0a8. PEP 803 was accepted, giving free-threaded builds a stable ABI (big deal for extension authors). And if you missed it, Ken Jin wrote about the JIT getting back on track for 3.15 on the Python blog.
+
+  On Discourse, PEP 829 on startup configuration via `.site.toml` files is on fire with 49 new replies this week, and PEP 803's stable ABI discussion is picking up steam too.
+
+  We're still figuring out the format — if you have feedback, open an issue on [GitHub](https://github.com/savannahostrowski/coredispatch.xyz).
+quote:
+  text: "Just a friendly reminder that if you want sweet #PyConUS, #PyConCharlas and/or #pyladies t-shirts this year, you have to pre-order by April 14, 2026! To add a t-shirt to your ticket, login to your PyConUS dashboard and t-shirts are under \"Add to your Registration\"."
+  author: "Elaine Wong"
+  url: "https://bsky.app/profile/elainew.bsky.social/post/3mimr2dvhkx2b"
+credits:
+  - name: "Savannah Ostrowski"
+    url: "https://savannah.dev"
+items:
+- section: upcoming_releases
+  title: Python 3.13.13
+  url: https://peps.python.org/pep-0719/
+  summary: Apr 07
+  source: release_schedule
+  metadata:
+    date: '2026-04-07'
+- section: upcoming_releases
+  title: Python 3.14.4
+  url: https://peps.python.org/pep-0745/
+  summary: Apr 07
+  source: release_schedule
+  metadata:
+    date: '2026-04-07'
+- section: upcoming_releases
+  title: Python 3.15.0 alpha 8
+  url: https://peps.python.org/pep-0790/
+  summary: Apr 07
+  source: release_schedule
+  metadata:
+    date: '2026-04-07'
+- section: official_news
+  title: Python 3.15's JIT is now back on track
+  url: https://blog.python.org/2026/03/jit-on-track/
+  summary: By Ken Jin
+  source: python_blog
+  metadata:
+    feed: Python Blog
+    author: Ken Jin
+    published: Mon, 23 Mar 2026 00:00:00 GMT
+- section: official_news
+  title: 'Incident Report: LiteLLM/Telnyx supply-chain attacks, with guidance'
+  url: https://blog.pypi.org/posts/2026-04-02-incident-report-litellm-telnyx-supply-chain-attack/
+  summary: By Seth Larson
+  source: python_blog
+  metadata:
+    feed: PyPI Blog
+    author: Seth Larson
+    published: Thu, 02 Apr 2026 06:09:00 +0000
+- section: pep_updates
+  title: 'PEP 803: "abi3t": Stable ABI for Free-Threaded Builds'
+  url: https://peps.python.org/pep-0803/
+  summary: ''
+  source: peps
+  metadata:
+    pep_number: 803
+    status: Accepted
+    pr_url: https://github.com/python/peps/pull/4880
+- section: steering_council
+  title: 2026-03-12 PSC Meeting Summary
+  url: https://discuss.python.org/t/2026-03-12-psc-meeting-summary/106655
+  summary: ''
+  source: discourse
+  metadata:
+    topic_id: 106655
+    category: committers
+- section: merged_prs
+  title: 'GH-147985: Use lock-free lookup in PySet_Contains().'
+  url: https://github.com/python/cpython/pull/147986
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 147986
+    author: nascheme
+    labels:
+    - type-feature
+    - performance
+    - topic-free-threading
+    comments: 0
+- section: merged_prs
+  title: 'gh-143930: Reject leading dashes in webbrowser URLs'
+  url: https://github.com/python/cpython/pull/143931
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 143931
+    author: sethmlarson
+    labels:
+    - type-security
+    - stdlib
+    comments: 11
+- section: merged_prs
+  title: 'gh-138580: add sys.float_info.iec_60559 boolean flag'
+  url: https://github.com/python/cpython/pull/138811
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 138811
+    author: skirpichev
+    labels: []
+    comments: 23
+- section: merged_prs
+  title: 'gh-138577: Fix keyboard shortcuts in getpass with echo_char'
+  url: https://github.com/python/cpython/pull/141597
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 141597
+    author: CuriousLearner
+    labels: []
+    comments: 18
+- section: merged_prs
+  title: 'gh-145980: Add support for alternative alphabets in the binascii module'
+  url: https://github.com/python/cpython/pull/145981
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 145981
+    author: serhiy-storchaka
+    labels: []
+    comments: 8
+- section: merged_prs
+  title: 'gh-146004: propagate all -X options to multiprocessing child processes'
+  url: https://github.com/python/cpython/pull/146005
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 146005
+    author: gpshead
+    labels:
+    - needs backport to 3.13
+    comments: 17
+- section: merged_prs
+  title: 'gh-145633: Fix struct.pack(''f'') on s390x'
+  url: https://github.com/python/cpython/pull/146422
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 146422
+    author: vstinner
+    labels: []
+    comments: 17
+- section: merged_prs
+  title: 'gh-143414: Implement unique reference tracking for JIT, optimize unpacking
+    of such tuples'
+  url: https://github.com/python/cpython/pull/144300
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 144300
+    author: reidenong
+    labels: []
+    comments: 15
+- section: merged_prs
+  title: 'gh-138122: Add differential flame graph'
+  url: https://github.com/python/cpython/pull/145785
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 145785
+    author: ivonastojanovic
+    labels: []
+    comments: 4
+- section: merged_prs
+  title: 'gh-146440: Add "array_hook" parameter to JSON decoders'
+  url: https://github.com/python/cpython/pull/146441
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 146441
+    author: jsbueno
+    labels: []
+    comments: 4
+- section: discussions
+  title: 'PEP 829: Structured Startup Configuration via .site.toml Files'
+  url: https://discuss.python.org/t/pep-829-structured-startup-configuration-via-site-toml-files/106789
+  summary: 🔥 49 new replies · 575 views
+  source: discourse
+  metadata:
+    topic_id: 106789
+    new_replies: 49
+    views: 575
+- section: discussions
+  title: 'PEP 803, round two – “abi3t”: Stable ABI for Free-Threaded Builds'
+  url: https://discuss.python.org/t/pep-803-round-two-abi3t-stable-abi-for-free-threaded-builds/106181
+  summary: 7 new replies · 2.2k views
+  source: discourse
+  metadata:
+    topic_id: 106181
+    new_replies: 7
+    views: 2161
+- section: discussions
+  title: 'PEP 828: Supporting ''yield from'' in asynchronous generators'
+  url: https://discuss.python.org/t/pep-828-supporting-yield-from-in-asynchronous-generators/106459
+  summary: 5 new replies · 1.9k views
+  source: discourse
+  metadata:
+    topic_id: 106459
+    new_replies: 5
+    views: 1857
+- section: discussions
+  title: 'PEP 802: Display Syntax for the Empty Set'
+  url: https://discuss.python.org/t/pep-802-display-syntax-for-the-empty-set/101676
+  summary: 3 new replies · 7.7k views
+  source: discourse
+  metadata:
+    topic_id: 101676
+    new_replies: 3
+    views: 7744
+- section: discussions
+  title: 'PEP 827: Type Manipulation'
+  url: https://discuss.python.org/t/pep-827-type-manipulation/106353
+  summary: 3 new replies · 4.8k views
+  source: discourse
+  metadata:
+    topic_id: 106353
+    new_replies: 3
+    views: 4832
+- section: discussions
+  title: 'PEP 764: Inlined typed dictionaries'
+  url: https://discuss.python.org/t/pep-764-inlined-typed-dictionaries/78779
+  summary: 2 new replies · 7.0k views
+  source: discourse
+  metadata:
+    topic_id: 78779
+    new_replies: 2
+    views: 6993
+- section: events
+  title: PyCon Lithuania 2026
+  url: https://pycon.lt/2026
+  summary: Apr 08
+  source: pycon_calendar
+  metadata:
+    date: '2026-04-08'
+    type: conference
+- section: events
+  title: PyCon DE & PyData 2026
+  url: https://pycon.de/
+  summary: Apr 14
+  source: pycon_calendar
+  metadata:
+    date: '2026-04-14'
+    type: conference
+- section: events
+  title: DjangoCon Europe 2026
+  url: https://2026.djangocon.eu/
+  summary: Apr 15
+  source: pycon_calendar
+  metadata:
+    date: '2026-04-15'
+    type: conference
+- section: events
+  title: PyTexas 2026
+  url: https://www.pytexas.org/2026/
+  summary: Apr 17
+  source: pycon_calendar
+  metadata:
+    date: '2026-04-17'
+    type: conference
+- section: events
+  title: PyCon Austria 2026
+  url: https://pycon.at/
+  summary: Apr 19
+  source: pycon_calendar
+  metadata:
+    date: '2026-04-19'
+    type: conference
+- section: events
+  title: 📋 PyCon Cameroon 2026 Deadline
+  url: https://pycon.pythoncameroon.org/
+  summary: Apr 20
+  source: python_deadlines
+  metadata:
+    date: '2026-04-20'
+    type: cfp
+- section: events
+  title: 📋 PyOhio 2026 Deadline
+  url: https://pyohio.org/2026/
+  summary: Apr 20
+  source: python_deadlines
+  metadata:
+    date: '2026-04-20'
+    type: cfp
+- section: events
+  title: 📋 Black Python Devs Leadership Summit 2026 Deadline
+  url: https://blackpythondevs.com/bpd-events/black-python-devs-leadership-summit-2026-ohio.html
+  summary: Apr 21
+  source: python_deadlines
+  metadata:
+    date: '2026-04-21'
+    type: cfp
+- section: events
+  title: PyCon US 2026
+  url: https://us.pycon.org/
+  summary: May 13
+  source: pycon_calendar
+  metadata:
+    date: '2026-05-13'
+    type: conference
+- section: events
+  title: 📋 PyCon Russia 2026 Deadline
+  url: https://www.pycon.ru/
+  summary: May 15
+  source: python_deadlines
+  metadata:
+    date: '2026-05-15'
+    type: cfp
+- section: picks
+  title: "'Interpretor' t-shirt - for your favourite Pythonista who regularly typos!"
+  url: https://shop.strawberry.rocks/products/interpretor
+  summary: ""
+  source: manual
+  metadata:
+    submitted_by: "savannahostrowski"
+- section: musings
+  title: Why pylock.toml includes digital attestations
+  url: https://snarky.ca/why-pylock-toml-includes-digital-attestations/
+  summary: By Brett Cannon
+  source: blog
+  metadata:
+    feed: Brett Cannon
+    author: Brett Cannon

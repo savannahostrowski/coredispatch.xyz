@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     github_token: str = ""
     site_url: str = "http://localhost:3000"
     cors_origins: list[str] = ["http://localhost:3000"]
-    issues_dir: str = str(Path(__file__).resolve().parents[2] / "issues")
+    editions_dir: str = str(Path(__file__).resolve().parents[2] / "editions")
 
 
 settings = Settings()

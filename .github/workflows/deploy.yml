@@ -29,12 +29,16 @@ jobs:
       - name: Copy frontend build to backend static dir
         run: cp -r frontend/out backend/app/static
 
+      - name: Copy editions to backend
+        run: cp -r editions backend/editions
+
       - name: Install uv
         uses: astral-sh/setup-uv@v7
 
       - name: Deploy to FastAPI Cloud
         working-directory: backend
-        run: uv run fastapi deploy
         env:
           FASTAPI_CLOUD_TOKEN: ${{ secrets.FASTAPI_CLOUD_TOKEN }}
           FASTAPI_CLOUD_APP_ID: ${{ secrets.FASTAPI_CLOUD_APP_ID }}
+          EDITIONS_DIR: /app/editions
+        run: uv run fastapi deploy

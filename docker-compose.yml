@@ -7,10 +7,10 @@ services:
       - ./backend/.env
     environment:
       SITE_URL: http://localhost:3000
-      ISSUES_DIR: /issues
+      EDITIONS_DIR: /editions
     volumes:
       - ./backend/app:/app/app
-      - ./issues:/issues
+      - ./editions:/editions
       - ./feeds.yml:/feeds.yml
 
   frontend:
@@ -24,6 +24,7 @@ services:
       - ./frontend:/app
       - /app/node_modules
       - /app/.next
-      - ./issues:/issues
+      - ./editions:/editions
+      - ./drafts:/drafts
     depends_on:
       - backend

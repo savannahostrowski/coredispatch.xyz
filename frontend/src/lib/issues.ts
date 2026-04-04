@@ -3,7 +3,8 @@ import path from "path";
 import YAML from "yaml";
 import type { Issue, Item } from "./types";
 
-const ISSUES_DIR = path.join(process.cwd(), "..", "issues");
+const EDITIONS_DIR = process.env.EDITIONS_DIR || path.join(process.cwd(), "..", "editions");
+const DRAFTS_DIR = process.env.DRAFTS_DIR || path.join(process.cwd(), "..", "drafts");
 
 interface IssueCredit {
   name: string;
@@ -22,7 +23,6 @@ interface IssueFile {
   slug: string;
   period_start: string;
   period_end: string;
-  // Support legacy week_start/week_end too
   week_start?: string;
   week_end?: string;
   editorial_notes: string;
@@ -51,17 +51,17 @@ function parseIssueFile(filePath: string): IssueFile | null {
   }
 }
 
-export function getAllIssues(): Issue[] {
-  if (!fs.existsSync(ISSUES_DIR)) return [];
+function loadIssuesFromDir(dir: string): Issue[] {
+  if (!fs.existsSync(dir)) return [];
 
   const files = fs
-    .readdirSync(ISSUES_DIR)
+    .readdirSync(dir)
     .filter((f) => f.endsWith(".yml") && !f.startsWith("_"));
 
   const issues: Issue[] = [];
 
   for (const file of files) {
-    const data = parseIssueFile(path.join(ISSUES_DIR, file));
+    const data = parseIssueFile(path.join(dir, file));
     if (!data) continue;
 
     const periodStart = data.period_start || data.week_start || "";
@@ -83,23 +83,18 @@ export function getAllIssues(): Issue[] {
     });
   }
 
-  return issues.sort((a, b) => b.number - a.number);
+  return issues;
 }
 
-export function getIssueByNumber(number: number): Issue | null {
-  const all = getAllIssues();
-  return all.find((i) => i.number === number) ?? null;
-}
-
-export function getIssueItems(number: number): Item[] {
-  if (!fs.existsSync(ISSUES_DIR)) return [];
+function loadItemsFromDir(dir: string, number: number): Item[] {
+  if (!fs.existsSync(dir)) return [];
 
   const files = fs
-    .readdirSync(ISSUES_DIR)
+    .readdirSync(dir)
     .filter((f) => f.endsWith(".yml") && !f.startsWith("_"));
 
   for (const file of files) {
-    const data = parseIssueFile(path.join(ISSUES_DIR, file));
+    const data = parseIssueFile(path.join(dir, file));
     if (!data || data.number !== number) continue;
 
     return (data.items || []).map((item, idx) => ({
@@ -123,16 +118,46 @@ export function getIssueItems(number: number): Item[] {
   return [];
 }
 
+// --- Published editions ---
+
+export function getAllIssues(): Issue[] {
+  return loadIssuesFromDir(EDITIONS_DIR).sort((a, b) => b.number - a.number);
+}
+
+export function getIssueByNumber(number: number): Issue | null {
+  const all = getAllIssues();
+  return all.find((i) => i.number === number) ?? null;
+}
+
+export function getIssueItems(number: number): Item[] {
+  return loadItemsFromDir(EDITIONS_DIR, number);
+}
+
 export function getLatestIssue(): Issue | null {
   const all = getAllIssues();
   return all.length > 0 ? all[0] : null;
 }
 
 export function getAdjacentIssues(number: number): { prev: Issue | null; next: Issue | null } {
-  const all = getAllIssues(); // sorted descending by number
+  const all = getAllIssues();
   const idx = all.findIndex((i) => i.number === number);
   return {
-    prev: idx < all.length - 1 ? all[idx + 1] : null, // older
-    next: idx > 0 ? all[idx - 1] : null, // newer
+    prev: idx < all.length - 1 ? all[idx + 1] : null,
+    next: idx > 0 ? all[idx - 1] : null,
   };
+}
+
+// --- Drafts (staging) ---
+
+export function getAllDrafts(): Issue[] {
+  return loadIssuesFromDir(DRAFTS_DIR).sort((a, b) => b.number - a.number);
+}
+
+export function getDraftByNumber(number: number): Issue | null {
+  const all = getAllDrafts();
+  return all.find((i) => i.number === number) ?? null;
+}
+
+export function getDraftItems(number: number): Item[] {
+  return loadItemsFromDir(DRAFTS_DIR, number);
 }
