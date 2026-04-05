@@ -91,6 +91,7 @@ def _render_issue_html(issue: dict) -> str:
 
 
 @router.get("/rss")
+@router.head("/rss")
 async def rss_feed():
     fg = FeedGenerator()
     fg.title("Core Dispatch")
