@@ -1,3 +1,4 @@
+import re
 from html import escape
 from pathlib import Path
 
@@ -65,7 +66,23 @@ def _render_issue_html(issue: dict) -> str:
         .strip()
     )
     if editorial:
-        parts.append(f"<p>{escape(editorial)}</p>")
+        for para in editorial.split("\n\n"):
+            para = para.strip()
+            if not para:
+                continue
+            # Convert markdown links to HTML before escaping
+            para = re.sub(
+                r"\[([^\]]+)\]\(([^)]+)\)",
+                lambda m: f'<a href="{escape(m.group(2))}">{escape(m.group(1))}</a>',
+                para,
+            )
+            # Escape everything except our generated <a> tags
+            parts_inline = re.split(r"(<a [^>]+>[^<]*</a>)", para)
+            para = "".join(
+                p if p.startswith("<a ") else escape(p) for p in parts_inline
+            )
+            para = re.sub(r"`([^`]+)`", r"<code>\1</code>", para)
+            parts.append(f"<p>{para}</p>")
 
     items = issue.get("items", [])
     for section in SECTION_ORDER:
@@ -96,6 +113,7 @@ async def rss_feed():
     fg = FeedGenerator()
     fg.title("Core Dispatch")
     fg.link(href=settings.site_url)
+    fg.link(href=f"{settings.site_url}/api/feed/rss", rel="self")
     fg.description(
         "A regular digest of what's happening in CPython — from merged PRs and PEP decisions to community discussions and upcoming events."
     )
@@ -119,4 +137,7 @@ async def rss_feed():
             fe.published(f"{period_end}T00:00:00+00:00")
             fe.updated(f"{period_end}T00:00:00+00:00")
 
-    return Response(content=fg.rss_str(pretty=True), media_type="application/rss+xml")
+    return Response(
+        content=fg.rss_str(pretty=True),
+        media_type="application/rss+xml; charset=utf-8",
+    )
