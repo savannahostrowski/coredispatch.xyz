@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 0
 
@@ -22,8 +22,13 @@ jobs:
           mkdir -p editions
           mkdir -p drafts
 
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version: 22
+
       - name: Setup bun
-        uses: oven-sh/setup-bun@v2
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
 
       - name: Build frontend
         working-directory: frontend
@@ -37,13 +42,13 @@ jobs:
       - name: Copy editions to backend
         run: cp -r editions backend/editions
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v7
-
       - name: Copy feed manifests to backend
         run: |
           cp official.yml backend/official.yml
           cp core-blogs.yml backend/core-blogs.yml
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@cec208311dfd045dd5311c1add060b2062131d57 # v8.0.0
 
       - name: Deploy to FastAPI Cloud
         working-directory: backend
