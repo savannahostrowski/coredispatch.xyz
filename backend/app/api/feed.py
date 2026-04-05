@@ -49,7 +49,7 @@ def _load_published_issues() -> list[dict]:
             data = yaml.safe_load(path.read_text())
             if data and isinstance(data, dict):
                 issues.append(data)
-        except (yaml.YAMLError, OSError):
+        except yaml.YAMLError, OSError:
             continue
     issues.sort(key=lambda i: i.get("number", 0), reverse=True)
     return issues

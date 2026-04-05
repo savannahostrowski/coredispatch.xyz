@@ -8,7 +8,12 @@ from fastapi.staticfiles import StaticFiles
 from app.api import feed
 from app.config import settings
 
-app = FastAPI(title="Core Dispatch", description="This Week in Python")
+app = FastAPI(
+    title="Core Dispatch",
+    description="This Week in Python",
+    docs_url=None,
+    redoc_url=None,
+)
 
 app.add_middleware(
     CORSMiddleware,
@@ -37,8 +42,8 @@ if STATIC_DIR.exists():
             "/_astro", StaticFiles(directory=str(astro_static)), name="astro_static"
         )
 
-    # Catch-all: serve static files, fall back to index.html
-    @app.get("/{path:path}")
+    # Catch-all: serve static files for known Astro routes only
+    @app.api_route("/{path:path}", methods=["GET", "HEAD"])
     async def spa_fallback(path: str):
         file_path = (STATIC_DIR / path).resolve()
         if file_path.is_relative_to(STATIC_DIR) and file_path.is_file():
@@ -47,7 +52,7 @@ if STATIC_DIR.exists():
         index_path = (STATIC_DIR / path / "index.html").resolve()
         if index_path.is_relative_to(STATIC_DIR) and index_path.is_file():
             return FileResponse(index_path)
-        index = STATIC_DIR / "index.html"
-        if index.is_file():
-            return FileResponse(index)
+        not_found = STATIC_DIR / "404.html"
+        if not_found.is_file():
+            return FileResponse(not_found, status_code=404)
         return Response(status_code=404, content="Not found")
