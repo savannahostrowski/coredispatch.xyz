@@ -108,6 +108,8 @@ async def fetch_pep_discussions(days: int = 14) -> list[dict]:
 
             if views >= 1000:
                 views_str = f"{views / 1000:.1f}k views"
+            elif views == 1:
+                views_str = f"{views} view"
             else:
                 views_str = f"{views} views"
 
