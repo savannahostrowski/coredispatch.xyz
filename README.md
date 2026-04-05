@@ -8,8 +8,8 @@ A regular digest of what's happening in CPython, from merged PRs and PEP decisio
 
 ### Prerequisites
 
-- [uv](https://docs.astral.sh/uv/) (Python)
-- [bun](https://bun.sh/) (JavaScript)
+- [uv](https://docs.astral.sh/uv/)
+- [bun](https://bun.sh/)
 - A GitHub token with public repo read access (for the generating the edition draft)
 
 ### Setup
@@ -41,22 +41,7 @@ This fetches data from all sources and writes a YAML file to `drafts/`. Preview 
 
 ## Publishing Workflow
 
-### Automated (weekly)
-
-1. **Friday 6 AM UTC** — GitHub Actions runs the pipeline, writes a draft to `drafts/`, and opens a draft PR
-2. **Review** — edit the YAML in the PR: write editorial notes, remove uninteresting items, add community picks and a quote
-3. **Preview** — merge the PR to main, preview at `/staging`
-4. **Publish** — move the file from `drafts/` to `editions/` via another PR. Merge to publish.
-5. **Email** — Buttondown sends the edition to subscribers via RSS-to-email
-
-### Manual
-
-1. Run `cd backend && uv run python -m app.pipeline.run` to generate a draft
-2. Edit `drafts/<slug>.yml` — add editorial notes, curate items, add picks
-3. Preview at `http://localhost:3000/staging`
-4. Move the file to `editions/` when ready to publish
-5. Push to main — GHA deploys to FastAPI Cloud
-
+Every week, a new edition's skeleton is generated automatically by GitHub Actions and opened as a draft PR. Editors review the draft, add notes and picks, and take a solid editorial pass. Once the draft is ready, it's merged to main and moved from `drafts/` to `editions/` to publish. Buttondown picks up the new edition via RSS and sends it to subscribers.
 
 ## Content
 
@@ -72,7 +57,7 @@ These are populated by the pipeline every Friday:
 | **Official News** | Python Blog + PyPI Blog (configured in `official.yml`) |
 | **PEP Updates** | Merged PRs in [python/peps](https://github.com/python/peps) that change a PEP's status |
 | **Steering Council Updates** | PSC meeting summaries from [discuss.python.org/c/committers](https://discuss.python.org/c/committers) |
-| **Merged PRs** | Top 10 CPython PRs by engagement — features, security fixes, performance |
+| **Merged PRs** | Draft is created with high-traffic PRs but this needs manual curation to remove noise and add context |
 | **Discussion** | Most active PEP discussions on Discourse, ranked by new replies |
 | **Core Dev Musings** | Personal blogs and podcasts (configured in `core-blogs.yml`) |
 | **Upcoming CFPs & Conferences** | [pythondeadlin.es](https://pythondeadlin.es) + PyCon event calendar |
@@ -100,14 +85,14 @@ Have a great quote for **One More Thing**? [Submit it as an issue](https://githu
 
 ### Add a blog feed
 
-Core developer or regular Python contributor with a blog? Open a PR to add your feed to `core-blogs.yml`:
+Are you a core developer or regular Python contributor with a blog? Open a PR to add your feed to `core-blogs.yml`:
 
 ```yaml
 - name: Your Name
   url: https://yourblog.com/tags/python/feed.xml
 ```
 
-Use a tag-filtered feed URL when possible to avoid off-topic posts.
+> Note: If you have tags or categories, it's best to link to a feed that filters for Python-related content. Otherwise, all your posts will be included, which may not be relevant to the newsletter. We will review the feed and may remove posts that are not relevant.
 
 ### Add an official feed
 
@@ -115,7 +100,7 @@ If an official Python project has a blog (like the PSF or a working group), open
 
 ## Editing an Edition
 
-Want to help curate? Here's what editors do during the review phase:
+Want to help curate and edit the next edition? Here's what we need help with!
 
 1. **Write editorial notes** — a 2-3 sentence intro that ties the highlights together. What's the big story this week?
 2. **Remove noise** — delete items that aren't interesting or relevant. Less is more.
