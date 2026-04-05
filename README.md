@@ -108,15 +108,3 @@ Want to help curate and edit the next edition? Here's what we need help with!
 4. **Add a quote** — fill in the `quote` field with something fun, insightful, or mass-reply-inducing
 5. **Add credits** — list everyone who contributed to this edition in the `credits` field
 6. **Review PR titles** — the auto-generated PR titles are raw GitHub titles. Rewrite to be human-readable when needed.
-
-To add a manual item:
-
-```yaml
-- section: picks
-  title: "Something cool"
-  url: https://example.com
-  summary: "Why this is worth reading."
-  source: manual
-  metadata:
-    submitted_by: "githubhandle"
-```
