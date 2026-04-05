@@ -7,7 +7,7 @@ editorial_notes: |
   Welcome to the very first edition of Core Dispatch! This is a new newsletter that will cover the latest news and updates from the Python core development community. Each issue will include a summary of recent releases, official news, PEP updates, steering council meetings, merged PRs, discussions, and upcoming events.
   If you have any feedback or suggestions for future issues, please [open an issue](https://github.com/savannahostrowski/coredispatch.xyz). If you're interested in joining the editorial team or contributing content, please let us know!
 
-  Now, here's what's new: three CPython releases are slated to drop on Monday: 3.13.13, 3.14.4, and 3.15.0a8. PEP 803 got accepted, so free-threaded builds now have a stable ABI (extension authors, rejoice). Ken Jin also wrote up what's going on with the JIT in 3.15. Worth a read if you missed it.
+  Now, here's what's new: three CPython releases are slated to drop on Tuesday: 3.13.13, 3.14.4, and 3.15.0a8. PEP 803 got accepted, so free-threaded builds now have a stable ABI (extension authors, rejoice). Ken Jin also wrote up what's going on with the JIT in 3.15. Worth a read if you missed it.
 
   If you maintain a package or just like living on the edge, make sure to give the latest 3.15 alpha a spin and [file any issues](https://github.com/python/cpython/issues) you find.
 
