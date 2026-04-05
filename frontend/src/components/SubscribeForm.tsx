@@ -33,19 +33,19 @@ export default function SubscribeForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex gap-2">
+    <form onSubmit={handleSubmit} className="flex flex-wrap gap-2">
       <input
         type="email"
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="you@example.com"
-        className="flex-1 rounded-lg border border-border bg-surface px-3.5 py-2 text-sm placeholder:text-muted/60 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all"
+        className="flex-999 max-w-full rounded-lg border border-border bg-surface px-3.5 py-2 text-sm placeholder:text-muted/60 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all"
       />
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="rounded-lg bg-gradient-to-r from-gradient-start to-gradient-end px-5 py-2 text-sm font-medium text-white hover:opacity-90 transition-opacity disabled:opacity-50"
+        className="flex-1 rounded-lg bg-gradient-to-r from-gradient-start to-gradient-end px-5 py-2 text-sm font-medium text-white hover:opacity-90 transition-opacity disabled:opacity-50"
       >
         {status === "submitting" ? "..." : "Subscribe"}
       </button>
