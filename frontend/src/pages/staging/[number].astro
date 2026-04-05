@@ -8,6 +8,8 @@ import type { GetStaticPaths } from "astro";
 import { getAllDrafts, getDraft } from "../../lib/issues";
 import { formatDateRange } from "../../lib/format";
 import { renderMarkdown } from "../../lib/markdown";
+import { SECTION_LABELS } from "../../lib/types";
+import type { Section } from "../../lib/types";
 
 export const getStaticPaths = (() => {
   return getAllDrafts().map((draft) => ({
@@ -22,6 +24,12 @@ const editorial = issue.editorial_notes?.replace(/<!--[\s\S]*?-->/g, "").trim();
 const editorialHtml = editorial ? renderMarkdown(editorial) : "";
 
 const sections = ["official_news", "pep_updates", "steering_council", "merged_prs", "discussions"] as const;
+
+const allSections: Section[] = ["upcoming_releases", ...sections, "musings", "picks", "events"];
+const tocEntries: { id: string; label: string }[] = allSections
+  .filter((s) => issue.items.some((i) => i.section === s))
+  .map((s) => ({ id: s, label: SECTION_LABELS[s] }));
+if (issue.quote) tocEntries.push({ id: "one_more_thing", label: "One More Thing" });
 ---
 
 <Layout title={`Draft: ${issue.title}`} noindex>
@@ -45,6 +53,18 @@ const sections = ["official_news", "pep_updates", "steering_council", "merged_pr
     )}
 
     <Preamble />
+
+    <nav class="mb-10">
+      <ul class="flex flex-wrap gap-1.5">
+        {tocEntries.map((entry) => (
+          <li>
+            <a href={`#${entry.id}`} class="inline-block rounded-full border border-border px-2.5 py-0.5 text-xs text-muted hover:border-accent/40 hover:text-accent transition-colors">
+              {entry.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
 
     <SectionBlock section="upcoming_releases" items={issue.items.filter((i) => i.section === "upcoming_releases")} />
 
