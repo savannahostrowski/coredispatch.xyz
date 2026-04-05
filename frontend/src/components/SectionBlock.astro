@@ -29,7 +29,7 @@ const isReleases = section === "upcoming_releases";
 const description = SECTION_DESCRIPTIONS[section];
 ---
 
-<section class="mb-10 scroll-mt-16" id={section}>
+<section class="mb-10 scroll-mt-16" id={section.replaceAll("_", "-")}>
   <div class="mb-2 pb-2 border-b border-border">
     <div class="flex items-center gap-2.5">
       <span class="text-lg" aria-hidden="true">{ICONS[section]}</span>

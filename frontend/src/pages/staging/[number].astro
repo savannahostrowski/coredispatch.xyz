@@ -28,8 +28,8 @@ const sections = ["official_news", "pep_updates", "steering_council", "merged_pr
 const allSections: Section[] = ["upcoming_releases", ...sections, "musings", "picks", "events"];
 const tocEntries: { id: string; label: string }[] = allSections
   .filter((s) => issue.items.some((i) => i.section === s))
-  .map((s) => ({ id: s, label: SECTION_LABELS[s] }));
-if (issue.quote) tocEntries.push({ id: "one_more_thing", label: "One More Thing" });
+  .map((s) => ({ id: s.replaceAll("_", "-"), label: SECTION_LABELS[s] }));
+if (issue.quote) tocEntries.push({ id: "one-more-thing", label: "One More Thing" });
 ---
 
 <Layout title={`Draft: ${issue.title}`} noindex>
