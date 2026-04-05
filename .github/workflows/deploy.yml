@@ -4,6 +4,13 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'backend/**'
+      - 'frontend/**'
+      - 'editions/**'
+      - 'drafts/**'
+      - 'official.yml'
+      - 'core-blogs.yml'
   workflow_dispatch:
 
 jobs:
