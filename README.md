@@ -41,7 +41,7 @@ This fetches data from all sources and writes a YAML file to `drafts/`. Preview 
 
 ## Publishing Workflow
 
-Every week, a new edition's skeleton is generated automatically by GitHub Actions and opened as a draft PR. Editors review the draft, add notes and picks, and take a solid editorial pass. Once the draft is ready, it's merged to main and moved from `drafts/` to `editions/` to publish. Buttondown picks up the new edition via RSS and sends it to subscribers.
+Every Friday, a new edition's skeleton is generated automatically by GitHub Actions and opened as a draft PR. Editors merge the draft and then review, add notes and picks, and take a solid editorial pass on `main`. Once the draft is ready (usually by the following Thursday), it's moved from `drafts/` to `editions/` to publish. Buttondown picks up the new edition via RSS and sends it to subscribers.
 
 ## Content
 
