@@ -112,13 +112,14 @@ async def fetch_pep_discussions(days: int = 14) -> list[dict]:
                 views_str = f"{views} views"
 
             hot = "\U0001f525 " if new_replies >= 10 else ""
+            replies_str = "reply" if new_replies == 1 else "replies"
 
             items.append(
                 {
                     "section": "discussions",
                     "title": topic["title"],
                     "url": f"{DISCOURSE_URL}/t/{topic['slug']}/{topic_id}",
-                    "summary": f"{hot}{new_replies} new replies \u00b7 {views_str}",
+                    "summary": f"{hot}{new_replies} new {replies_str} \u00b7 {views_str}",
                     "source": "discourse",
                     "metadata": {
                         "topic_id": topic_id,
