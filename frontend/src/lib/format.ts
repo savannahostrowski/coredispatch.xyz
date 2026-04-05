@@ -8,10 +8,10 @@ export function formatDateRange(start: string, end: string): string {
   const e = new Date(end + "T00:00:00");
 
   if (s.getFullYear() === e.getFullYear() && s.getMonth() === e.getMonth()) {
-    return `${s.toLocaleDateString("en-US", { month: "long", day: "numeric" })}\u2013${e.getDate()}, ${e.getFullYear()}`;
+    return `${s.toLocaleDateString("en-US", { month: "long", day: "numeric" })} \u2013 ${e.getDate()}, ${e.getFullYear()}`;
   }
   if (s.getFullYear() === e.getFullYear()) {
-    return `${s.toLocaleDateString("en-US", { month: "short", day: "numeric" })}\u2013${e.toLocaleDateString("en-US", { month: "short", day: "numeric" })}, ${e.getFullYear()}`;
+    return `${s.toLocaleDateString("en-US", { month: "short", day: "numeric" })} \u2013 ${e.toLocaleDateString("en-US", { month: "short", day: "numeric" })}, ${e.getFullYear()}`;
   }
-  return `${formatDate(start)}\u2013${formatDate(end)}`;
+  return `${formatDate(start)} \u2013 ${formatDate(end)}`;
 }
