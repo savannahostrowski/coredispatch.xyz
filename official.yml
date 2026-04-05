@@ -1,11 +1,11 @@
 # Official Python project blogs.
 # Posts from these feeds appear in the "Official News" section.
 
+- name: PyPI Blog
+  url: https://blog.pypi.org/feed_rss_created.xml
+
 - name: Python Blog
   url: https://blog.python.org/rss.xml
 
 - name: Python Software Foundation News
   url: https://pyfound.blogspot.com/feeds/posts/default
-
-- name: PyPI Blog
-  url: https://blog.pypi.org/feed_rss_created.xml

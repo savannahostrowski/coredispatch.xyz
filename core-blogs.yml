@@ -2,23 +2,23 @@
 # Posts from these feeds appear in the "Core Dev Musings" section.
 # Use tag-filtered feed URLs where available to avoid off-topic posts.
 
+- name: "core.py (Pablo Galindo & Łukasz Langa)"
+  url: https://www.youtube.com/feeds/videos.xml?playlist_id=PLShJCpYUN3C3XrdguJiAZrQEnQGH-Sq26
+
 - name: Brett Cannon
   url: https://snarky.ca/tag/python/rss/
-
-- name: Savannah Ostrowski
-  url: https://savannah.dev/tags/cpython/index.xml
-
-- name: Ken Jin
-  url: https://fidget-spinner.github.io/feed.xml
-
-- name: Hugo van Kemenade
-  url: https://hugovk.dev/tags/python/index.xml
 
 - name: Emma Smith
   url: https://emmatyping.dev/feeds/python/rss.xml
 
+- name: Hugo van Kemenade
+  url: https://hugovk.dev/tags/python/index.xml
+
+- name: Ken Jin
+  url: https://fidget-spinner.github.io/feed.xml
+
+- name: Savannah Ostrowski
+  url: https://savannah.dev/tags/cpython/index.xml
+
 - name: Seth Larson
   url: https://sethmlarson.dev/feed
-
-- name: "core.py (Pablo Galindo & Łukasz Langa)"
-  url: https://www.youtube.com/feeds/videos.xml?playlist_id=PLShJCpYUN3C3XrdguJiAZrQEnQGH-Sq26
