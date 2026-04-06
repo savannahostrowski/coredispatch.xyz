@@ -29,7 +29,7 @@ echo 'GITHUB_TOKEN=ghp_...' > backend/.env
 ./scripts/dev.sh
 ```
 
-This starts the FastAPI backend on `:8000` and the Astro frontend on `:3000`. The frontend proxies `/api` requests to the backend.
+This starts the FastAPI backend on `:8000` and the Astro frontend on `:4321`. The frontend proxies `/api` requests to the backend.
 
 ### Generate a draft edition
 
@@ -37,7 +37,7 @@ This starts the FastAPI backend on `:8000` and the Astro frontend on `:3000`. Th
 cd backend && uv run python -m app.pipeline.run
 ```
 
-This fetches data from all sources and writes a YAML file to `drafts/`. Preview it at `http://localhost:3000/staging`.
+This fetches data from all sources and writes a YAML file to `drafts/`. Preview it at `http://localhost:4321/staging`.
 
 ## Publishing Workflow
 
