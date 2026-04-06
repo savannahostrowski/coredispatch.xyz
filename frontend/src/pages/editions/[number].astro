@@ -7,7 +7,7 @@ import Credits from "../../components/Credits.astro";
 import SubscribeForm from "../../components/SubscribeForm";
 import type { GetStaticPaths } from "astro";
 import { getAllEditions, getEdition, getAdjacentEditions } from "../../lib/issues";
-import { formatDateRange } from "../../lib/format";
+import { formatDateRange, formatTrimmedDescription } from "../../lib/format";
 import { renderMarkdown } from "../../lib/markdown";
 import { SECTION_LABELS } from "../../lib/types";
 import type { Section } from "../../lib/types";
@@ -24,6 +24,7 @@ const issue = getEdition(Number(number))!;
 const { prev, next } = getAdjacentEditions(issue.number);
 const editorial = issue.editorial_notes?.replace(/<!--[\s\S]*?-->/g, "").trim();
 const editorialHtml = editorial ? renderMarkdown(editorial) : "";
+const description = editorial ? formatTrimmedDescription(editorial) : undefined;
 
 const sections = ["official_news", "pep_updates", "steering_council", "merged_prs", "discussions"] as const;
 
@@ -34,7 +35,7 @@ const tocEntries: { id: string; label: string }[] = allSections
 if (issue.quote) tocEntries.push({ id: "one-more-thing", label: "One More Thing" });
 ---
 
-<Layout title={issue.title}>
+<Layout title={issue.title} description={description}>
   <div class="mx-auto max-w-3xl px-6 py-10">
     <a href="/editions" class="inline-flex items-center gap-1 text-sm text-muted hover:text-foreground transition-colors">
       &larr; Editions

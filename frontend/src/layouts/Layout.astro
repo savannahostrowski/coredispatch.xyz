@@ -11,7 +11,7 @@ const {
   noindex = false,
 } = Astro.props;
 
-const fullTitle = title === "Core Dispatch" ? title : `${title} — Core Dispatch`;
+const fullTitle = title.includes("Core Dispatch") ? title : `${title} — Core Dispatch`;
 ---
 
 <!doctype html>

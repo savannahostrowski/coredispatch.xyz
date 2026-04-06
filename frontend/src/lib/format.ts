@@ -15,3 +15,12 @@ export function formatDateRange(start: string, end: string): string {
   }
   return `${formatDate(start)}\u2013${formatDate(end)}`;
 }
+
+export function formatTrimmedDescription(description: string): string {
+  const limit = 160;
+  if (description.length <= limit) {
+    return description;
+  }
+  const trimmed = description.substring(0, limit);
+  return trimmed.substring(0, trimmed.lastIndexOf(" ")) + "\u2026";
+}
