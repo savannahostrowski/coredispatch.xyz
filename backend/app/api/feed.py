@@ -2,12 +2,15 @@ import re
 from html import escape
 from pathlib import Path
 
+import logging
 import yaml
-from fastapi import APIRouter
+from fastapi import APIRouter, Request
 from fastapi.responses import Response
 from feedgen.feed import FeedGenerator
 
 from app.config import settings
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter()
 
@@ -109,7 +112,10 @@ def _render_issue_html(issue: dict) -> str:
 
 @router.get("/rss")
 @router.head("/rss")
-async def rss_feed():
+async def rss_feed(request: Request):
+    user_agent = request.headers.get("user-agent", "")
+    if user_agent:
+        logger.info("RSS fetch: %s", user_agent)
     fg = FeedGenerator()
     fg.title("Core Dispatch")
     fg.link(href=settings.site_url)
