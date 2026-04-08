@@ -1,0 +1,3 @@
+Contact: mailto:hello@coredispatch.xyz
+Expires: 2027-04-07T00:00:00.000Z
+Preferred-Languages: en
