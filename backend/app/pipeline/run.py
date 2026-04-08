@@ -76,6 +76,16 @@ def _next_issue_number(repo_root: Path) -> int:
 async def run_pipeline(issues_dir: Path, since: date | None = None):
     repo_root = issues_dir.parent
 
+    period_end = date.today()
+    slug = week_slug(period_end)
+    output_path = issues_dir / f"{slug}.yml"
+
+    updateable_issue = None
+    if output_path.exists():
+        updateable_issue = yaml.safe_load(output_path.read_text())
+        if not since:
+            since = date.fromisoformat(updateable_issue["period_start"])
+
     if since is None:
         # Look back to the last issue's end date, or default to 14 days
         last_end = _last_issue_date(repo_root)
@@ -85,12 +95,10 @@ async def run_pipeline(issues_dir: Path, since: date | None = None):
             since = date.today() - timedelta(days=14)
 
     period_start = since
-    period_end = date.today()
-    slug = week_slug(period_end)
 
     print(f"Fetching data for {slug} ({period_start} to {period_end})...")
 
-    all_items: list[dict] = []
+    all_generate_items: list[dict] = []
 
     days_back = (period_end - period_start).days
 
@@ -109,22 +117,40 @@ async def run_pipeline(issues_dir: Path, since: date | None = None):
         try:
             items = await coro
             print(f"  -> {len(items)} {name}")
-            all_items.extend(items)
+            all_generate_items.extend(items)
         except Exception as e:
             print(f"  !! {name} failed: {e}")
 
     # Dedupe across sections by title — prefer earlier sections (official_news > musings)
     seen_titles: set[str] = set()
     deduped: list[dict] = []
-    for item in all_items:
+    for item in all_generate_items:
         key = _normalize_title(item["title"])
         if key in seen_titles:
             continue
         seen_titles.add(key)
         deduped.append(item)
-    all_items = deduped
+    all_generate_items = deduped
 
-    issue_number = _next_issue_number(repo_root)
+    issue_number = (
+        _next_issue_number(repo_root)
+        if not updateable_issue
+        else updateable_issue["number"]
+    )
+
+    hand_curated_sections = {
+        "editorial_notes": "<!-- Write your editorial notes here -->\n",
+        "quote": {"text": "<!-- Add a quote here -->", "author": "", "url": ""},
+        "credits": [],
+    }
+    hand_curated_items: list[dict] = []
+    if updateable_issue:
+        hand_curated_sections = {k: updateable_issue[k] for k in hand_curated_sections}
+        hand_curated_items = [
+            item
+            for item in updateable_issue["items"]
+            if item["section"] == "picks" or item["source"] == "manual"
+        ]
 
     issue = {
         "number": issue_number,
@@ -132,21 +158,16 @@ async def run_pipeline(issues_dir: Path, since: date | None = None):
         "slug": slug,
         "period_start": period_start.isoformat(),
         "period_end": period_end.isoformat(),
-        "editorial_notes": "<!-- Write your editorial notes here -->\n",
-        "quote": {
-            "text": "<!-- Add a quote here -->",
-            "author": "",
-            "url": "",
-        },
-        "credits": [],
-        "items": all_items,
+        **hand_curated_sections,
+        "items": all_generate_items + hand_curated_items,
     }
 
-    output_path = issues_dir / f"{slug}.yml"
     output_path.write_text(
         yaml.dump(issue, default_flow_style=False, sort_keys=False, allow_unicode=True)
     )
-    print(f"Wrote {output_path} with {len(all_items)} items")
+    print(
+        f"{'Wrote' if not updateable_issue else 'Updated'} {output_path} with {len(all_generate_items)} items"
+    )
     return output_path
 
 

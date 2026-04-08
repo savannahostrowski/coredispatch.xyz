@@ -68,7 +68,7 @@ These are added during editorial review:
 
 | Section | Description |
 |---------|-------------|
-| **Community** | Links, talks, and tools submitted by the community |
+| **Community** | Links, talks, and tools submitted by the community — items with the `section` set to `picks` in the YAML |
 | **One More Thing** | A quote or fun post — top-level `quote` field in the YAML |
 | **Editorial Notes** | The intro paragraph — top-level `editorial_notes` field |
 | **Credits** | Who put this edition together — top-level `credits` field |
