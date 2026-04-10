@@ -3,7 +3,7 @@
 # Use tag-filtered feed URLs where available to avoid off-topic posts.
 
 - name: "core.py (Pablo Galindo & Łukasz Langa)"
-  url: https://www.youtube.com/feeds/videos.xml?playlist_id=PLShJCpYUN3C3XrdguJiAZrQEnQGH-Sq26
+  url: https://www.youtube.com/feeds/videos.xml?channel_id=UCUo9ht5EiVMMHceR5RvxneQ
 
 - name: Alex Gaynor
   url: https://alexgaynor.net/feed.xml
