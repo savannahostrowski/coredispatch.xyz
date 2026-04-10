@@ -1,4 +1,4 @@
-"""Fetch recent posts from core dev personal blogs for the Core Dev Musings section."""
+"""Fetch recent posts from core team personal blogs for the Core Dev Musings section."""
 
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -135,7 +135,7 @@ def _load_feeds() -> list[dict]:
 
 
 async def fetch_musings(days: int = 14) -> list[dict]:
-    """Fetch recent posts from core dev personal blogs."""
+    """Fetch recent posts from core team personal blogs."""
     cutoff = datetime.now(timezone.utc) - timedelta(days=days)
     feeds = _load_feeds()
     all_items: list[dict] = []

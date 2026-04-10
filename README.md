@@ -85,7 +85,7 @@ Have a great quote for **One More Thing**? [Submit it as an issue](https://githu
 
 ### Add a blog feed
 
-Are you a core developer or regular Python contributor with a blog? Open a PR to add your feed to `core-blogs.yml`:
+Are you a core team member or regular Python contributor with a blog? Open a PR to add your feed to `core-blogs.yml`:
 
 ```yaml
 - name: Your Name

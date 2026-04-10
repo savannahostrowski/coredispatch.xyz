@@ -59,6 +59,6 @@ export const SECTION_DESCRIPTIONS: Partial<Record<Section, string>> = {
   steering_council: "Meeting summaries from the Python Steering Council.",
   merged_prs: "High-traffic PRs, new features, and changes that landed in What's New.",
   discussions: "Most active PEP discussions on Discourse since last edition.",
-  musings: "Recent posts from Python core developers.",
+  musings: "Recent posts from the Python core team.",
   picks: "Community-submitted links, talks, and tools.",
 };
