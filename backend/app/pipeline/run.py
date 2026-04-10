@@ -121,8 +121,21 @@ async def run_pipeline(issues_dir: Path, since: date | None = None):
         except Exception as e:
             print(f"  !! {name} failed: {e}")
 
-    # Dedupe across sections by title — prefer earlier sections (official_news > musings)
+    # Seed seen titles from recent editions to avoid cross-edition duplicates
+    # Skip events and releases — they repeat across editions by design
     seen_titles: set[str] = set()
+    skip_sections = {"events", "upcoming_releases", "discussions"}
+    recent_editions = sorted(
+        _scan_yml_dir(repo_root / "editions"),
+        key=lambda d: d.get("number", 0),
+        reverse=True,
+    )[:5]
+    for edition in recent_editions:
+        for item in edition.get("items", []):
+            if item.get("section") not in skip_sections:
+                seen_titles.add(_normalize_title(item.get("title", "")))
+
+    # Dedupe across sections by title — prefer earlier sections (official_news > musings)
     deduped: list[dict] = []
     for item in all_generate_items:
         key = _normalize_title(item["title"])
