@@ -69,6 +69,9 @@ async def fetch_official_news(days: int = 14) -> list[dict]:
                     author = item_el.findtext(f"{DC_NS}creator", "").strip()
                     if not author:
                         author = item_el.findtext("author", "").strip()
+                    # Strip email format: "noreply@blogger.com (Name)" -> "Name"
+                    if "(" in author and author.endswith(")"):
+                        author = author[author.index("(") + 1 : -1].strip()
                     display_author = author or feed["name"]
 
                     items.append(
