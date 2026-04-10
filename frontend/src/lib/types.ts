@@ -49,7 +49,7 @@ export const SECTION_LABELS: Record<Section, string> = {
   merged_prs: "Merged PRs",
   discussions: "Discussion",
   events: "Upcoming CFPs & Conferences",
-  musings: "Core Dev Musings",
+  musings: "Core Team Musings",
   picks: "Community",
 };
 
