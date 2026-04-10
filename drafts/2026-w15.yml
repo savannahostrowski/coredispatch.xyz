@@ -3,14 +3,30 @@ title: 'Core Dispatch #2'
 slug: 2026-w15
 period_start: '2026-04-04'
 period_end: '2026-04-10'
-editorial_notes: '<!-- Write your editorial notes here -->
+editorial_notes: |
+  Welcome back to Core Dispatch! This edition covers April 4–10, and there's
+  a lot going on. As expected, new releases are out for 3.13, 3.14, and 3.15.
+  Python 3.15.0 beta 1 is right around the corner (May 5), and if you've got
+  PRs you want in 3.15, now's the time! Feature freeze is just 3 weeks away.
+  Don't miss the window, otherwise it'll go into 3.16 and have to wait until
+  October 2027 for release.
 
-  '
+  Emma Smith published a Rust for CPython progress update: the build system
+  now works across all CI platforms 🎉, and the team has shifted their target
+  from 3.15 to 3.16 to give more time for API design and a PEP. If you're
+  attending PyCon US and interested in Rust for CPython, Emma will be giving
+  a talk on the initiative and there will also be a sprint on the topic.
+
+  If you maintain a package or just like living on the edge, make sure to give
+  the latest 3.15 alpha a spin and [file any issues](https://github.com/python/cpython/issues) 
+  you find.
 quote:
   text: <!-- Add a quote here -->
   author: ''
   url: ''
-credits: []
+credits:
+- name: Savannah Ostrowski
+  url: https://github.com/savannahostrowski
 items:
 - section: upcoming_releases
   title: Python 3.15.0 beta 1
@@ -22,20 +38,20 @@ items:
 - section: official_news
   title: Stories from the PyCon US Hotels
   url: https://pycon.blogspot.com/2026/04/stories-from-pycon-us-hotels.html
-  summary: By noreply@blogger.com (The PyCon US Team)
+  summary: By The PyCon US Team
   source: python_blog
   metadata:
     feed: PyCon US
-    author: noreply@blogger.com (The PyCon US Team)
+    author: The PyCon US Team
     published: Tue, 07 Apr 2026 14:30:00 +0000
 - section: official_news
   title: 'Python and the Future of AI: Agents, Inference, and Edge AI'
   url: https://pycon.blogspot.com/2026/04/python-and-future-of-ai-agents.html
-  summary: By noreply@blogger.com (The PyCon US Team)
+  summary: By The PyCon US Team
   source: python_blog
   metadata:
     feed: PyCon US
-    author: noreply@blogger.com (The PyCon US Team)
+    author: The PyCon US Team
     published: Mon, 06 Apr 2026 14:33:00 +0000
 - section: official_news
   title: Rust for CPython Progress Update April 2026
@@ -194,7 +210,7 @@ items:
   metadata:
     topic_id: 106789
     new_replies: 16
-    views: 1485
+    views: 1487
 - section: discussions
   title: 'PEP 802: Display Syntax for the Empty Set'
   url: https://discuss.python.org/t/pep-802-display-syntax-for-the-empty-set/101676
@@ -203,7 +219,7 @@ items:
   metadata:
     topic_id: 101676
     new_replies: 8
-    views: 8354
+    views: 8355
 - section: discussions
   title: 'PEP 786: Precision and modulo-precision flag format specifiers for integer
     fields'
@@ -222,7 +238,7 @@ items:
   metadata:
     topic_id: 106353
     new_replies: 2
-    views: 5204
+    views: 5205
 - section: discussions
   title: 'PEP 783: Emscripten Packaging'
   url: https://discuss.python.org/t/pep-783-emscripten-packaging/86862
@@ -232,6 +248,14 @@ items:
     topic_id: 86862
     new_replies: 2
     views: 3454
+- section: events
+  title: 📋 Warsaw Python Pizza 2026 Deadline
+  url: https://warsaw.python.pizza/
+  summary: Apr 13
+  source: python_deadlines
+  metadata:
+    date: '2026-04-13'
+    type: cfp
 - section: events
   title: PyCon DE & PyData 2026
   url: https://pycon.de/
@@ -265,6 +289,30 @@ items:
     date: '2026-04-19'
     type: conference
 - section: events
+  title: 📋 PyCon Cameroon 2026 Deadline
+  url: https://pycon.pythoncameroon.org/
+  summary: Apr 20
+  source: python_deadlines
+  metadata:
+    date: '2026-04-20'
+    type: cfp
+- section: events
+  title: 📋 PyOhio 2026 Deadline
+  url: https://pyohio.org/2026/
+  summary: Apr 20
+  source: python_deadlines
+  metadata:
+    date: '2026-04-20'
+    type: cfp
+- section: events
+  title: 📋 Black Python Devs Leadership Summit 2026 Deadline
+  url: https://blackpythondevs.com/bpd-events/black-python-devs-leadership-summit-2026-ohio.html
+  summary: Apr 21
+  source: python_deadlines
+  metadata:
+    date: '2026-04-21'
+    type: cfp
+- section: events
   title: PyCon US 2026
   url: https://us.pycon.org/
   summary: May 13
@@ -273,18 +321,22 @@ items:
     date: '2026-05-13'
     type: conference
 - section: events
-  title: PyCon Italia 2026
-  url: https://2026.pycon.it/en
-  summary: May 27
-  source: pycon_calendar
+  title: 📋 PyCon Russia 2026 Deadline
+  url: https://www.pycon.ru/
+  summary: May 15
+  source: python_deadlines
   metadata:
-    date: '2026-05-27'
-    type: conference
-- section: events
-  title: GeoPython 2026
-  url: https://2026.geopython.net/
-  summary: Jun 08
-  source: pycon_calendar
+    date: '2026-05-15'
+    type: cfp
+- section: picks
+  title: 3.15 feature freeze in 3 weeks — get your PRs in!
+  url: https://mastodon.social/@hugovk/116370025582888545
+  source: manual
   metadata:
-    date: '2026-06-08'
-    type: conference
+    submitted_by: hugovk
+- section: picks
+  title: The Packaging Summit at PyCon US 2026 is now live
+  url: https://us.pycon.org/2026/events/packaging-summit/
+  source: manual
+  metadata:
+    submitted_by: jezdez
