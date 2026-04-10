@@ -1,6 +1,6 @@
 name: Submit a Link
 description: Suggest a link for an upcoming edition of Core Dispatch
-title: "[Submit] "
+title: "[Submit] Title of the link"
 labels: ["submission"]
 body:
   - type: input
@@ -10,13 +10,6 @@ body:
       placeholder: https://...
     validations:
       required: true
-  - type: input
-    id: title
-    attributes:
-      label: Title
-      placeholder: What's this about?
-    validations:
-      required: true
   - type: dropdown
     id: section
     attributes:
@@ -24,7 +17,7 @@ body:
       description: Where should this go in the edition?
       options:
         - Community
-        - Core Dev Musings
+        - Core Team Musings
         - One More Thing (quote)
         - Other
     validations:
