@@ -17,6 +17,7 @@ from app.pipeline.musings import fetch_musings
 from app.pipeline.peps import fetch_pep_updates
 from app.pipeline.releases import fetch_events, fetch_upcoming_releases
 from app.pipeline.steering_council import fetch_steering_council
+from app.pipeline.welcome import fetch_welcome
 
 
 def _normalize_title(title: str) -> str:
@@ -107,6 +108,7 @@ async def run_pipeline(issues_dir: Path, since: date | None = None):
         ("Official news", fetch_official_news(days=days_back)),
         ("PEP updates", fetch_pep_updates(since)),
         ("Steering Council", fetch_steering_council(days=days_back)),
+        ("Welcome", fetch_welcome(days=days_back)),
         ("PRs", fetch_github_prs(since)),
         ("PEP discussions", fetch_pep_discussions(days=days_back)),
         ("Events", fetch_events()),
