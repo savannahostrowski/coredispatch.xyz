@@ -26,7 +26,7 @@ const editorial = issue.editorial_notes?.replace(/<!--[\s\S]*?-->/g, "").trim();
 const editorialHtml = editorial ? renderMarkdown(editorial) : "";
 const description = editorial ? formatTrimmedDescription(editorial) : undefined;
 
-const sections = ["official_news", "pep_updates", "steering_council", "merged_prs", "discussions"] as const;
+const sections = ["official_news", "pep_updates", "steering_council", "welcome", "merged_prs", "discussions"] as const;
 
 const allSections: Section[] = ["upcoming_releases", ...sections, "musings", "picks", "events"];
 const tocEntries: { id: string; label: string }[] = allSections
