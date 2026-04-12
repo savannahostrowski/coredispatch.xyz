@@ -182,8 +182,23 @@ async def run_pipeline(issues_dir: Path, since: date | None = None):
         "items": all_generate_items + hand_curated_items,
     }
 
+    # Use literal block style for multiline strings (editorial_notes)
+    def _str_representer(dumper, data):
+        if "\n" in data:
+            return dumper.represent_scalar("tag:yaml.org,2002:str", data, style="|")
+        return dumper.represent_scalar("tag:yaml.org,2002:str", data)
+
+    dumper = yaml.Dumper
+    dumper.add_representer(str, _str_representer)
+
     output_path.write_text(
-        yaml.dump(issue, default_flow_style=False, sort_keys=False, allow_unicode=True)
+        yaml.dump(
+            issue,
+            Dumper=dumper,
+            default_flow_style=False,
+            sort_keys=False,
+            allow_unicode=True,
+        )
     )
     print(
         f"{'Wrote' if not updateable_issue else 'Updated'} {output_path} with {len(all_generate_items)} items"
