@@ -4,6 +4,7 @@ Uses GitHub Search API with targeted queries to find significant PRs,
 plus a file-based search for PRs that touch Doc/whatsnew/ (user-facing changes).
 """
 
+import re
 from datetime import date, timedelta
 
 import httpx
@@ -67,7 +68,7 @@ def _pr_to_item(pr: dict, touches_whatsnew: bool = False) -> dict:
     labels = [label["name"] for label in pr.get("labels", [])]
     return {
         "section": "merged_prs",
-        "title": pr.get("title", ""),
+        "title": re.sub(r"^gh-\d+:\s*", "", pr.get("title", "")),
         "url": pr["html_url"],
         "summary": "",
         "source": "github",

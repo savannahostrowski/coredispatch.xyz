@@ -123,9 +123,9 @@ async def run_pipeline(issues_dir: Path, since: date | None = None):
         except Exception as e:
             print(f"  !! {name} failed: {e}")
 
-    # Seed seen titles from recent editions to avoid cross-edition duplicates
+    # Seed seen URLs from recent editions to avoid cross-edition duplicates
     # Skip events and releases — they repeat across editions by design
-    seen_titles: set[str] = set()
+    seen_urls: set[str] = set()
     skip_sections = {"events", "upcoming_releases", "discussions"}
     recent_editions = sorted(
         _scan_yml_dir(repo_root / "editions"),
@@ -135,14 +135,19 @@ async def run_pipeline(issues_dir: Path, since: date | None = None):
     for edition in recent_editions:
         for item in edition.get("items", []):
             if item.get("section") not in skip_sections:
-                seen_titles.add(_normalize_title(item.get("title", "")))
+                seen_urls.add(item.get("url", ""))
 
-    # Dedupe across sections by title — prefer earlier sections (official_news > musings)
+    # Dedupe across sections by URL, then by title within this edition
+    seen_titles: set[str] = set()
     deduped: list[dict] = []
     for item in all_generate_items:
+        url = item.get("url", "")
+        if url in seen_urls:
+            continue
         key = _normalize_title(item["title"])
         if key in seen_titles:
             continue
+        seen_urls.add(url)
         seen_titles.add(key)
         deduped.append(item)
     all_generate_items = deduped
