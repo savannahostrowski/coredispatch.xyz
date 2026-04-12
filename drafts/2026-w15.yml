@@ -3,19 +3,26 @@ title: 'Core Dispatch #2'
 slug: 2026-w15
 period_start: '2026-04-04'
 period_end: '2026-04-12'
-editorial_notes: "Welcome back to Core Dispatch! This edition covers April 4–10, and\
-  \ there's\na lot going on. As expected, new releases are out for 3.13, 3.14, and\
-  \ 3.15.\nPython 3.15.0 beta 1 is right around the corner (May 5), and if you've\
-  \ got\nPRs you want in 3.15, now's the time! Feature freeze is just 3 weeks away.\n\
-  Don't miss the window, otherwise it'll go into 3.16 and have to wait until\nOctober\
-  \ 2027 for release.\n\nEmma Smith published a Rust for CPython progress update:\
-  \ the build system\nnow works across all CI platforms \U0001F389, and the team has\
-  \ shifted their target\nfrom 3.15 to 3.16 to give more time for API design and a\
-  \ PEP. If you're\nattending PyCon US and interested in Rust for CPython, Emma will\
-  \ be giving\na talk on the initiative and there will also be a sprint on the topic.\n\
-  \nIf you maintain a package or just like living on the edge, make sure to give\n\
-  the latest 3.15 alpha a spin and [file any issues](https://github.com/python/cpython/issues)\
-  \ \nyou find.\n"
+editorial_notes: |
+  Welcome back to Core Dispatch! This edition covers April 4–12,
+  and there's a lot going on. As expected, new releases are out
+  for 3.13, 3.14, and 3.15. Python 3.15.0 beta 1 is right around
+  the corner (May 5), and if you've got PRs you want in 3.15,
+  now's the time! Feature freeze is just 3 weeks away. Don't miss
+  the window, otherwise it'll go into 3.16 and have to wait until
+  October 2027 for release.
+
+  Emma Smith published a Rust for CPython progress update: the
+  build system now works across all CI platforms 🎉, and the team
+  has shifted their target from 3.15 to 3.16 to give more time
+  for API design and a PEP. If you're attending PyCon US and
+  interested in Rust for CPython, Emma will be giving a talk on
+  the initiative and there will also be a sprint on the topic.
+
+  If you maintain a package or just like living on the edge, make
+  sure to give the latest 3.15 alpha a spin and
+  [file any issues](https://github.com/python/cpython/issues)
+  you find.
 quote:
   text: <!-- Add a quote here -->
   author: ''
