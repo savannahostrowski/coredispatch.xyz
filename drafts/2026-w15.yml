@@ -98,6 +98,14 @@ items:
   metadata:
     topic_id: 106931
     category: committers
+- section: welcome
+  title: Stan Ulbrych promoted to core developer!
+  url: https://discuss.python.org/t/vote-to-promote-stan-ulbrych/106562
+  summary: ''
+  source: manual
+  metadata:
+    topic_id: 106562
+    category: committers
 - section: merged_prs
   title: Reject CR/LF in HTTP tunnel request headers
   url: https://github.com/python/cpython/pull/146212
