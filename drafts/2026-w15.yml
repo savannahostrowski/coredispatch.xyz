@@ -242,7 +242,7 @@ items:
     views: 415
 - section: discussions
   title: 'PEP 831: Frame Pointers Everywhere'
-  url: https://discuss.python.org/t/pep-831-frame-pointers-everywhere-enabling-system-level-observability-for-python/107211
+  url: https://discuss.python.org/t/pep-831-frame-pointers-everywhere-enabling-system-level-observability-for-python/106958
   summary: 🆕 3 new replies · 33 views
   source: discourse
   metadata:
