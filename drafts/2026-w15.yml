@@ -371,6 +371,12 @@ items:
     date: '2026-05-03'
     type: cfp
 - section: picks
+  title: "2026 Python Developers Survey — last chance to participate!"
+  url: https://bsky.app/profile/t-redactyl.bsky.social/post/3mj56vxjn2k2o
+  source: manual
+  metadata:
+    submitted_by: t-redactyl
+- section: picks
   title: 3.15 feature freeze in 3 weeks — get your PRs in!
   url: https://mastodon.social/@hugovk/116370025582888545
   source: manual
