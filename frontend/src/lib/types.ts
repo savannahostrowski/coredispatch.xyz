@@ -58,7 +58,7 @@ export const SECTION_LABELS: Record<Section, string> = {
 export const SECTION_DESCRIPTIONS: Partial<Record<Section, string>> = {
   official_news: "From the Python, PSF, PyPI and PyCon blogs.",
   pep_updates: "PEPs that changed status since last edition.",
-  steering_council: "Meeting summaries from the Python Steering Council.",
+  steering_council: "Meeting summaries and other communications from the Python Steering Council.",
   welcome: "New core team members and promotions.",
   merged_prs: "High-traffic PRs, new features, and changes that landed in What's New.",
   discussions: "Most active PEP discussions on Discourse since last edition.",
