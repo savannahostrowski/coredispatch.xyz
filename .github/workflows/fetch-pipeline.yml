@@ -66,6 +66,7 @@ jobs:
           - [ ] Add community picks
           - [ ] Add a quote for "One More Thing"
           - [ ] Add credits
+          - [ ] Double check all links work
           - [ ] Move from `drafts/` to `editions/` to publish
           EOF
           )" \
