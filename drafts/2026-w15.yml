@@ -112,6 +112,14 @@ items:
     pep_number: 776
     status: Active
 - section: steering_council
+  title: "Three weeks to beta 1 — wrap up your PEPs for 3.15"
+  url: https://discuss.python.org/t/three-weeks-to-beta-1/106962
+  summary: ''
+  source: manual
+  metadata:
+    topic_id: 106962
+    category: committers
+- section: steering_council
   title: 2026-04-02 Python Steering Council meeting summary
   url: https://discuss.python.org/t/2026-04-02-python-steering-council-meeting-summary/106901
   summary: ''
