@@ -7,6 +7,9 @@
 - name: PyPI Blog
   url: https://blog.pypi.org/feed_rss_created.xml
 
+- name: PyPy Blog
+  url: https://www.pypy.org/rss.xml
+
 - name: Python Blog
   url: https://blog.python.org/rss.xml
 
