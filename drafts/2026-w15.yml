@@ -24,12 +24,14 @@ editorial_notes: |
   [file any issues](https://github.com/python/cpython/issues)
   you find.
 quote:
-  text: <!-- Add a quote here -->
-  author: ''
-  url: ''
+  text: "i think this will fix all our problems!!! moar interpreters = good"
+  author: Ken Jin
+  url: https://fidget-spinner.github.io/
 credits:
 - name: Savannah Ostrowski
   url: https://github.com/savannahostrowski
+- name: Hugo van Kemenade
+  url: https://github.com/hugovk
 items:
 - section: upcoming_releases
   title: Python 3.15.0 beta 1
