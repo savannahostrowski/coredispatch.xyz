@@ -17,9 +17,13 @@ let rightClass = "shrink-0 text-xs text-muted";
 if (section === "pep_updates" && "status" in meta) {
   const status = String(meta.status);
   rightText = status;
-  rightClass = status === "Accepted" || status === "Final"
-    ? "shrink-0 rounded-full px-2 py-0.5 text-xs font-medium bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
-    : "shrink-0 rounded-full px-2 py-0.5 text-xs font-medium bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400";
+  if (status === "New") {
+    rightClass = "shrink-0 rounded-full px-2 py-0.5 text-xs font-medium bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400";
+  } else if (status === "Accepted" || status === "Final" || status === "Active") {
+    rightClass = "shrink-0 rounded-full px-2 py-0.5 text-xs font-medium bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400";
+  } else {
+    rightClass = "shrink-0 rounded-full px-2 py-0.5 text-xs font-medium bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400";
+  }
 } else if ("submitted_by" in meta) {
   rightText = `via @${meta.submitted_by}`;
   rightClass = "shrink-0 text-xs text-muted font-mono";

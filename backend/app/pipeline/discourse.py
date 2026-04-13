@@ -102,8 +102,16 @@ async def fetch_pep_discussions(days: int = 14) -> list[dict]:
             topic_id = topic["id"]
             views = topic.get("views", 0)
 
+            # Always include newly created PEP topics
+            created_at = topic.get("created_at", "")
+            is_new_pep = False
+            if created_at:
+                created_dt = datetime.fromisoformat(created_at.replace("Z", "+00:00"))
+                if created_dt >= cutoff:
+                    is_new_pep = True
+
             new_replies = await _count_recent_posts(client, topic_id, cutoff)
-            if new_replies < MIN_NEW_REPLIES:
+            if new_replies < MIN_NEW_REPLIES and not is_new_pep:
                 continue
 
             if views >= 1000:
@@ -114,6 +122,7 @@ async def fetch_pep_discussions(days: int = 14) -> list[dict]:
                 views_str = f"{views} views"
 
             hot = "\U0001f525 " if new_replies >= 10 else ""
+            new_tag = "\U0001f195 " if is_new_pep else ""
             replies_str = "reply" if new_replies == 1 else "replies"
 
             items.append(
@@ -121,7 +130,7 @@ async def fetch_pep_discussions(days: int = 14) -> list[dict]:
                     "section": "discussions",
                     "title": topic["title"],
                     "url": f"{DISCOURSE_URL}/t/{topic['slug']}/{topic_id}",
-                    "summary": f"{hot}{new_replies} new {replies_str} \u00b7 {views_str}",
+                    "summary": f"{new_tag}{hot}{new_replies} new {replies_str} \u00b7 {views_str}",
                     "source": "discourse",
                     "metadata": {
                         "topic_id": topic_id,
