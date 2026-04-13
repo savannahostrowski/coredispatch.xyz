@@ -19,6 +19,10 @@ editorial_notes: |
   interested in Rust for CPython, Emma will be giving a talk on
   the initiative and there will also be a sprint on the topic.
 
+  In other news, Łukasz Langa is stepping down as the PSF's
+  first CPython Developer in Residence after nearly five years.
+  Thank you, Łukasz (we know where to find you)!
+
   If you maintain a package or just like living on the edge, make
   sure to give the latest 3.15 alpha a spin and
   [file any issues](https://github.com/python/cpython/issues)
@@ -41,23 +45,14 @@ items:
   metadata:
     date: '2026-05-05'
 - section: official_news
-  title: Stories from the PyCon US Hotels
-  url: https://pycon.blogspot.com/2026/04/stories-from-pycon-us-hotels.html
-  summary: By The PyCon US Team
+  title: "Reflecting on Five Years as the PSF\u2019s First CPython Developer in Residence"
+  url: https://pyfound.blogspot.com/2026/04/reflecting-on-five-years-as-psfs-first.html
+  summary: "By \u0141ukasz Langa"
   source: python_blog
   metadata:
-    feed: PyCon US
-    author: The PyCon US Team
-    published: Tue, 07 Apr 2026 14:30:00 +0000
-- section: official_news
-  title: 'Python and the Future of AI: Agents, Inference, and Edge AI'
-  url: https://pycon.blogspot.com/2026/04/python-and-future-of-ai-agents.html
-  summary: By The PyCon US Team
-  source: python_blog
-  metadata:
-    feed: PyCon US
-    author: The PyCon US Team
-    published: Mon, 06 Apr 2026 14:33:00 +0000
+    feed: Python Software Foundation News
+    author: "\u0141ukasz Langa"
+    published: Sun, 13 Apr 2026 14:01:00 -0400
 - section: official_news
   title: Rust for CPython Progress Update April 2026
   url: https://blog.python.org/2026/04/rust-for-cpython-2026-04/
@@ -133,7 +128,7 @@ items:
     topic_id: 106849
     category: committers
 - section: welcome
-  title: Please welcome Nathan Goldbaum to the triage team!
+  title: Nathan Goldbaum joins the triage team!
   url: https://discuss.python.org/t/please-welcome-nathan-goldbaum-to-the-triage-team/106931
   summary: ''
   source: discourse
