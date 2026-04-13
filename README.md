@@ -55,11 +55,12 @@ These are populated by the pipeline every Friday:
 |---------|--------|
 | **Upcoming Releases** | [peps.python.org](https://peps.python.org) release schedule iCal |
 | **Official News** | Python Blog + PyPI Blog (configured in `official.yml`) |
-| **PEP Updates** | Merged PRs in [python/peps](https://github.com/python/peps) that change a PEP's status |
+| **PEP Updates** | Merged PRs in [python/peps](https://github.com/python/peps) that change a PEP's status, plus newly created PEPs |
 | **Steering Council Updates** | PSC meeting summaries from [discuss.python.org/c/committers](https://discuss.python.org/c/committers) |
+| **Welcome to the Team** | New core team members and promotions from [discuss.python.org/c/committers](https://discuss.python.org/c/committers) |
 | **Merged PRs** | Draft is created with high-traffic PRs but this needs manual curation to remove noise and add context |
-| **Discussion** | Most active PEP discussions on Discourse, ranked by new replies |
-| **Core Dev Musings** | Personal blogs and podcasts (configured in `core-blogs.yml`) |
+| **Discussion** | Most active PEP discussions on Discourse, ranked by new replies. Newly created PEP discussions are always included. |
+| **Core Team Musings** | Personal blogs and podcasts (configured in `core-blogs.yml`) |
 | **Upcoming CFPs & Conferences** | [pythondeadlin.es](https://pythondeadlin.es) + PyCon event calendar |
 
 ### Hand-curated sections
