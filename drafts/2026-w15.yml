@@ -8,8 +8,9 @@ editorial_notes: |
   and there's a lot going on. As expected, new releases are out
   for 3.13, 3.14, and 3.15. Python 3.15.0 beta 1 is right around
   the corner (May 5), and if you've got PRs you want in 3.15,
-  now's the time! Feature freeze is just 3 weeks away. Don't miss
-  the window, otherwise it'll go into 3.16 and have to wait until
+  now's the time! Feature freeze is less than 3 weeks away.
+  Don't miss the window, otherwise it'll go into 3.16 and
+  have to wait until
   October 2027 for release.
 
   Emma Smith published a Rust for CPython progress update: the
@@ -195,7 +196,7 @@ items:
     comments: 5
     touches_whatsnew: true
 - section: merged_prs
-  title: Specializes enums to improve performance and better scaling in free-threading
+  title: Specialize enums to improve performance and better scaling in free-threading
   url: https://github.com/python/cpython/pull/148184
   summary: ''
   source: github
@@ -318,22 +319,6 @@ items:
     topic_id: 86862
     new_replies: 2
     views: 3464
-- section: events
-  title: 📋 Warsaw Python Pizza 2026 Deadline
-  url: https://warsaw.python.pizza/
-  summary: Apr 13
-  source: python_deadlines
-  metadata:
-    date: '2026-04-13'
-    type: cfp
-- section: events
-  title: PyCon DE & PyData 2026
-  url: https://pycon.de/
-  summary: Apr 14
-  source: pycon_calendar
-  metadata:
-    date: '2026-04-14'
-    type: conference
 - section: events
   title: DjangoCon Europe 2026
   url: https://2026.djangocon.eu/
