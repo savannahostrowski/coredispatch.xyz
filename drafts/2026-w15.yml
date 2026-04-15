@@ -23,6 +23,12 @@ editorial_notes: |
   first CPython Developer in Residence after nearly five years.
   Thank you, Łukasz (we know where to find you)!
 
+  CPython is moving platform-specific build files to the new `Platforms/`
+  directory.
+  [Most of the platforms have been migrated](https://discuss.python.org/t/moving-to-a-new-platforms-directory/105215/17),
+  with the rest planned to be moved prior to 3.15 beta 1. If you build CPython,
+  you'll want to update your automation so it is ready for beta 1!
+  
   If you maintain a package or just like living on the edge, make
   sure to give the latest 3.15 alpha a spin and
   [file any issues](https://github.com/python/cpython/issues)
@@ -36,6 +42,8 @@ credits:
   url: https://github.com/savannahostrowski
 - name: Hugo van Kemenade
   url: https://github.com/hugovk
+- name: Emma Smith
+  url: https://github.com/emmatyping
 items:
 - section: upcoming_releases
   title: Python 3.15.0 beta 1
