@@ -320,14 +320,6 @@ items:
     new_replies: 2
     views: 3464
 - section: events
-  title: DjangoCon Europe 2026
-  url: https://2026.djangocon.eu/
-  summary: Apr 15
-  source: pycon_calendar
-  metadata:
-    date: '2026-04-15'
-    type: conference
-- section: events
   title: PyTexas 2026
   url: https://www.pytexas.org/2026/
   summary: Apr 17
