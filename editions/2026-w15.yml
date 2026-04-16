@@ -23,8 +23,14 @@ editorial_notes: |
   Developer in Residence after nearly five years. Thank you,
   Łukasz (we know where to find you)!
 
-  The Steering Council has accepted a number of PEPs, including 
+  The Steering Council has accepted a number of PEPs, including
   PEP 772, which establishes a new Packaging Council!
+
+  The [incremental GC introduced in 3.14 is being
+  reverted](https://discuss.python.org/t/reverting-the-incremental-gc-in-python-3-14-and-3-15/107014)
+  due to memory pressure in production environments.
+  Python 3.14 and 3.15 will return to the previous
+  generational GC.
 
   CPython is moving platform-specific build files to the new
   `Platforms/` directory. [Most of the platforms have been
