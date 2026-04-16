@@ -55,6 +55,14 @@ items:
   metadata:
     date: '2026-05-05'
 - section: official_news
+  title: PyPI has completed its second audit
+  url: https://blog.pypi.org/posts/2026-04-16-pypi-completes-second-audit/
+  summary: By Mike Fiedler
+  source: python_blog
+  metadata:
+    feed: PyPI Blog
+    author: Mike Fiedler
+- section: official_news
   title: "Reflecting on Five Years as the PSF\u2019s First CPython Developer in Residence"
   url: https://pyfound.blogspot.com/2026/04/reflecting-on-five-years-as-psfs-first.html
   summary: "By \u0141ukasz Langa"
@@ -82,6 +90,14 @@ items:
     author: Hugo van Kemenade
     published: Tue, 07 Apr 2026 00:00:00 GMT
 - section: pep_updates
+  title: 'PEP 832: Virtual environment discovery'
+  url: https://peps.python.org/pep-0832/
+  summary: ''
+  source: peps
+  metadata:
+    pep_number: 832
+    status: New
+- section: pep_updates
   title: 'PEP 831: Frame Pointers Everywhere: Enabling System-Level Observability for Python'
   url: https://peps.python.org/pep-0831/
   summary: ''
@@ -106,6 +122,14 @@ items:
     pep_number: 786
     status: New
 - section: pep_updates
+  title: 'PEP 800: Solid bases in the type system'
+  url: https://peps.python.org/pep-0800/
+  summary: ''
+  source: peps
+  metadata:
+    pep_number: 800
+    status: Accepted
+- section: pep_updates
   title: 'PEP 783: Emscripten Packaging'
   url: https://peps.python.org/pep-0783/
   summary: ''
@@ -128,6 +152,14 @@ items:
   source: manual
   metadata:
     topic_id: 106962
+    category: committers
+- section: steering_council
+  title: 2026-04-09 Python Steering Council meeting summary
+  url: https://discuss.python.org/t/2026-04-09-python-steering-council-meeting-summary/107011
+  summary: ''
+  source: discourse
+  metadata:
+    topic_id: 107168
     category: committers
 - section: steering_council
   title: 2026-04-02 Python Steering Council meeting summary
@@ -249,49 +281,58 @@ items:
 - section: discussions
   title: 'PEP 829: Structured Startup Configuration Files'
   url: https://discuss.python.org/t/pep-829-structured-startup-configuration-via-site-toml-files/106789
-  summary: 🔥 46 new replies · 2.0k views
+  summary: 🔥 47 new replies · 2.1k views
   source: discourse
   metadata:
     topic_id: 106789
-    new_replies: 46
-    views: 2000
+    new_replies: 47
+    views: 2100
 - section: discussions
   title: 'PEP 830: Add timestamps to exceptions and tracebacks'
   url: https://discuss.python.org/t/pep-830-add-timestamps-to-exceptions-and-tracebacks/106942
-  summary: 🆕 🔥 21 new replies · 603 views
+  summary: 🆕 🔥 22 new replies · 715 views
   source: discourse
   metadata:
     topic_id: 106942
-    new_replies: 21
-    views: 603
+    new_replies: 22
+    views: 715
+- section: discussions
+  title: 'PEP 832: Virtual environment discovery'
+  url: https://discuss.python.org/t/pep-832-virtual-environment-discovery/106998
+  summary: 🆕 8 new replies · 409 views
+  source: discourse
+  metadata:
+    topic_id: 107250
+    new_replies: 8
+    views: 409
 - section: discussions
   title: 'PEP 786: Precision and modulo-precision flag format specifiers for integer
     fields'
   url: https://discuss.python.org/t/pep-786-precision-and-modulo-precision-flag-format-specifiers-for-integer-fields/106907
-  summary: 🆕 7 new replies · 432 views
+  summary: 🆕 7 new replies · 435 views
   source: discourse
   metadata:
     topic_id: 106907
     new_replies: 7
-    views: 432
+    views: 435
 - section: discussions
-  title: 'PEP 831: Frame Pointers Everywhere: Enabling System-Level Observability for Python'
+  title: 'PEP 831: Frame Pointers Everywhere'
   url: https://discuss.python.org/t/pep-831-frame-pointers-everywhere-enabling-system-level-observability-for-python/106958
-  summary: 🆕 5 new replies · 356 views
+  summary: 🆕 5 new replies · 384 views
   source: discourse
   metadata:
     topic_id: 107211
     new_replies: 5
-    views: 356
+    views: 384
 - section: discussions
-  title: 'PEP 802: Display Syntax for the Empty Set'
-  url: https://discuss.python.org/t/pep-802-display-syntax-for-the-empty-set/101676
-  summary: 7 new replies · 8.5k views
+  title: 'PEP 661: Sentinel Values'
+  url: https://discuss.python.org/t/pep-661-sentinel-values/9126
+  summary: 4 new replies · 28.4k views
   source: discourse
   metadata:
-    topic_id: 101676
-    new_replies: 7
-    views: 8500
+    topic_id: 107200
+    new_replies: 4
+    views: 28400
 - section: discussions
   title: 'PEP 827: Type Manipulation'
   url: https://discuss.python.org/t/pep-827-type-manipulation/106353
@@ -310,6 +351,15 @@ items:
     topic_id: 106181
     new_replies: 3
     views: 2500
+- section: discussions
+  title: 'PEP 800: Solid bases in the type system'
+  url: https://discuss.python.org/t/pep-800-solid-bases-in-the-type-system/99910
+  summary: 3 new replies · 2.8k views
+  source: discourse
+  metadata:
+    topic_id: 106700
+    new_replies: 3
+    views: 2800
 - section: discussions
   title: 'PEP 783: Emscripten Packaging'
   url: https://discuss.python.org/t/pep-783-emscripten-packaging/86862
