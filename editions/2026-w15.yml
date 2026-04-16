@@ -12,25 +12,25 @@ editorial_notes: |
   Don't miss the window, otherwise it'll go into 3.16 and
   have to wait until October 2027 for release.
 
-  Emma Smith published a Rust for CPython progress update: the
-  build system now works across all CI platforms 🎉, and the team
-  has shifted their target from 3.15 to 3.16 to give more time
-  for API design and a PEP. If you're attending PyCon US and
-  interested in Rust for CPython, Emma will be giving a talk on
-  the initiative and there will also be a sprint on the topic.
-
-  Łukasz Langa is stepping down as the PSF's first CPython
-  Developer in Residence after nearly five years. Thank you,
-  Łukasz (we know where to find you)!
-
-  The Steering Council has accepted a number of PEPs, including
-  PEP 772, which establishes a new Packaging Council!
-
   The [incremental GC introduced in 3.14 is being
   reverted](https://discuss.python.org/t/reverting-the-incremental-gc-in-python-3-14-and-3-15/107014)
   due to memory pressure in production environments.
   Python 3.14 and 3.15 will return to the previous
   generational GC.
+
+  The Steering Council has accepted a number of PEPs, including
+  PEP 772, which establishes a new Packaging Council!
+
+  Łukasz Langa is stepping down as the PSF's first CPython
+  Developer in Residence after nearly five years. Thank you,
+  Łukasz (we know where to find you)!
+
+  Emma Smith published a Rust for CPython progress update: the
+  build system now works across all CI platforms, and the team
+  has shifted their target from 3.15 to 3.16 to give more time
+  for API design and a PEP. If you're attending PyCon US and
+  interested in Rust for CPython, Emma will be giving a talk on
+  the initiative and there will also be a sprint on the topic.
 
   CPython is moving platform-specific build files to the new
   `Platforms/` directory. [Most of the platforms have been
