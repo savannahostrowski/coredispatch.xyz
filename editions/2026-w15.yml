@@ -10,8 +10,7 @@ editorial_notes: |
   the corner (May 5), and if you've got PRs you want in 3.15,
   now's the time! Feature freeze is less than 3 weeks away.
   Don't miss the window, otherwise it'll go into 3.16 and
-  have to wait until
-  October 2027 for release.
+  have to wait until October 2027 for release.
 
   Emma Smith published a Rust for CPython progress update: the
   build system now works across all CI platforms 🎉, and the team
@@ -23,6 +22,9 @@ editorial_notes: |
   Łukasz Langa is stepping down as the PSF's first CPython
   Developer in Residence after nearly five years. Thank you,
   Łukasz (we know where to find you)!
+
+  The Steering Council has accepted a number of PEPs, including 
+  PEP 772, which establishes a new Packaging Council!
 
   CPython is moving platform-specific build files to the new
   `Platforms/` directory. [Most of the platforms have been
@@ -128,6 +130,14 @@ items:
   source: peps
   metadata:
     pep_number: 800
+    status: Accepted
+- section: pep_updates
+  title: 'PEP 772: Packaging Council governance process'
+  url: https://peps.python.org/pep-0772/
+  summary: ''
+  source: peps
+  metadata:
+    pep_number: 772
     status: Accepted
 - section: pep_updates
   title: 'PEP 783: Emscripten Packaging'
@@ -316,7 +326,7 @@ items:
     new_replies: 7
     views: 435
 - section: discussions
-  title: 'PEP 831: Frame Pointers Everywhere'
+  title: 'PEP 831: Frame Pointers Everywhere: Enabling System-Level Observability for Python'
   url: https://discuss.python.org/t/pep-831-frame-pointers-everywhere-enabling-system-level-observability-for-python/106958
   summary: 🆕 5 new replies · 384 views
   source: discourse
