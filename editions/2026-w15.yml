@@ -2,27 +2,35 @@ number: 2
 title: 'Core Dispatch #2'
 slug: 2026-w15
 period_start: '2026-04-04'
-period_end: '2026-04-15'
+period_end: '2026-04-16'
 editorial_notes: |
-  Welcome back to Core Dispatch! This edition covers April 4–15, 2026,
+  Welcome back to Core Dispatch! This edition covers April 4–16, 2026,
   and there's a lot going on. As expected, new releases are out
   for 3.13, 3.14, and 3.15. Python 3.15.0 beta 1 is right around
   the corner (May 5), and if you've got PRs you want in 3.15,
   now's the time! Feature freeze is less than 3 weeks away.
   Don't miss the window, otherwise it'll go into 3.16 and
-  have to wait until
-  October 2027 for release.
+  have to wait until October 2027 for release.
 
-  Emma Smith published a Rust for CPython progress update: the
-  build system now works across all CI platforms 🎉, and the team
-  has shifted their target from 3.15 to 3.16 to give more time
-  for API design and a PEP. If you're attending PyCon US and
-  interested in Rust for CPython, Emma will be giving a talk on
-  the initiative and there will also be a sprint on the topic.
+  The [incremental GC introduced in 3.14 is being
+  reverted](https://discuss.python.org/t/reverting-the-incremental-gc-in-python-3-14-and-3-15/107014)
+  due to memory pressure in production environments.
+  Python 3.14 and 3.15 will return to the previous
+  generational GC.
+
+  The Steering Council has accepted a number of PEPs, including
+  PEP 772, which establishes a new Packaging Council!
 
   Łukasz Langa is stepping down as the PSF's first CPython
   Developer in Residence after nearly five years. Thank you,
   Łukasz (we know where to find you)!
+
+  Emma Smith published a Rust for CPython progress update: the
+  build system now works across all CI platforms, and the team
+  has shifted their target from 3.15 to 3.16 to give more time
+  for API design and a PEP. If you're attending PyCon US and
+  interested in Rust for CPython, Emma will be giving a talk on
+  the initiative and there will also be a sprint on the topic.
 
   CPython is moving platform-specific build files to the new
   `Platforms/` directory. [Most of the platforms have been
@@ -128,6 +136,14 @@ items:
   source: peps
   metadata:
     pep_number: 800
+    status: Accepted
+- section: pep_updates
+  title: 'PEP 772: Packaging Council governance process'
+  url: https://peps.python.org/pep-0772/
+  summary: ''
+  source: peps
+  metadata:
+    pep_number: 772
     status: Accepted
 - section: pep_updates
   title: 'PEP 783: Emscripten Packaging'
@@ -316,7 +332,7 @@ items:
     new_replies: 7
     views: 435
 - section: discussions
-  title: 'PEP 831: Frame Pointers Everywhere'
+  title: 'PEP 831: Frame Pointers Everywhere: Enabling System-Level Observability for Python'
   url: https://discuss.python.org/t/pep-831-frame-pointers-everywhere-enabling-system-level-observability-for-python/106958
   summary: 🆕 5 new replies · 384 views
   source: discourse
@@ -424,6 +440,30 @@ items:
   source: python_deadlines
   metadata:
     date: '2026-05-03'
+    type: cfp
+- section: events
+  title: 📋 PyCon Greece 2026 Deadline
+  url: https://2026.pycon.gr/
+  summary: May 10
+  source: python_deadlines
+  metadata:
+    date: '2026-05-10'
+    type: cfp
+- section: events
+  title: PyCon US 2026
+  url: https://us.pycon.org/
+  summary: May 13
+  source: pycon_calendar
+  metadata:
+    date: '2026-05-13'
+    type: conference
+- section: events
+  title: 📋 PyCon Russia 2026 Deadline
+  url: https://www.pycon.ru/
+  summary: May 15
+  source: python_deadlines
+  metadata:
+    date: '2026-05-15'
     type: cfp
 - section: picks
   title: "2026 Python Developers Survey — last chance to participate!"
