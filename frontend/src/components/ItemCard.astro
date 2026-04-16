@@ -29,9 +29,10 @@ if (section === "pep_updates" && "status" in meta) {
   rightClass = "shrink-0 text-xs text-muted font-mono";
 } else if ("author" in meta) {
   const author = String(meta.author);
-  const isHandle = /^[a-zA-Z0-9_-]+$/.test(author);
-  rightText = isHandle ? `@${author}` : `by ${author}`;
-  rightClass = `shrink-0 text-xs text-muted ${isHandle ? "font-mono" : ""}`;
+  const parts = author.split(/,\s*/);
+  const allHandles = parts.every(p => /^[a-zA-Z0-9_-]+$/.test(p));
+  rightText = allHandles ? parts.map(p => `@${p}`).join(", ") : `by ${author}`;
+  rightClass = `shrink-0 text-xs text-muted ${allHandles ? "font-mono" : ""}`;
 } else if (item.summary) {
   rightText = item.summary;
 }
