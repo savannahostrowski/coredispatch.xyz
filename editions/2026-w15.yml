@@ -2,9 +2,9 @@ number: 2
 title: 'Core Dispatch #2'
 slug: 2026-w15
 period_start: '2026-04-04'
-period_end: '2026-04-15'
+period_end: '2026-04-16'
 editorial_notes: |
-  Welcome back to Core Dispatch! This edition covers April 4–15, 2026,
+  Welcome back to Core Dispatch! This edition covers April 4–16, 2026,
   and there's a lot going on. As expected, new releases are out
   for 3.13, 3.14, and 3.15. Python 3.15.0 beta 1 is right around
   the corner (May 5), and if you've got PRs you want in 3.15,
@@ -424,6 +424,30 @@ items:
   source: python_deadlines
   metadata:
     date: '2026-05-03'
+    type: cfp
+- section: events
+  title: 📋 PyCon Greece 2026 Deadline
+  url: https://2026.pycon.gr/
+  summary: May 10
+  source: python_deadlines
+  metadata:
+    date: '2026-05-10'
+    type: cfp
+- section: events
+  title: PyCon US 2026
+  url: https://us.pycon.org/
+  summary: May 13
+  source: pycon_calendar
+  metadata:
+    date: '2026-05-13'
+    type: conference
+- section: events
+  title: 📋 PyCon Russia 2026 Deadline
+  url: https://www.pycon.ru/
+  summary: May 15
+  source: python_deadlines
+  metadata:
+    date: '2026-05-15'
     type: cfp
 - section: picks
   title: "2026 Python Developers Survey — last chance to participate!"
