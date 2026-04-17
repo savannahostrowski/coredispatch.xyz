@@ -124,6 +124,12 @@ async def rss_feed(request: Request):
         "A regular digest of what's happening in CPython — from merged PRs and PEP decisions to community discussions and upcoming events."
     )
     fg.language("en")
+    fg.logo(f"{settings.site_url}/icon.png")
+    fg.image(
+        url=f"{settings.site_url}/icon.png",
+        title="Core Dispatch",
+        link=settings.site_url,
+    )
 
     for issue in _load_published_issues()[:20]:
         fe = fg.add_entry()
