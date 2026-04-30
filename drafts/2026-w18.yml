@@ -39,10 +39,8 @@ quote:
 credits:
 - name: Savannah Ostrowski
   url: https://github.com/savannahostrowski
-  role: editor
 - name: Hugo van Kemenade
   url: https://github.com/hugovk
-  role: editor
 items:
 - section: upcoming_releases
   title: Python 3.14.5rc1
