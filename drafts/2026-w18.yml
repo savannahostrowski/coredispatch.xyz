@@ -143,7 +143,7 @@ items:
     topic_id: 107142
     category: committers
 - section: merged_prs
-  title: Add boundary check to asyncio.AbstractEventLoop.sock_recvf…
+  title: Add boundary check to `asyncio.AbstractEventLoop.sock_recvfrom_into()`
   url: https://github.com/python/cpython/pull/148809
   summary: ''
   source: github
@@ -155,7 +155,7 @@ items:
     comments: 10
     touches_whatsnew: false
 - section: merged_prs
-  title: Fix vulnerability in shutil.unpack_archive() for ZIP files on Windows
+  title: Fix vulnerability in `shutil.unpack_archive()` for ZIP files on Windows
   url: https://github.com/python/cpython/pull/146591
   summary: ''
   source: github
@@ -212,7 +212,7 @@ items:
     comments: 8
     touches_whatsnew: true
 - section: discussions
-  title: 'PEP 832: virtual environment discovery'
+  title: 'PEP 832: Virtual Environment Discovery'
   url: https://discuss.python.org/t/pep-832-virtual-environment-discovery/106998
   summary: 🔥 62 new replies · 3.2k views
   source: discourse
@@ -248,7 +248,7 @@ items:
     new_replies: 10
     views: 6685
 - section: discussions
-  title: 'PEP 718: subscriptable functions'
+  title: 'PEP 718: Subscriptable Functions'
   url: https://discuss.python.org/t/pep-718-subscriptable-functions/28457
   summary: 8 new replies · 13.2k views
   source: discourse
@@ -257,7 +257,7 @@ items:
     new_replies: 8
     views: 13217
 - section: discussions
-  title: 'PEP 828: Supporting ''yield from'' in asynchronous generators'
+  title: 'PEP 828: Supporting `yield from` in Asynchronous Generators'
   url: https://discuss.python.org/t/pep-828-supporting-yield-from-in-asynchronous-generators/106459
   summary: 6 new replies · 2.5k views
   source: discourse
@@ -266,7 +266,7 @@ items:
     new_replies: 6
     views: 2484
 - section: discussions
-  title: 'PEP 820 – PySlot: Unified slot system for the C API'
+  title: 'PEP 820 – PySlot: Unified Slot System for the C API'
   url: https://discuss.python.org/t/pep-820-pyslot-unified-slot-system-for-the-c-api/105552
   summary: 4 new replies · 1.9k views
   source: discourse
@@ -275,7 +275,7 @@ items:
     new_replies: 4
     views: 1900
 - section: discussions
-  title: 'PEP 830: Add timestamps to exceptions and tracebacks'
+  title: 'PEP 830: Add Timestamps to Exceptions and Tracebacks'
   url: https://discuss.python.org/t/pep-830-add-timestamps-to-exceptions-and-tracebacks/106942
   summary: 4 new replies · 1.3k views
   source: discourse
