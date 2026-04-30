@@ -98,6 +98,8 @@ def _render_issue_html(issue: dict) -> str:
         parts.append("<ul>")
         for item in section_items:
             title = escape(item.get("title", ""))
+            # Convert `code` to <code>code</code>
+            title = re.sub(r"`([^`]+)`", r"<code>\1</code>", title)
             url = escape(item.get("url", ""))
             summary = escape(item.get("summary", ""))
             link = f'<a href="{url}">{title}</a>' if url else title

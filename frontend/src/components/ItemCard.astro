@@ -10,6 +10,22 @@ const { item, compact = false } = Astro.props;
 const meta = item.metadata || {};
 const section = item.section as Section;
 
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function renderTitle(title: string): string {
+  return escapeHtml(title).replace(
+    /`([^`]+)`/g,
+    '<code class="rounded bg-border/50 px-1 py-0.5 text-[0.9em]">$1</code>'
+  );
+}
+
 // Determine right-aligned detail
 let rightText = "";
 let rightClass = "shrink-0 text-xs text-muted";
@@ -41,13 +57,13 @@ if (section === "pep_updates" && "status" in meta) {
 {compact ? (
   <a href={item.url} target="_blank" rel="noopener noreferrer"
     class="group flex items-baseline justify-between gap-2 py-1.5 border-b border-border/30 last:border-0">
-    <span class="text-sm font-medium truncate group-hover:text-accent transition-colors">{item.title}</span>
+    <span class="text-sm font-medium truncate group-hover:text-accent transition-colors" set:html={renderTitle(item.title)} />
     {item.summary && <span class="shrink-0 text-xs text-muted">{item.summary}</span>}
   </a>
 ) : (
   <a href={item.url} target="_blank" rel="noopener noreferrer"
     class="group flex items-baseline justify-between gap-4 py-2.5">
-    <span class="text-[15px] font-medium group-hover:text-accent transition-colors">{item.title}</span>
+    <span class="text-[15px] font-medium group-hover:text-accent transition-colors" set:html={renderTitle(item.title)} />
     {rightText && <span class={rightClass}>{rightText}</span>}
   </a>
 )}
