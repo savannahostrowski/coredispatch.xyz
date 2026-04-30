@@ -1,5 +1,5 @@
-number: 4
-title: 'Core Dispatch #4'
+number: 3
+title: 'Core Dispatch #3'
 slug: 2026-w18
 period_start: '2026-04-16'
 period_end: '2026-04-30'
@@ -13,8 +13,9 @@ editorial_notes: |
   661](https://peps.python.org/pep-0661/) was accepted
   after nearly five years of discussion.
   [PEP 788](https://peps.python.org/pep-0788/),
-  [PEP 829](https://peps.python.org/pep-0829/), and
-  [PEP 820](https://peps.python.org/pep-0820/) also got the green light,
+  [PEP 829](https://peps.python.org/pep-0829/),
+  [PEP 820](https://peps.python.org/pep-0820/), and
+  [PEP 831](https://peps.python.org/pep-0831/) also got the green light,
   while [PEP 708](https://peps.python.org/pep-0708/) and
   [PEP 806](https://peps.python.org/pep-0806/) were turned down. Big
   fortnight on the PEP front! It's also a great time to review the 3.15
@@ -35,8 +36,21 @@ quote:
   text: Ken Jin has a dangerous energy
   author: Brandt Bucher
   url: https://github.com/brandtbucher
-credits: []
+credits:
+- name: Savannah Ostrowski
+  url: https://github.com/savannahostrowski
+  role: editor
+- name: Hugo van Kemenade
+  url: https://github.com/hugovk
+  role: editor
 items:
+- section: upcoming_releases
+  title: Python 3.14.5rc1
+  url: https://peps.python.org/pep-0745/
+  summary: May 02
+  source: manual
+  metadata:
+    date: '2026-05-02'
 - section: upcoming_releases
   title: Python 3.15.0 beta 1
   url: https://peps.python.org/pep-0790/
@@ -44,6 +58,13 @@ items:
   source: release_schedule
   metadata:
     date: '2026-05-05'
+- section: upcoming_releases
+  title: Python 3.14.5 final
+  url: https://peps.python.org/pep-0745/
+  summary: May 08
+  source: manual
+  metadata:
+    date: '2026-05-08'
 - section: official_news
   title: Announcing Python Software Foundation Fellow Members for Q1 2026! 🎉
   url: https://pyfound.blogspot.com/2026/04/announcing-python-software-foundation.html
@@ -54,6 +75,23 @@ items:
     author: Marie Nordin
     published: Thu, 23 Apr 2026 11:07:00 +0000
 - section: pep_updates
+  title: 'PEP 833: Freezing the HTML simple repository API'
+  url: https://peps.python.org/pep-0833/
+  summary: ''
+  source: peps
+  metadata:
+    pep_number: 833
+    status: New
+    pr_url: https://github.com/python/peps/pull/4930
+- section: pep_updates
+  title: 'PEP 831: Frame Pointers Everywhere: Enabling System-Level Observability for Python'
+  url: https://peps.python.org/pep-0831/
+  summary: ''
+  source: manual
+  metadata:
+    pep_number: 831
+    status: Accepted
+- section: pep_updates
   title: 'PEP 820: PySlot: Unified slot system for the C API'
   url: https://peps.python.org/pep-0820/
   summary: ''
@@ -62,24 +100,6 @@ items:
     pep_number: 820
     status: Accepted
     pr_url: https://github.com/python/peps/pull/4939
-- section: pep_updates
-  title: 'PEP 788: Protecting the C API from Interpreter Finalization'
-  url: https://peps.python.org/pep-0788/
-  summary: ''
-  source: peps
-  metadata:
-    pep_number: 788
-    status: Accepted
-    pr_url: https://github.com/python/peps/pull/4945
-- section: pep_updates
-  title: 'PEP 661: Sentinel Values'
-  url: https://peps.python.org/pep-0661/
-  summary: ''
-  source: peps
-  metadata:
-    pep_number: 661
-    status: Accepted
-    pr_url: https://github.com/python/peps/pull/4935
 - section: pep_updates
   title: 'PEP 806: Mixed sync/async context managers with precise async marking'
   url: https://peps.python.org/pep-0806/
@@ -90,6 +110,15 @@ items:
     status: Rejected
     pr_url: https://github.com/python/peps/pull/4934
 - section: pep_updates
+  title: 'PEP 788: Protecting the C API from Interpreter Finalization'
+  url: https://peps.python.org/pep-0788/
+  summary: ''
+  source: peps
+  metadata:
+    pep_number: 788
+    status: Accepted
+    pr_url: https://github.com/python/peps/pull/4945
+- section: pep_updates
   title: 'PEP 708: Extending the Repository API to Mitigate Dependency Confusion Attacks'
   url: https://peps.python.org/pep-0708/
   summary: ''
@@ -99,14 +128,14 @@ items:
     status: Rejected
     pr_url: https://github.com/python/peps/pull/4922
 - section: pep_updates
-  title: 'PEP 833: Freezing the HTML simple repository API'
-  url: https://peps.python.org/pep-0833/
+  title: 'PEP 661: Sentinel Values'
+  url: https://peps.python.org/pep-0661/
   summary: ''
   source: peps
   metadata:
-    pep_number: 833
-    status: New
-    pr_url: https://github.com/python/peps/pull/4930
+    pep_number: 661
+    status: Accepted
+    pr_url: https://github.com/python/peps/pull/4935
 - section: steering_council
   title: 2026-04-16 Python Steering Council meeting summary
   url: https://discuss.python.org/t/2026-04-16-python-steering-council-meeting-summary/107142
