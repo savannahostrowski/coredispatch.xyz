@@ -1,0 +1,421 @@
+number: 3
+title: 'Core Dispatch #3'
+slug: 2026-w18
+period_start: '2026-04-16'
+period_end: '2026-04-30'
+editorial_notes: |
+  Welcome back to Core Dispatch! This edition covers April 16–30, 2026.
+  Python 3.15.0 beta 1 is just around the corner (that's next week...but
+  who's counting?). If you've got outstanding features, now's the time,
+  or else you'll have to wait for 3.16.0!
+
+  Heads up: there's also an early 3.14.5 next week. 3.14.5rc1 ships
+  Saturday May 2 with the final on Friday May 8, pulled forward to
+  deliver the [incremental GC
+  revert](https://discuss.python.org/t/reverting-the-incremental-gc-in-python-3-14-and-3-15/107014)
+  we mentioned last edition.
+
+  The Steering Council was busy. [PEP
+  661](https://peps.python.org/pep-0661/) was accepted
+  after nearly five years of discussion.
+  [PEP 788](https://peps.python.org/pep-0788/),
+  [PEP 829](https://peps.python.org/pep-0829/),
+  [PEP 820](https://peps.python.org/pep-0820/), and
+  [PEP 831](https://peps.python.org/pep-0831/) also got the green light,
+  while [PEP 708](https://peps.python.org/pep-0708/) and
+  [PEP 806](https://peps.python.org/pep-0806/) were turned down. Big
+  fortnight on the PEP front! It's also a great time to review the 3.15
+  [What's New](https://docs.python.org/3.15/whatsnew/3.15.html) to see
+  what's coming in the next release (spoiler: it's a lot of really cool
+  stuff).
+
+  As always, if you maintain a package or just like living on the edge,
+  make sure to give 3.15 beta 1 a spin when it drops next week and
+  [file any issues](https://github.com/python/cpython/issues) you find.
+
+  One more thing: this newsletter takes real work to edit and curate.
+  If you've got something Python core related to share, or just want to
+  help out, please file [an issue on
+  GitHub](https://github.com/savannahostrowski/coredispatch.xyz/issues)
+  or reach out!
+quote:
+  text: Ken Jin has a dangerous energy
+  author: Brandt Bucher
+  url: https://github.com/brandtbucher
+credits:
+- name: Savannah Ostrowski
+  url: https://github.com/savannahostrowski
+- name: Hugo van Kemenade
+  url: https://github.com/hugovk
+items:
+- section: upcoming_releases
+  title: Python 3.14.5rc1
+  url: https://peps.python.org/pep-0745/
+  summary: May 02
+  source: manual
+  metadata:
+    date: '2026-05-02'
+- section: upcoming_releases
+  title: Python 3.15.0 beta 1
+  url: https://peps.python.org/pep-0790/
+  summary: May 05
+  source: release_schedule
+  metadata:
+    date: '2026-05-05'
+- section: upcoming_releases
+  title: Python 3.14.5 final
+  url: https://peps.python.org/pep-0745/
+  summary: May 08
+  source: manual
+  metadata:
+    date: '2026-05-08'
+- section: official_news
+  title: Announcing Python Software Foundation Fellow Members for Q1 2026! 🎉
+  url: https://pyfound.blogspot.com/2026/04/announcing-python-software-foundation.html
+  summary: By Marie Nordin
+  source: python_blog
+  metadata:
+    feed: Python Software Foundation News
+    author: Marie Nordin
+    published: Thu, 23 Apr 2026 11:07:00 +0000
+- section: pep_updates
+  title: 'PEP 833: Freezing the HTML simple repository API'
+  url: https://peps.python.org/pep-0833/
+  summary: ''
+  source: peps
+  metadata:
+    pep_number: 833
+    status: New
+    pr_url: https://github.com/python/peps/pull/4930
+- section: pep_updates
+  title: 'PEP 831: Frame Pointers Everywhere: Enabling System-Level Observability for Python'
+  url: https://peps.python.org/pep-0831/
+  summary: ''
+  source: manual
+  metadata:
+    pep_number: 831
+    status: Accepted
+- section: pep_updates
+  title: 'PEP 829: Package Startup Configuration Files'
+  url: https://peps.python.org/pep-0829/
+  summary: ''
+  source: manual
+  metadata:
+    pep_number: 829
+    status: Accepted
+- section: pep_updates
+  title: 'PEP 820: PySlot: Unified slot system for the C API'
+  url: https://peps.python.org/pep-0820/
+  summary: ''
+  source: peps
+  metadata:
+    pep_number: 820
+    status: Accepted
+    pr_url: https://github.com/python/peps/pull/4939
+- section: pep_updates
+  title: 'PEP 806: Mixed sync/async context managers with precise async marking'
+  url: https://peps.python.org/pep-0806/
+  summary: ''
+  source: peps
+  metadata:
+    pep_number: 806
+    status: Rejected
+    pr_url: https://github.com/python/peps/pull/4934
+- section: pep_updates
+  title: 'PEP 788: Protecting the C API from Interpreter Finalization'
+  url: https://peps.python.org/pep-0788/
+  summary: ''
+  source: peps
+  metadata:
+    pep_number: 788
+    status: Accepted
+    pr_url: https://github.com/python/peps/pull/4945
+- section: pep_updates
+  title: 'PEP 708: Extending the Repository API to Mitigate Dependency Confusion Attacks'
+  url: https://peps.python.org/pep-0708/
+  summary: ''
+  source: peps
+  metadata:
+    pep_number: 708
+    status: Rejected
+    pr_url: https://github.com/python/peps/pull/4922
+- section: pep_updates
+  title: 'PEP 661: Sentinel Values'
+  url: https://peps.python.org/pep-0661/
+  summary: ''
+  source: peps
+  metadata:
+    pep_number: 661
+    status: Accepted
+    pr_url: https://github.com/python/peps/pull/4935
+- section: steering_council
+  title: 2026-04-16 Python Steering Council meeting summary
+  url: https://discuss.python.org/t/2026-04-16-python-steering-council-meeting-summary/107142
+  summary: ''
+  source: discourse
+  metadata:
+    topic_id: 107142
+    category: committers
+- section: merged_prs
+  title: Add boundary check to `asyncio.AbstractEventLoop.sock_recvfrom_into()`
+  url: https://github.com/python/cpython/pull/148809
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 148809
+    author: sethmlarson
+    labels:
+    - type-security
+    comments: 10
+    touches_whatsnew: false
+- section: merged_prs
+  title: Fix vulnerability in `shutil.unpack_archive()` for ZIP files on Windows
+  url: https://github.com/python/cpython/pull/146591
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 146591
+    author: serhiy-storchaka
+    labels:
+    - type-security
+    comments: 12
+    touches_whatsnew: false
+- section: merged_prs
+  title: Lazy import `inspect` module in dataclasses
+  url: https://github.com/python/cpython/pull/144387
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 144387
+    author: danielhollas
+    labels:
+    - performance
+    comments: 15
+    touches_whatsnew: false
+- section: merged_prs
+  title: Fix import deadlock by implementing hierarchical module locking
+  url: https://github.com/python/cpython/pull/137196
+  summary: ''
+  source: manual
+  metadata:
+    pr_number: 137196
+    author: gpshead
+    labels: []
+    comments: 4
+    touches_whatsnew: true
+- section: merged_prs
+  title: Use PyREPL as the default input console for pdb
+  url: https://github.com/python/cpython/pull/145379
+  summary: ''
+  source: manual
+  metadata:
+    pr_number: 145379
+    author: gaogaotiantian
+    labels: []
+    comments: 5
+    touches_whatsnew: true
+- section: merged_prs
+  title: Implement PEP 661
+  url: https://github.com/python/cpython/pull/148831
+  summary: ''
+  source: manual
+  metadata:
+    pr_number: 148831
+    author: JelleZijlstra
+    labels: []
+    comments: 8
+    touches_whatsnew: true
+- section: discussions
+  title: 'PEP 832: Virtual Environment Discovery'
+  url: https://discuss.python.org/t/pep-832-virtual-environment-discovery/106998
+  summary: 🔥 62 new replies · 3.2k views
+  source: discourse
+  metadata:
+    topic_id: 106998
+    new_replies: 62
+    views: 3247
+- section: discussions
+  title: 'PEP 829: Structured Startup Configuration Files'
+  url: https://discuss.python.org/t/pep-829-structured-startup-configuration-files/106789
+  summary: 🔥 12 new replies · 3.1k views
+  source: discourse
+  metadata:
+    topic_id: 106789
+    new_replies: 12
+    views: 3084
+- section: discussions
+  title: 'PEP 802: Display Syntax for the Empty Set'
+  url: https://discuss.python.org/t/pep-802-display-syntax-for-the-empty-set/101676
+  summary: 🔥 11 new replies · 10.0k views
+  source: discourse
+  metadata:
+    topic_id: 101676
+    new_replies: 11
+    views: 9956
+- section: discussions
+  title: 'PEP 827: Type Manipulation'
+  url: https://discuss.python.org/t/pep-827-type-manipulation/106353
+  summary: 🔥 10 new replies · 6.7k views
+  source: discourse
+  metadata:
+    topic_id: 106353
+    new_replies: 10
+    views: 6685
+- section: discussions
+  title: 'PEP 718: Subscriptable Functions'
+  url: https://discuss.python.org/t/pep-718-subscriptable-functions/28457
+  summary: 8 new replies · 13.2k views
+  source: discourse
+  metadata:
+    topic_id: 28457
+    new_replies: 8
+    views: 13217
+- section: discussions
+  title: 'PEP 828: Supporting `yield from` in Asynchronous Generators'
+  url: https://discuss.python.org/t/pep-828-supporting-yield-from-in-asynchronous-generators/106459
+  summary: 6 new replies · 2.5k views
+  source: discourse
+  metadata:
+    topic_id: 106459
+    new_replies: 6
+    views: 2484
+- section: discussions
+  title: 'PEP 820 – PySlot: Unified Slot System for the C API'
+  url: https://discuss.python.org/t/pep-820-pyslot-unified-slot-system-for-the-c-api/105552
+  summary: 4 new replies · 1.9k views
+  source: discourse
+  metadata:
+    topic_id: 105552
+    new_replies: 4
+    views: 1900
+- section: discussions
+  title: 'PEP 830: Add Timestamps to Exceptions and Tracebacks'
+  url: https://discuss.python.org/t/pep-830-add-timestamps-to-exceptions-and-tracebacks/106942
+  summary: 4 new replies · 1.3k views
+  source: discourse
+  metadata:
+    topic_id: 106942
+    new_replies: 4
+    views: 1346
+- section: events
+  title: 📋 PyCon Spain 2026 Deadline
+  url: https://2026.es.pycon.org/
+  summary: May 03
+  source: python_deadlines
+  metadata:
+    date: '2026-05-03'
+    type: cfp
+- section: events
+  title: 📋 PyCon Greece 2026 Deadline
+  url: https://pycon.gr/
+  summary: May 10
+  source: python_deadlines
+  metadata:
+    date: '2026-05-10'
+    type: cfp
+- section: events
+  title: PyCon US 2026
+  url: https://us.pycon.org/
+  summary: May 13
+  source: pycon_calendar
+  metadata:
+    date: '2026-05-13'
+    type: conference
+- section: events
+  title: 📋 PyCon Russia 2026 Deadline
+  url: https://www.pycon.ru/
+  summary: May 15
+  source: python_deadlines
+  metadata:
+    date: '2026-05-15'
+    type: cfp
+- section: events
+  title: PyCon Italia 2026
+  url: https://2026.pycon.it/en
+  summary: May 27
+  source: pycon_calendar
+  metadata:
+    date: '2026-05-27'
+    type: conference
+- section: events
+  title: 📋 Swiss Python Summit 2026 Deadline
+  url: https://python-summit.ch/
+  summary: May 31
+  source: python_deadlines
+  metadata:
+    date: '2026-05-31'
+    type: cfp
+- section: events
+  title: 📋 PyCon Indonesia 2026 Deadline
+  url: https://pycon.id/
+  summary: May 31
+  source: python_deadlines
+  metadata:
+    date: '2026-05-31'
+    type: cfp
+- section: events
+  title: 📋 PyCon Togo 2026 Deadline
+  url: https://pycontg.pytogo.org/
+  summary: Jun 01
+  source: python_deadlines
+  metadata:
+    date: '2026-06-01'
+    type: cfp
+- section: events
+  title: GeoPython 2026
+  url: https://2026.geopython.net/
+  summary: Jun 08
+  source: pycon_calendar
+  metadata:
+    date: '2026-06-08'
+    type: conference
+- section: events
+  title: 📋 PyCon Kenya 2026 Deadline
+  url: https://www.pycon.ke/
+  summary: Jun 09
+  source: python_deadlines
+  metadata:
+    date: '2026-06-09'
+    type: cfp
+- section: musings
+  title: 'Episode 29: Is CPython developed with AI now?'
+  url: https://podcasters.spotify.com/pod/show/corepy/episodes/Episode-29-Is-CPython-developed-with-AI-now-e3i18ic
+  summary: By Pablo Galindo and Łukasz Langa
+  source: blog
+  metadata:
+    feed: core.py (Pablo Galindo & Łukasz Langa)
+    author: Pablo Galindo and Łukasz Langa
+- section: musings
+  title: PyCascades 2026 Recap
+  url: https://mariatta.ca/posts/pycascades-2026-recap/
+  summary: By Mariatta
+  source: blog
+  metadata:
+    feed: Mariatta
+    author: Mariatta
+- section: musings
+  title: pip v26.1 adds support for relative dependency cooldowns
+  url: https://sethmlarson.dev/pip-relative-dependency-cooldowns?utm_campaign=rss
+  summary: By Seth Larson
+  source: blog
+  metadata:
+    feed: Seth Larson
+    author: Seth Larson
+- section: picks
+  title: Vietnamese translation team is looking for volunteers
+  url: https://discuss.python.org/t/starting-vietnamese-translation/107028
+  source: manual
+  metadata:
+    submitted_by: hugovk
+- section: picks
+  title: Listen to PyPI — a soundscape of PyPI package updates
+  url: https://miketheman.github.io/listen-to-pypi/
+  source: manual
+  metadata:
+    submitted_by: hugovk
+- section: picks
+  title: doesjitgobrrr now has a new Linux aarch64 runner
+  url: https://www.doesjitgobrrr.com/
+  source: manual
+  metadata:
+    submitted_by: savannahostrowski
