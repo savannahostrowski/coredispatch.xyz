@@ -9,6 +9,12 @@ editorial_notes: |
   who's counting?). If you've got outstanding features, now's the time,
   or else you'll have to wait for 3.16.0!
 
+  Heads up: there's also an early 3.14.5 next week. 3.14.5rc1 ships
+  Saturday May 2 with the final on Friday May 8, pulled forward to
+  deliver the [incremental GC
+  revert](https://discuss.python.org/t/reverting-the-incremental-gc-in-python-3-14-and-3-15/107014)
+  we mentioned last edition.
+
   The Steering Council was busy. [PEP
   661](https://peps.python.org/pep-0661/) was accepted
   after nearly five years of discussion.
@@ -88,6 +94,14 @@ items:
   source: manual
   metadata:
     pep_number: 831
+    status: Accepted
+- section: pep_updates
+  title: 'PEP 829: Package Startup Configuration Files'
+  url: https://peps.python.org/pep-0829/
+  summary: ''
+  source: manual
+  metadata:
+    pep_number: 829
     status: Accepted
 - section: pep_updates
   title: 'PEP 820: PySlot: Unified slot system for the C API'
