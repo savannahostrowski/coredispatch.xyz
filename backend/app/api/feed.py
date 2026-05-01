@@ -109,6 +109,37 @@ def _render_issue_html(issue: dict) -> str:
                 parts.append(f"<li>{link}</li>")
         parts.append("</ul>")
 
+    quote = issue.get("quote") or {}
+    quote_text = (
+        (quote.get("text") or "").replace("<!--", "").replace("-->", "").strip()
+    )
+    if quote_text and not quote_text.startswith("Add a quote"):
+        text = escape(quote_text)
+        author = escape((quote.get("author") or "").strip())
+        url = escape((quote.get("url") or "").strip())
+        parts.append("<h3>One More Thing</h3>")
+        attribution = f'<a href="{url}">{author}</a>' if url and author else author
+        if attribution:
+            parts.append(
+                f'<blockquote><p>"{text}"</p><footer>— {attribution}</footer></blockquote>'
+            )
+        else:
+            parts.append(f'<blockquote><p>"{text}"</p></blockquote>')
+
+    credits = issue.get("credits") or []
+    if credits:
+        parts.append("<h3>Credits</h3>")
+        parts.append("<ul>")
+        for c in credits:
+            name = escape((c.get("name") or "").strip())
+            url = escape((c.get("url") or "").strip())
+            if not name:
+                continue
+            parts.append(
+                f'<li><a href="{url}">{name}</a></li>' if url else f"<li>{name}</li>"
+            )
+        parts.append("</ul>")
+
     return "\n".join(parts)
 
 
