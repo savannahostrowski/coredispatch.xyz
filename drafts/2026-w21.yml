@@ -7,7 +7,7 @@ editorial_notes: |
   Welcome back to Core Dispatch! This edition covers April 30 through May 18, 2026.
   Python 3.15.0 beta 1 is officially here, which means CPython `main` branch is
   now on to the upcoming 3.16 release, slated for mid-October. More imminently,
-  Beta 2 is up next on June 2, with 3.13.14 and 3.14.6 following on June 9.
+  beta 2 is up next on June 2, with 3.13.14 and 3.14.6 following on June 9.
 
   This is also PyCon US week, so a lot of the core team is gathered in Long
   Beach right now. Once recordings are available, we'll be sure to pull talks
