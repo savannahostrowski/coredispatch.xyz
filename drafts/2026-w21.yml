@@ -6,8 +6,9 @@ period_end: '2026-05-18'
 editorial_notes: |
   Welcome back to Core Dispatch! This edition covers April 30 through May 18, 2026.
   Python 3.15.0 beta 1 is officially here, which means CPython `main` branch is
-  now on to the upcoming 3.16 release, slated for mid-October. More imminently,
-  beta 2 is up next on June 2, with 3.13.14 and 3.14.6 following on June 9.
+  now open for 3.16 work. The first 3.16 alpha is slated for mid-October.
+  More imminently, beta 2 is up next on June 2, with 3.13.14 and 3.14.6
+  following on June 9.
 
   This is also PyCon US week, so a lot of the core team is gathered in Long
   Beach right now. Once recordings are available, we'll be sure to pull talks
@@ -78,13 +79,21 @@ items:
     author: Hugo van Kemenade
     published: Mon, 04 May 2026 00:00:00 GMT
 - section: welcome
-  title: Vote to promote Chris Eibl
+  title: Chris Eibl promoted to core developer!
   url: https://discuss.python.org/t/vote-to-promote-chris-eibl/107168
   summary: ''
   source: discourse
   metadata:
     topic_id: 107168
     category: committers
+- section: welcome
+  title: David Ellis joins the triage team!
+  url: https://github.com/python/core-workflow/issues/595
+  summary: ''
+  source: manual
+  metadata:
+    issue_number: 595
+    repo: python/core-workflow
 - section: merged_prs
   title: Add a --header CLI argument to http.server
   url: https://github.com/python/cpython/pull/135057
