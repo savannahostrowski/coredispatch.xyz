@@ -5,7 +5,7 @@ period_start: '2026-04-30'
 period_end: '2026-05-18'
 editorial_notes: |
   Welcome back to Core Dispatch! This edition covers April 30 through May 18, 2026.
-  Python 3.15.0 beta 1 is officially here, which means CPython `main` branch is
+  Python 3.15.0 beta 1 is officially here, which means CPython's `main` branch is
   now open for 3.16 work. The first 3.16 alpha is slated for mid-October.
   More imminently, beta 2 is up next on June 2, with 3.13.14 and 3.14.6
   following on June 9.
