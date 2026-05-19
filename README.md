@@ -41,7 +41,7 @@ This fetches data from all sources and writes a YAML file to `drafts/`. Preview 
 
 ## Publishing Workflow
 
-Every Friday, a new edition's skeleton is generated automatically by GitHub Actions and opened as a draft PR. Editors merge the draft and then review, add notes and picks, and take a solid editorial pass on `main`. Once the draft is ready (usually by the following Thursday), it's moved from `drafts/` to `editions/` to publish. Buttondown picks up the new edition via RSS and sends it to subscribers.
+Every other Friday, a new edition's skeleton is generated automatically by GitHub Actions and pushed to a `dispatch/<number>` branch. Editors check out the branch, review, add notes and picks, and take a solid editorial pass. Once the draft is ready (usually by the following Thursday), the file is moved from `drafts/` to `editions/` and the branch is merged into `main` to publish. Buttondown picks up the new edition via RSS and sends it to subscribers.
 
 ## Content
 
@@ -49,7 +49,7 @@ Each edition is a YAML file with auto-generated and hand-curated sections.
 
 ### Auto-generated sections
 
-These are populated by the pipeline every Friday:
+These are populated by the pipeline every other Friday:
 
 | Section | Source |
 |---------|--------|
@@ -108,4 +108,4 @@ Want to help curate and edit the next edition? Here's what we need help with!
 3. **Add community picks** — add items with `section: picks` from submitted issues or things you've found
 4. **Add a quote** — fill in the `quote` field with something fun, insightful, or mass-reply-inducing
 5. **Add credits** — list everyone who contributed to this edition in the `credits` field
-6. **Review PR titles** — the auto-generated PR titles are raw GitHub titles. Rewrite to be human-readable when needed.
+6. **Review PR titles** — the auto-generated item titles are raw GitHub titles. Rewrite to be human-readable when needed.
