@@ -15,7 +15,7 @@ editorial_notes: |
   from folks on the team into a future edition.
 
   PEP 788 has also moved from accepted to implemented, and free-threaded builds
-  picked up iterator support. There are also a few smaller but concrete fixes:
+  picked up thread-safe iterator support. There are also a few smaller but concrete fixes:
   `http.server` can send custom headers from the command line, `AttributeError`
   can suggest Python equivalents for method names from other languages,
   `webbrowser` on macOS is moving away from `osascript`, and `ftplib.ftpcp()`
