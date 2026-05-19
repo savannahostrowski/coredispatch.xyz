@@ -101,7 +101,7 @@ items:
     issue_number: 595
     repo: python/core-workflow
 - section: merged_prs
-  title: Add a --header CLI argument to http.server
+  title: Add a `--header` CLI argument to `http.server`
   url: https://github.com/python/cpython/pull/135057
   summary: ''
   source: github
@@ -112,7 +112,7 @@ items:
     comments: 55
     touches_whatsnew: true
 - section: merged_prs
-  title: Add free-threading support for iterators.
+  title: Add free-threading support for iterators
   url: https://github.com/python/cpython/pull/148894
   summary: ''
   source: github
@@ -125,7 +125,7 @@ items:
     comments: 4
     touches_whatsnew: true
 - section: merged_prs
-  title: Replace 'osascript' with 'open' on macOS in webbrowser
+  title: Replace `osascript` with `open` on macOS in `webbrowser`
   url: https://github.com/python/cpython/pull/146439
   summary: ''
   source: github
@@ -138,7 +138,7 @@ items:
     comments: 12
     touches_whatsnew: true
 - section: merged_prs
-  title: Add Zd/Zf formats to array, ctypes, memoryview, struct
+  title: Add `Zd`/`Zf` formats to `array`, `ctypes`, `memoryview`, `struct`
   url: https://github.com/python/cpython/pull/148676
   summary: ''
   source: github
@@ -171,7 +171,7 @@ items:
     comments: 25
     touches_whatsnew: true
 - section: merged_prs
-  title: Apply CVE-2021-4189 PASV fix to ftplib.ftpcp()
+  title: Apply CVE-2021-4189 PASV fix to `ftplib.ftpcp()`
   url: https://github.com/python/cpython/pull/149648
   summary: ''
   source: github
@@ -192,7 +192,7 @@ items:
     new_replies: 32
     views: 34679
 - section: discussions
-  title: 'PEP 832: virtual environment discovery'
+  title: 'PEP 832: Virtual Environment Discovery'
   url: https://discuss.python.org/t/pep-832-virtual-environment-discovery/106998
   summary: 9 new replies · 4.2k views
   source: discourse
@@ -210,7 +210,7 @@ items:
     new_replies: 6
     views: 10389
 - section: discussions
-  title: 'PEP 828: Supporting ''yield from'' in asynchronous generators'
+  title: 'PEP 828: Supporting `yield from` in asynchronous generators'
   url: https://discuss.python.org/t/pep-828-supporting-yield-from-in-asynchronous-generators/106459
   summary: 5 new replies · 3.3k views
   source: discourse
