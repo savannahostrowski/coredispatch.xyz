@@ -33,9 +33,13 @@ editorial_notes: |
   latest 3.15 beta a spin and [file any issues](https://github.com/python/cpython/issues)
   you find.
 quote:
-  text: <!-- Add a quote here -->
-  author: ''
-  url: ''
+  lines:
+  - text: '"TBC" is "to be confirmed" for Pablo''s [Language Summit talk]?'
+    author: Gregory Smith
+    url: https://github.com/gpshead
+  - text: The Banana Council 🍌
+    author: Donghee Na
+    url: https://github.com/corona10
 credits:
 - name: Savannah Ostrowski
   url: https://github.com/savannahostrowski
