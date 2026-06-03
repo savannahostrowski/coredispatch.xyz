@@ -51,7 +51,7 @@
   url: https://sethmlarson.dev/feed
 
 - name: Victor Stinner
-  url: https://vstinner.github.io/feeds/all.atom.xml
+  url: https://vstinner.github.io/feeds/cpython.atom.xml
 
 - name: Łukasz Langa
   url: https://lukasz.langa.pl/programming/atom.xml
