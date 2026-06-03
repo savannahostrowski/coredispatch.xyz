@@ -6,6 +6,10 @@ interface Props {
 }
 
 const { quote } = Astro.props;
+
+// Normalize legacy single quotes and multi-speaker exchanges into one shape.
+const lines =
+  quote.lines ?? [{ text: quote.text ?? "", author: quote.author ?? "", url: quote.url }];
 ---
 
 <section class="mb-10 scroll-mt-16" id="one-more-thing">
@@ -16,16 +20,20 @@ const { quote } = Astro.props;
     </div>
     <p class="mt-1 text-xs text-muted">Your favourite funny, informative, or mass-reply-inducing words.</p>
   </div>
-  <blockquote class="border-l-3 border-accent/40 pl-4 py-2">
-    <p class="text-[15px] italic leading-relaxed text-foreground/90">{quote.text}</p>
-    <p class="mt-2 text-sm text-muted">
-      {"— "}
-      {quote.url ? (
-        <a href={quote.url} class="text-accent hover:text-accent-hover transition-colors">{quote.author}</a>
-      ) : (
-        quote.author
-      )}
-    </p>
+  <blockquote class="border-l-3 border-accent/40 pl-4 py-2 space-y-3">
+    {lines.map((line) => (
+      <div>
+        <p class="text-[15px] italic leading-relaxed text-foreground/90">{line.text}</p>
+        <p class="mt-1 text-sm text-muted">
+          {"— "}
+          {line.url ? (
+            <a href={line.url} class="text-accent hover:text-accent-hover transition-colors">{line.author}</a>
+          ) : (
+            line.author
+          )}
+        </p>
+      </div>
+    ))}
   </blockquote>
   <p class="mt-3 text-xs text-muted">
     Have a great quote?{" "}
