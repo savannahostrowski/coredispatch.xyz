@@ -110,21 +110,35 @@ def _render_issue_html(issue: dict) -> str:
         parts.append("</ul>")
 
     quote = issue.get("quote") or {}
-    quote_text = (
-        (quote.get("text") or "").replace("<!--", "").replace("-->", "").strip()
-    )
-    if quote_text and not quote_text.startswith("Add a quote"):
-        text = escape(quote_text)
-        author = escape((quote.get("author") or "").strip())
-        url = escape((quote.get("url") or "").strip())
-        parts.append("<h3>One More Thing</h3>")
+    # Normalize legacy single quotes and multi-speaker exchanges into one shape.
+    raw_lines = quote.get("lines")
+    quote_lines = raw_lines if isinstance(raw_lines, list) else []
+    if not quote_lines and quote.get("text"):
+        quote_lines = [
+            {
+                "text": quote.get("text"),
+                "author": quote.get("author"),
+                "url": quote.get("url"),
+            }
+        ]
+    rendered = []
+    for line in quote_lines:
+        if not isinstance(line, dict):
+            continue
+        text = (line.get("text") or "").replace("<!--", "").replace("-->", "").strip()
+        if not text or text.startswith("Add a quote"):
+            continue
+        text_html = escape(text)
+        author = escape((line.get("author") or "").strip())
+        url = escape((line.get("url") or "").strip())
         attribution = f'<a href="{url}">{author}</a>' if url and author else author
         if attribution:
-            parts.append(
-                f'<blockquote><p>"{text}"</p><footer>— {attribution}</footer></blockquote>'
-            )
+            rendered.append(f'<p>"{text_html}"</p><footer>— {attribution}</footer>')
         else:
-            parts.append(f'<blockquote><p>"{text}"</p></blockquote>')
+            rendered.append(f'<p>"{text_html}"</p>')
+    if rendered:
+        parts.append("<h3>One More Thing</h3>")
+        parts.append("<blockquote>" + "".join(rendered) + "</blockquote>")
 
     credits = issue.get("credits") or []
     if credits:

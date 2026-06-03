@@ -1,7 +1,14 @@
-export interface IssueQuote {
+export interface QuoteLine {
   text: string;
   author: string;
   url?: string;
+}
+
+export interface IssueQuote {
+  text?: string; // legacy single quote
+  author?: string;
+  url?: string;
+  lines?: QuoteLine[]; // multi-speaker exchange
 }
 
 export interface IssueCredit {
