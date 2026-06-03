@@ -8,8 +8,14 @@ interface Props {
 const { quote } = Astro.props;
 
 // Normalize legacy single quotes and multi-speaker exchanges into one shape.
+// Fall back to the legacy fields only when `lines` is absent or empty, matching
+// the backend RSS renderer.
 const lines =
-  quote.lines ?? [{ text: quote.text ?? "", author: quote.author ?? "", url: quote.url }];
+  quote.lines && quote.lines.length > 0
+    ? quote.lines
+    : quote.text
+      ? [{ text: quote.text, author: quote.author ?? "", url: quote.url }]
+      : [];
 ---
 
 <section class="mb-10 scroll-mt-16" id="one-more-thing">

@@ -111,7 +111,8 @@ def _render_issue_html(issue: dict) -> str:
 
     quote = issue.get("quote") or {}
     # Normalize legacy single quotes and multi-speaker exchanges into one shape.
-    quote_lines = quote.get("lines") or []
+    raw_lines = quote.get("lines")
+    quote_lines = raw_lines if isinstance(raw_lines, list) else []
     if not quote_lines and quote.get("text"):
         quote_lines = [
             {
@@ -122,6 +123,8 @@ def _render_issue_html(issue: dict) -> str:
         ]
     rendered = []
     for line in quote_lines:
+        if not isinstance(line, dict):
+            continue
         text = (line.get("text") or "").replace("<!--", "").replace("-->", "").strip()
         if not text or text.startswith("Add a quote"):
             continue
