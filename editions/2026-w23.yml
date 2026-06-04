@@ -1,0 +1,361 @@
+number: 5
+title: 'Core Dispatch #5'
+slug: 2026-w23
+period_start: '2026-05-18'
+period_end: '2026-06-04'
+editorial_notes: |
+  Welcome back to Core Dispatch! This edition covers May 18 through June 4, 2026.
+  As promised, Python 3.15.0 beta 2 landed on June 2. Two more
+  milestones are close behind: 3.13.14 and 3.14.6 on June 9, followed by
+  3.15.0 beta 3 on June 23.
+
+  There's also a healthy batch of changes landing for 3.15: an O(n^2) blowup in
+  `unicodedata.normalize()` was fixed, the XML parser gained support for
+  multi-byte encodings, and a round of deprecation warnings went in for the
+  `ast` module and `abc`'s `abstractclassmethod`/`abstractstaticmethod`/`abstractproperty`.
+
+  On the project side, the Python Security Response Team (PSRT) landed an
+  [initial Python security policy](https://github.com/python/devguide/pull/1804)
+  in the [Devguide](https://devguide.python.org/), giving the vulnerability reporting and response process a
+  documented home. And dev builds of 3.15+ now report a version like
+  `3.15.0b2+dev` instead of the old bare-plus `3.15.0b2+`, which
+  [wasn't PEP 440-compliant](https://github.com/python/release-tools/pull/394).
+
+  Looking ahead, the [EuroPython 2026 Language Summit](https://ep2026.europython.eu/language-summit/)
+  topics are out, with a lineup spanning a Rust-for-CPython roadmap, the future
+  of free-threading, garbage collection, and the buffer protocol.
+
+  If you're interested in CPython internals, Victor Stinner has a great writeup on
+  [free threading internals and reference counting](https://vstinner.github.io/free-threading-reference-counting.html)
+  that's well worth your time.
+
+  As always, if you maintain a package or just like living on the edge, give the
+  latest 3.15 beta a spin and [file any issues](https://github.com/python/cpython/issues)
+  you find.
+quote:
+  lines:
+  - text: '"TBC" is "to be confirmed" for Pablo''s [Language Summit talk]?'
+    author: Gregory Smith
+    url: https://github.com/gpshead
+  - text: The Banana Council 🍌
+    author: Donghee Na
+    url: https://github.com/corona10
+credits:
+- name: Savannah Ostrowski
+  url: https://github.com/savannahostrowski
+items:
+- section: upcoming_releases
+  title: Python 3.13.14
+  url: https://peps.python.org/pep-0719/
+  summary: Jun 09
+  source: release_schedule
+  metadata:
+    date: '2026-06-09'
+- section: upcoming_releases
+  title: Python 3.14.6
+  url: https://peps.python.org/pep-0745/
+  summary: Jun 09
+  source: release_schedule
+  metadata:
+    date: '2026-06-09'
+- section: upcoming_releases
+  title: Python 3.15.0 beta 3
+  url: https://peps.python.org/pep-0790/
+  summary: Jun 23
+  source: release_schedule
+  metadata:
+    date: '2026-06-23'
+- section: official_news
+  title: Python 3.15.0 beta 2 is here!
+  url: https://blog.python.org/2026/06/python-3150-beta-2/
+  summary: By Hugo van Kemenade
+  source: python_blog
+  metadata:
+    feed: Python Blog
+    author: Hugo van Kemenade
+    published: Tue, 02 Jun 2026 00:00:00 GMT
+- section: pep_updates
+  title: 'PEP 808: Including static values in dynamic metadata'
+  url: https://peps.python.org/pep-0808/
+  summary: ''
+  source: peps
+  metadata:
+    pep_number: 808
+    status: Accepted
+    pr_url: https://github.com/python/peps/pull/4980
+- section: pep_updates
+  title: 'PEP 798: Unpacking in Comprehensions'
+  url: https://peps.python.org/pep-0798/
+  summary: ''
+  source: peps
+  metadata:
+    pep_number: 798
+    status: Final
+    pr_url: https://github.com/python/peps/pull/4812
+- section: welcome
+  title: Neko Asakura joins the triage team!
+  url: https://github.com/python/core-workflow/issues/596
+  source: manual
+  metadata:
+    github_username: NekoAsakura
+- section: merged_prs
+  title: Restore `os.makedirs()` ability to apply `mode` recursively
+  url: https://github.com/python/cpython/pull/150011
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 150011
+    author: nessita
+    comments: 8
+- section: merged_prs
+  title: Add missing ARM64 and RISCV filter in the `lzma` module
+  url: https://github.com/python/cpython/pull/115989
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 115989
+    author: ivq
+    comments: 30
+- section: merged_prs
+  title: Fix O(n^2) canonical ordering in `unicodedata.normalize()`
+  url: https://github.com/python/cpython/pull/149080
+  metadata:
+    pr_number: 149080
+    author: sethmlarson
+- section: merged_prs
+  title: '`ast`: Add deprecation warnings'
+  url: https://github.com/python/cpython/pull/140345
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 140345
+    author: jepler
+- section: merged_prs
+  title: Raise deprecation warnings for `abc.{abstractclassmethod,abstractstaticmethod,abstractproperty}`
+  url: https://github.com/python/cpython/pull/149636
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 149636
+    author: sobolevn
+- section: merged_prs
+  title: Add support of multi-byte encodings in the XML parser
+  url: https://github.com/python/cpython/pull/149860
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 149860
+    author: serhiy-storchaka
+- section: merged_prs
+  title: Improve the PEP 829 batch processing APIs
+  url: https://github.com/python/cpython/pull/150542
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 150542
+    author: warsaw
+- section: merged_prs
+  title: Remove `lazy_imports=none` startup mode
+  url: https://github.com/python/cpython/pull/149389
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 149389
+    author: pablogsal
+- section: merged_prs
+  title: Remove deprecated `'u'` type code from the `array` module
+  url: https://github.com/python/cpython/pull/149535
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 149535
+    author: skirpichev
+- section: merged_prs
+  title: Fix excessive overhead in the Tachyon profiler regarding the cache behavior
+  url: https://github.com/python/cpython/pull/149649
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 149649
+    author: pablogsal
+- section: merged_prs
+  title: '`devguide`: Add an initial Python security policy'
+  url: https://github.com/python/devguide/pull/1804
+  summary: ''
+  source: manual
+  metadata:
+    pr_number: 1804
+    author: sethmlarson
+- section: merged_prs
+  title: '`release-tools`: Make untagged versions PEP 440-compliant'
+  url: https://github.com/python/release-tools/pull/394
+  summary: Untagged/dev builds of CPython now produce PEP 440-compliant version strings.
+  source: manual
+  metadata:
+    pr_number: 394
+    author: savannahostrowski
+- section: discussions
+  title: Understanding PEP discussions
+  url: https://discuss.python.org/t/understanding-pep-discussions/107452
+  summary: 🆕 🔥 58 new replies · 1.3k views
+  source: discourse
+  metadata:
+    topic_id: 107452
+    new_replies: 58
+    views: 1332
+- section: discussions
+  title: 'PEP 802: Display Syntax for the Empty Set'
+  url: https://discuss.python.org/t/pep-802-display-syntax-for-the-empty-set/101676
+  summary: 🔥 28 new replies · 11.9k views
+  source: discourse
+  metadata:
+    topic_id: 101676
+    new_replies: 28
+    views: 11949
+- section: discussions
+  title: 'PEP 797: Shared Object Proxies'
+  url: https://discuss.python.org/t/pep-797-shared-object-proxies/105709
+  summary: 🔥 14 new replies · 1.9k views
+  source: discourse
+  metadata:
+    topic_id: 105709
+    new_replies: 14
+    views: 1856
+- section: discussions
+  title: 'PEP 828: Supporting ''yield from'' in asynchronous generators'
+  url: https://discuss.python.org/t/pep-828-supporting-yield-from-in-asynchronous-generators/106459
+  summary: 🔥 11 new replies · 4.0k views
+  source: discourse
+  metadata:
+    topic_id: 106459
+    new_replies: 11
+    views: 4035
+- section: discussions
+  title: 'PEP 832: virtual environment discovery'
+  url: https://discuss.python.org/t/pep-832-virtual-environment-discovery/106998
+  summary: 8 new replies · 4.8k views
+  source: discourse
+  metadata:
+    topic_id: 106998
+    new_replies: 8
+    views: 4814
+- section: discussions
+  title: Revisiting PEP 505 – None-aware operators
+  url: https://discuss.python.org/t/revisiting-pep-505-none-aware-operators/74568
+  summary: 4 new replies · 19.9k views
+  source: discourse
+  metadata:
+    topic_id: 74568
+    new_replies: 4
+    views: 19934
+- section: events
+  title: 📋 PyCon Ghana 2026 Deadline
+  url: https://gh.pycon.org/2026/
+  summary: Jun 06
+  source: python_deadlines
+  metadata:
+    date: '2026-06-06'
+    type: cfp
+- section: events
+  title: 📋 PyBeach 2026 Deadline
+  url: https://2026.pybeach.org/
+  summary: Jun 08
+  source: python_deadlines
+  metadata:
+    date: '2026-06-08'
+    type: cfp
+- section: events
+  title: GeoPython 2026
+  url: https://2026.geopython.net/
+  summary: Jun 08
+  source: pycon_calendar
+  metadata:
+    date: '2026-06-08'
+    type: conference
+- section: events
+  title: 📋 PyCon Kenya 2026 Deadline
+  url: https://www.pycon.ke/
+  summary: Jun 09
+  source: python_deadlines
+  metadata:
+    date: '2026-06-09'
+    type: cfp
+- section: events
+  title: 📋 PyCon South Korea 2026 Deadline (extended)
+  url: https://2026.pycon.kr/
+  summary: Jun 14
+  source: python_deadlines
+  metadata:
+    date: '2026-06-14'
+    type: cfp
+- section: events
+  title: 📋 Python Ho 2026 Deadline
+  url: https://2026.pythonho.com/
+  summary: Jun 15
+  source: python_deadlines
+  metadata:
+    date: '2026-06-15'
+    type: cfp
+- section: events
+  title: PyCon Singapore 2026
+  url: http://pycon.sg/
+  summary: Jun 19
+  source: pycon_calendar
+  metadata:
+    date: '2026-06-19'
+    type: conference
+- section: events
+  title: Python Norte 2026
+  url: https://2026.pythonnorte.org/
+  summary: Jul 03
+  source: pycon_calendar
+  metadata:
+    date: '2026-07-03'
+    type: conference
+- section: events
+  title: EuroPython 2026
+  url: https://ep2026.europython.eu/
+  summary: Jul 13
+  source: pycon_calendar
+  metadata:
+    date: '2026-07-13'
+    type: conference
+- section: events
+  title: SciPy 2026
+  url: https://www.scipy2026.scipy.org/
+  summary: Jul 13
+  source: pycon_calendar
+  metadata:
+    date: '2026-07-13'
+    type: conference
+- section: musings
+  title: 'Free Threading internals: reference counting'
+  url: https://vstinner.github.io/free-threading-reference-counting.html
+  summary: By Victor Stinner
+  source: blog
+  metadata:
+    feed: Victor Stinner
+    author: Victor Stinner
+- section: picks
+  title: Kirigami — a guided reading workspace for discuss.python.org topics
+  url: https://kirigami.fastapicloud.dev/
+  summary: Early development of a new frontend for DPO that turns a discuss.python.org
+    topic into a guided reading workspace — summary, evidence, participant signals,
+    and the original source posts stay connected.
+  metadata:
+    submitted_by: savannahostrowski
+- section: picks
+  title: EuroPython 2026 Language Summit topics are announced
+  url: https://ep2026.europython.eu/language-summit/
+  summary: The talk lineup is out — a Rust-for-CPython roadmap, the future of
+    free-threading, garbage collection, the buffer protocol, the Developer in
+    Residence update, and more.
+  metadata:
+    submitted_by: savannahostrowski
+- section: picks
+  title: An interactive look at CPython's core team over time
+  url: https://eendebakpt.github.io/core_devs_activity/pyodide_web/
+  summary: A Pyodide-powered chart of the CPython core team — listed members versus
+    those active on python/cpython — with a slider to change the activity window.
+  metadata:
+    submitted_by: eendebakpt
