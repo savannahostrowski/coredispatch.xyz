@@ -1,0 +1,148 @@
+number: 6
+title: 'Core Dispatch #6'
+slug: 2026-w23
+period_start: '2026-06-04'
+period_end: '2026-06-05'
+editorial_notes: |
+  <!-- Write your editorial notes here -->
+quote:
+  text: <!-- Add a quote here -->
+  author: ''
+  url: ''
+credits: []
+items:
+- section: upcoming_releases
+  title: Python 3.13.14
+  url: https://peps.python.org/pep-0719/
+  summary: Jun 09
+  source: release_schedule
+  metadata:
+    date: '2026-06-09'
+- section: upcoming_releases
+  title: Python 3.14.6
+  url: https://peps.python.org/pep-0745/
+  summary: Jun 09
+  source: release_schedule
+  metadata:
+    date: '2026-06-09'
+- section: upcoming_releases
+  title: Python 3.15.0 beta 3
+  url: https://peps.python.org/pep-0790/
+  summary: Jun 23
+  source: release_schedule
+  metadata:
+    date: '2026-06-23'
+- section: official_news
+  title: 'PSF Strategic Plan 2026 Draft: Open for Community Feedback'
+  url: https://pyfound.blogspot.com/2026/06/psf-strategic-plan-2026-draft-open-for.html
+  summary: By Jannis Leidel
+  source: python_blog
+  metadata:
+    feed: Python Software Foundation News
+    author: Jannis Leidel
+    published: Thu, 04 Jun 2026 13:38:17 +0000
+- section: welcome
+  title: Vote to promote Seth Larson
+  url: https://discuss.python.org/t/vote-to-promote-seth-larson/107622
+  summary: ''
+  source: discourse
+  metadata:
+    topic_id: 107622
+    category: committers
+- section: discussions
+  title: 'PEP 832: virtual environment discovery'
+  url: https://discuss.python.org/t/pep-832-virtual-environment-discovery/106998
+  summary: 2 new replies · 5.0k views
+  source: discourse
+  metadata:
+    topic_id: 106998
+    new_replies: 2
+    views: 4996
+- section: events
+  title: GeoPython 2026
+  url: https://2026.geopython.net/
+  summary: Jun 08
+  source: pycon_calendar
+  metadata:
+    date: '2026-06-08'
+    type: conference
+- section: events
+  title: PyCon Singapore 2026
+  url: http://pycon.sg/
+  summary: Jun 19
+  source: pycon_calendar
+  metadata:
+    date: '2026-06-19'
+    type: conference
+- section: events
+  title: Python Norte 2026
+  url: https://2026.pythonnorte.org/
+  summary: Jul 03
+  source: pycon_calendar
+  metadata:
+    date: '2026-07-03'
+    type: conference
+- section: events
+  title: SciPy 2026
+  url: https://www.scipy2026.scipy.org/
+  summary: Jul 13
+  source: pycon_calendar
+  metadata:
+    date: '2026-07-13'
+    type: conference
+- section: events
+  title: EuroPython 2026
+  url: https://ep2026.europython.eu/
+  summary: Jul 13
+  source: pycon_calendar
+  metadata:
+    date: '2026-07-13'
+    type: conference
+- section: events
+  title: EuroSciPy 2026
+  url: https://euroscipy.org/
+  summary: Jul 18
+  source: pycon_calendar
+  metadata:
+    date: '2026-07-18'
+    type: conference
+- section: events
+  title: PyData PyCon Armenia 2026
+  url: https://pycon.am/
+  summary: Jul 24
+  source: pycon_calendar
+  metadata:
+    date: '2026-07-24'
+    type: conference
+- section: events
+  title: PyOhio 2026
+  url: https://pythondeadlin.es
+  summary: Jul 25
+  source: pycon_calendar
+  metadata:
+    date: '2026-07-25'
+    type: conference
+- section: events
+  title: PyCon Korea 2026
+  url: https://2026.pycon.kr/
+  summary: Aug 15
+  source: pycon_calendar
+  metadata:
+    date: '2026-08-15'
+    type: conference
+- section: events
+  title: PyCon Ghana 2026
+  url: https://gh.pycon.org/2026/
+  summary: Aug 20
+  source: pycon_calendar
+  metadata:
+    date: '2026-08-20'
+    type: conference
+- section: musings
+  title: 'Free Threading internals: deferred reference counting'
+  url: https://vstinner.github.io/free-threading-deferred-reference-counting.html
+  summary: By Victor Stinner
+  source: blog
+  metadata:
+    feed: Victor Stinner
+    author: Victor Stinner
