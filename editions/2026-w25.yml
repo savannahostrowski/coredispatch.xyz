@@ -5,8 +5,8 @@ period_start: '2026-06-04'
 period_end: '2026-06-19'
 editorial_notes: |
   Welcome back to Core Dispatch! This edition covers June 4 through 19, 2026.
-  [Python 3.14.6 and 3.13.14](https://blog.python.org/2026/06/python-3146-31314/)
-  landed on June 10, and the next milestone is 3.15.0 beta 3 on June 23.
+  Python 3.14.6 and 3.13.14 landed on June 10, and the next milestone is 
+  3.15.0 beta 3 on June 23.
 
   The big news this fortnight comes from the Steering Council, who put out an
   [announcement on the path forward for the experimental JIT](https://discuss.python.org/t/an-announcement-from-the-steering-council-regarding-the-jit-project/107638).
@@ -362,3 +362,12 @@ items:
   metadata:
     submitted_by: jezdez
     issue: 45
+- section: picks
+  title: The Programming Language Named for Monty Python Evolved at NIST
+  url: https://www.nist.gov/blogs/taking-measure/programming-language-named-monty-python-evolved-nist
+  summary: An interview with Guido van Rossum on the early days of Python, complete
+    with a selection of vintage Python t-shirt slogans.
+  source: manual
+  metadata:
+    submitted_by: hugovk
+    issue: 47
