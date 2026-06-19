@@ -349,7 +349,7 @@ items:
     author: Hugo van Kemenade
 - section: musings
   title: Are insecure code completions a vulnerability?
-  url: https://sethmlarson.dev/are-insecure-code-completions-a-vulnerability?utm_campaign=rss
+  url: https://sethmlarson.dev/are-insecure-code-completions-a-vulnerability
   summary: By Seth Larson
   source: blog
   metadata:
