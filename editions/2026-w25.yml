@@ -1,0 +1,385 @@
+number: 6
+title: 'Core Dispatch #6'
+slug: 2026-w25
+period_start: '2026-06-04'
+period_end: '2026-06-19'
+editorial_notes: |
+  Welcome back to Core Dispatch! This edition covers June 4 through 19, 2026.
+  Python 3.14.6 and 3.13.14 landed on June 10, and the next milestone is 
+  3.15.0 beta 3 on June 23.
+
+  The big news this fortnight comes from the Steering Council, who put out an
+  [announcement on the path forward for the experimental JIT](https://discuss.python.org/t/an-announcement-from-the-steering-council-regarding-the-jit-project/107638).
+  The JIT entered CPython's `main` branch as an experiment, alongside the
+  Informational [PEP 744](https://peps.python.org/pep-0744/). The Council would
+  like to see its path forward worked out through a Standards Track PEP, giving
+  the project the explicit, structured conversation it hasn't really had yet
+  about what people expect from a JIT, including performance targets, interop
+  guarantees, and tooling compatibility.
+
+  On a related note, JIT contributors have opened a thread to
+  [gather community perspectives on the JIT](https://discuss.python.org/t/community-perspectives-on-the-jit-experiences-expectations-and-concerns/107737)
+  as they begin drafting that PEP. Give it a read, and if you've got
+  experiences, expectations, or concerns to share, it's a good place to
+  weigh in.
+
+  It's been a bit quieter on the PEP front over the past two weeks, though
+  [PEP 835](https://peps.python.org/pep-0835/), a shorthand syntax for `Annotated`
+  type metadata, was newly drafted.
+
+  Over on the PSF side, the Board has published the
+  [draft of its 2026 strategic plan](https://pyfound.blogspot.com/2026/06/psf-strategic-plan-2026-draft-open-for.html):
+  six organizational goals and four program goals spanning financial
+  sustainability, supply chain security, and community empowerment. The feedback
+  window is open through June 25, so if you've got thoughts, now's the time. The
+  [2026 PSF Board election dates](https://pyfound.blogspot.com/2026/06/psf-board-election-dates-for-2026.html)
+  are out too.
+
+  As always, if you maintain a package or just like living on the edge, give the
+  latest 3.15 beta a spin and [file any issues](https://github.com/python/cpython/issues)
+  you find.
+credits:
+- name: Savannah Ostrowski
+  url: https://github.com/savannahostrowski
+items:
+- section: upcoming_releases
+  title: Python 3.15.0 beta 3
+  url: https://peps.python.org/pep-0790/
+  summary: Jun 23
+  source: release_schedule
+  metadata:
+    date: '2026-06-23'
+- section: official_news
+  title: Python 3.14.6 and 3.13.14 are now available!
+  url: https://blog.python.org/2026/06/python-3146-31314/
+  summary: By Hugo van Kemenade
+  source: python_blog
+  metadata:
+    feed: Python Blog
+    author: Hugo van Kemenade
+    published: Wed, 10 Jun 2026 00:00:00 GMT
+- section: official_news
+  title: PSF Board Election Dates for 2026
+  url: https://pyfound.blogspot.com/2026/06/psf-board-election-dates-for-2026.html
+  summary: By Marie Nordin
+  source: python_blog
+  metadata:
+    feed: Python Software Foundation News
+    author: Marie Nordin
+    published: Thu, 18 Jun 2026 12:15:20 +0000
+- section: official_news
+  title: Everything Security at PyCon US 2026
+  url: https://pyfound.blogspot.com/2026/06/everything-security-at-pycon-us-2026.html
+  summary: By Seth Michael Larson
+  source: python_blog
+  metadata:
+    feed: Python Software Foundation News
+    author: Seth Michael Larson
+    published: Wed, 17 Jun 2026 13:55:10 +0000
+- section: pep_updates
+  title: 'PEP 753: Uniform project URLs in core metadata'
+  url: https://peps.python.org/pep-0753/
+  summary: ''
+  source: peps
+  metadata:
+    pep_number: 753
+    status: Final
+    pr_url: https://github.com/python/peps/pull/4993
+- section: pep_updates
+  title: 'PEP 835: Shorthand syntax for `Annotated` type metadata'
+  url: https://peps.python.org/pep-0835/
+  summary: ''
+  source: peps
+  metadata:
+    pep_number: 835
+    status: New
+    pr_url: https://github.com/python/peps/pull/4995
+- section: steering_council
+  title: An announcement from the Steering Council regarding the JIT project
+  url: https://discuss.python.org/t/an-announcement-from-the-steering-council-regarding-the-jit-project/107638
+  summary: ''
+  source: discourse
+  metadata:
+    topic_id: 107638
+    category: core-dev
+- section: steering_council
+  title: 2026-06-04 Python Steering Council meeting summary
+  url: https://discuss.python.org/t/2026-06-04-python-steering-council-meeting-summary/107717
+  summary: ''
+  source: discourse
+  metadata:
+    topic_id: 107717
+    category: committers
+- section: steering_council
+  title: 2026-05-28 Python Steering Council meeting summary
+  url: https://discuss.python.org/t/2026-05-28-python-steering-council-meeting-summary/107716
+  summary: ''
+  source: discourse
+  metadata:
+    topic_id: 107716
+    category: committers
+- section: steering_council
+  title: 2026-05-07 Python Steering Council meeting summary
+  url: https://discuss.python.org/t/2026-05-07-python-steering-council-meeting-summary/107715
+  summary: ''
+  source: discourse
+  metadata:
+    topic_id: 107715
+    category: committers
+- section: steering_council
+  title: 2026-04-30 Python Steering Council meeting summary
+  url: https://discuss.python.org/t/2026-04-30-python-steering-council-meeting-summary/107712
+  summary: ''
+  source: discourse
+  metadata:
+    topic_id: 107712
+    category: committers
+- section: steering_council
+  title: 2026-04-23 Python Steering Council meeting summary
+  url: https://discuss.python.org/t/2026-04-23-python-steering-council-meeting-summary/107711
+  summary: ''
+  source: discourse
+  metadata:
+    topic_id: 107711
+    category: committers
+- section: welcome
+  title: Seth Larson promoted to core developer!
+  url: https://discuss.python.org/t/vote-to-promote-seth-larson/107622
+  summary: ''
+  source: manual
+  metadata:
+    topic_id: 107622
+    category: committers
+- section: merged_prs
+  title: Prevent `bz2` decompressor reuse after errors
+  url: https://github.com/python/cpython/pull/150600
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 150600
+    author: StanFromIreland
+    labels:
+    - type-security
+    comments: 18
+    touches_whatsnew: false
+- section: merged_prs
+  title: Add `force` keyword only argument to `shlex.quote`
+  url: https://github.com/python/cpython/pull/148846
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 148846
+    author: jb2170
+    labels: []
+    comments: 11
+    touches_whatsnew: true
+- section: merged_prs
+  title: Add C23 half-turn trigonometric `*pi` functions
+  url: https://github.com/python/cpython/pull/150555
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 150555
+    author: jepler
+    labels: []
+    comments: 6
+    touches_whatsnew: true
+- section: merged_prs
+  title: Fix re-entrant mutation crashes in `socket.sendmsg`/`recvmsg_into` via `__buffer__`
+  url: https://github.com/python/cpython/pull/143987
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 143987
+    author: tonghuaroot
+    labels: []
+    comments: 27
+    touches_whatsnew: false
+- section: merged_prs
+  title: Deprecate `PyAsyncGen_New`, `PyCoro_New`, `PyGen_New`, `PyGen_NewWithQualName`
+    functions
+  url: https://github.com/python/cpython/pull/150672
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 150672
+    author: sobolevn
+    labels: []
+    comments: 2
+    touches_whatsnew: true
+- section: merged_prs
+  title: Fix CVE-2026-12003 by removing the fallback to `%VPATH%/Modules/Setup.local`
+    for discovering sources in `getpath.py`
+  url: https://github.com/python/cpython/pull/151545
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 151545
+    author: zooba
+    labels: []
+    comments: 11
+    touches_whatsnew: false
+- section: merged_prs
+  title: Escape `methodname` in `xmlrpc.client.dumps()` to prevent XML injection
+  url: https://github.com/python/cpython/pull/148968
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 148968
+    author: sanyamk23
+    labels: []
+    comments: 10
+    touches_whatsnew: false
+- section: merged_prs
+  title: Speed up `logging.getLogger()` for existing loggers
+  url: https://github.com/python/cpython/pull/150825
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 150825
+    author: gaborbernat
+    labels: []
+    comments: 13
+    touches_whatsnew: false
+- section: discussions
+  title: 'PEP 832: Virtual environment discovery'
+  url: https://discuss.python.org/t/pep-832-virtual-environment-discovery/106998
+  summary: 🔥 31 new replies · 6.7k views
+  source: discourse
+  metadata:
+    topic_id: 106998
+    new_replies: 31
+    views: 6736
+- section: discussions
+  title: 'PEP 835: Shorthand syntax for `Annotated` type metadata'
+  url: https://discuss.python.org/t/pep-835-shorthand-syntax-for-annotated-type-metadata/107795
+  summary: 🆕 3 new replies · 85 views
+  source: discourse
+  metadata:
+    topic_id: 107795
+    new_replies: 3
+    views: 85
+- section: events
+  title: PyCon Singapore 2026
+  url: http://pycon.sg/
+  summary: Jun 19
+  source: pycon_calendar
+  metadata:
+    date: '2026-06-19'
+    type: conference
+- section: events
+  title: 📋 PyCon Hong Kong 2026 Deadline
+  url: https://www.pycon.hk/
+  summary: Jun 20
+  source: python_deadlines
+  metadata:
+    date: '2026-06-20'
+    type: cfp
+- section: events
+  title: 📋 Python Nordeste 2026 Deadline
+  url: https://pythonnordeste.org/
+  summary: Jun 20
+  source: python_deadlines
+  metadata:
+    date: '2026-06-20'
+    type: cfp
+- section: events
+  title: Python Norte 2026
+  url: https://2026.pythonnorte.org/
+  summary: Jul 03
+  source: pycon_calendar
+  metadata:
+    date: '2026-07-03'
+    type: conference
+- section: events
+  title: SciPy 2026
+  url: https://www.scipy2026.scipy.org/
+  summary: Jul 13
+  source: pycon_calendar
+  metadata:
+    date: '2026-07-13'
+    type: conference
+- section: events
+  title: EuroPython 2026
+  url: https://ep2026.europython.eu/
+  summary: Jul 13
+  source: pycon_calendar
+  metadata:
+    date: '2026-07-13'
+    type: conference
+- section: events
+  title: EuroSciPy 2026
+  url: https://euroscipy.org/
+  summary: Jul 18
+  source: pycon_calendar
+  metadata:
+    date: '2026-07-18'
+    type: conference
+- section: events
+  title: PyData PyCon Armenia 2026
+  url: https://pycon.am/
+  summary: Jul 24
+  source: pycon_calendar
+  metadata:
+    date: '2026-07-24'
+    type: conference
+- section: events
+  title: PyOhio 2026
+  url: https://pythondeadlin.es
+  summary: Jul 25
+  source: pycon_calendar
+  metadata:
+    date: '2026-07-25'
+    type: conference
+- section: events
+  title: 📋 PyCon Ireland 2026 Deadline
+  url: https://2026.pycon.ie/
+  summary: Aug 01
+  source: python_deadlines
+  metadata:
+    date: '2026-08-01'
+    type: cfp
+- section: musings
+  title: I'm delighted to rejoin the Sovereign Tech Fellowship
+  url: https://hugovk.dev/blog/2026/sovereign-tech-fellowship/
+  summary: By Hugo van Kemenade
+  source: blog
+  metadata:
+    feed: Hugo van Kemenade
+    author: Hugo van Kemenade
+- section: musings
+  title: Are insecure code completions a vulnerability?
+  url: https://sethmlarson.dev/are-insecure-code-completions-a-vulnerability
+  summary: By Seth Larson
+  source: blog
+  metadata:
+    feed: Seth Larson
+    author: Seth Larson
+- section: musings
+  title: 'Free Threading internals: PyMutex'
+  url: https://vstinner.github.io/free-threading-pymutex.html
+  summary: By Victor Stinner
+  source: blog
+  metadata:
+    feed: Victor Stinner
+    author: Victor Stinner
+- section: picks
+  title: 'PSF Strategic Plan 2026 Draft: Open for Community Feedback'
+  url: https://pyfound.blogspot.com/2026/06/psf-strategic-plan-2026-draft-open-for.html
+  summary: The PSF Board has published the full draft of its five-year strategic plan
+    — six organizational goals and four program goals spanning financial sustainability,
+    supply chain security, community empowerment, and ecosystem partnerships. Community
+    feedback is open through June 25.
+  source: manual
+  metadata:
+    submitted_by: jezdez
+    issue: 45
+- section: picks
+  title: The Programming Language Named for Monty Python Evolved at NIST
+  url: https://www.nist.gov/blogs/taking-measure/programming-language-named-monty-python-evolved-nist
+  summary: An interview with Guido van Rossum on the early days of Python, complete
+    with a selection of vintage Python t-shirt slogans.
+  source: manual
+  metadata:
+    submitted_by: hugovk
+    issue: 47
