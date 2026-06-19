@@ -207,28 +207,6 @@ items:
     labels: []
     comments: 2
     touches_whatsnew: true
-- section: merged_prs
-  title: Raise MemoryError on tokenizer allocation failure instead of crashing
-  url: https://github.com/python/cpython/pull/150275
-  summary: ''
-  source: github
-  metadata:
-    pr_number: 150275
-    author: grantlouisherman
-    labels: []
-    comments: 14
-    touches_whatsnew: false
-- section: merged_prs
-  title: Fix Null pointer dereferences in TextIOWrapper underlying stream access
-  url: https://github.com/python/cpython/pull/145957
-  summary: ''
-  source: github
-  metadata:
-    pr_number: 145957
-    author: cmaloney
-    labels: []
-    comments: 13
-    touches_whatsnew: false
 - section: discussions
   title: 'PEP 832: Virtual environment discovery'
   url: https://discuss.python.org/t/pep-832-virtual-environment-discovery/106998
