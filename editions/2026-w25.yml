@@ -86,7 +86,7 @@ items:
     status: Final
     pr_url: https://github.com/python/peps/pull/4993
 - section: pep_updates
-  title: 'PEP 835: Shorthand syntax for Annotated type metadata'
+  title: 'PEP 835: Shorthand syntax for `Annotated` type metadata'
   url: https://peps.python.org/pep-0835/
   summary: ''
   source: peps
@@ -151,7 +151,7 @@ items:
     topic_id: 107622
     category: committers
 - section: merged_prs
-  title: Prevent bz2 decompressor reuse after errors
+  title: Prevent `bz2` decompressor reuse after errors
   url: https://github.com/python/cpython/pull/150600
   summary: ''
   source: github
@@ -185,7 +185,7 @@ items:
     comments: 6
     touches_whatsnew: true
 - section: merged_prs
-  title: Fix re-entrant mutation crashes in socket sendmsg/recvmsg_into via `__buffer__`
+  title: Fix re-entrant mutation crashes in `socket.sendmsg`/`recvmsg_into` via `__buffer__`
   url: https://github.com/python/cpython/pull/143987
   summary: ''
   source: github
@@ -207,6 +207,40 @@ items:
     labels: []
     comments: 2
     touches_whatsnew: true
+- section: merged_prs
+  title: Fix CVE-2026-12003 by removing the fallback to `%VPATH%/Modules/Setup.local`
+    for discovering sources in `getpath.py`
+  url: https://github.com/python/cpython/pull/151545
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 151545
+    author: zooba
+    labels: []
+    comments: 11
+    touches_whatsnew: false
+- section: merged_prs
+  title: Escape `methodname` in `xmlrpc.client.dumps()` to prevent XML injection
+  url: https://github.com/python/cpython/pull/148968
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 148968
+    author: sanyamk23
+    labels: []
+    comments: 10
+    touches_whatsnew: false
+- section: merged_prs
+  title: Speed up `logging.getLogger()` for existing loggers
+  url: https://github.com/python/cpython/pull/150825
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 150825
+    author: gaborbernat
+    labels: []
+    comments: 13
+    touches_whatsnew: false
 - section: discussions
   title: 'PEP 832: Virtual environment discovery'
   url: https://discuss.python.org/t/pep-832-virtual-environment-discovery/106998
@@ -217,7 +251,7 @@ items:
     new_replies: 31
     views: 6736
 - section: discussions
-  title: 'PEP 835: Shorthand syntax for Annotated type metadata'
+  title: 'PEP 835: Shorthand syntax for `Annotated` type metadata'
   url: https://discuss.python.org/t/pep-835-shorthand-syntax-for-annotated-type-metadata/107795
   summary: 🆕 3 new replies · 85 views
   source: discourse
