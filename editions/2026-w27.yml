@@ -365,10 +365,10 @@ items:
 - section: musings
   title: 'Tachyon: Python 3.15''s sampling profiler'
   url: https://youtu.be/f1x4X83CDSA
-  summary: By Pablo Galindo Salgado & Laszlo Kiss Kollar
+  summary: By Pablo Galindo Salgado & László Kiss Kollár
   source: manual
   metadata:
-    author: Pablo Galindo Salgado, Laszlo Kiss Kollar
+    author: Pablo Galindo Salgado, László Kiss Kollár
     event: PyCon US 2026
 - section: musings
   title: 'Free-threaded Python: past, present and future'
