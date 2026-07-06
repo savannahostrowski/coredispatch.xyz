@@ -1,0 +1,388 @@
+number: 7
+title: 'Core Dispatch #7'
+slug: 2026-w27
+period_start: '2026-06-19'
+period_end: '2026-07-05'
+editorial_notes: |
+  Welcome back to Core Dispatch! This edition covers June 19 through July 5, 2026.
+  Python 3.15.0 beta 3 landed on June 23, and beta 4 is up next on July 18, with
+  3.13.15 and 3.14.7 following on August 4.
+
+  Last edition, we covered the Steering Council's request that the experimental
+  JIT chart its future through a Standards Track PEP. A new PEP has now been
+  drafted and discussion has started: [PEP 836](https://peps.python.org/pep-0836/),
+  "JIT Go Brrr: The Path to a Supported JIT Compiler for CPython," sketches what
+  moving the JIT from experiment to supported feature could involve, from
+  performance expectations to interop and tooling compatibility.
+
+  PyCon US 2026 talk recordings have also started landing, and we've pulled a few
+  from the core team into Core Team Musings below: Pablo Galindo Salgado and Laszlo
+  Kiss Kollar on Python 3.15's new [Tachyon sampling profiler](https://youtu.be/f1x4X83CDSA),
+  Thomas Wouters on the [past, present, and future of free-threaded Python](https://youtu.be/PZu6LyiZVbM),
+  and Emma Smith on [Rust for CPython](https://youtu.be/42kibVnUHYE). Not everything
+  is up yet, so expect more picks as the rest are published.
+
+  On the packaging side, the inaugural
+  [Packaging Council election dates](https://blog.python.org/2026/06/2026-packaging-council-election-dates/)
+  are out. And looking ahead, [EuroPython 2026](https://ep2026.europython.eu/)
+  kicks off July 13, so expect a wave of talks and Language Summit coverage to
+  pull from in a future edition.
+
+  As always, if you maintain a package or just like living on the edge, give the
+  latest 3.15 beta a spin and [file any issues](https://github.com/python/cpython/issues)
+  you find.
+credits:
+- name: Savannah Ostrowski
+  url: https://github.com/savannahostrowski
+items:
+- section: upcoming_releases
+  title: Python 3.15.0 beta 4
+  url: https://peps.python.org/pep-0790/
+  summary: Jul 18
+  source: release_schedule
+  metadata:
+    date: '2026-07-18'
+- section: upcoming_releases
+  title: Python 3.13.15
+  url: https://peps.python.org/pep-0719/
+  summary: Aug 04
+  source: release_schedule
+  metadata:
+    date: '2026-08-04'
+- section: upcoming_releases
+  title: Python 3.14.7
+  url: https://peps.python.org/pep-0745/
+  summary: Aug 04
+  source: release_schedule
+  metadata:
+    date: '2026-08-04'
+- section: official_news
+  title: Packaging Council Inaugural Election Dates
+  url: https://blog.python.org/2026/06/2026-packaging-council-election-dates/
+  summary: By Pradyun Gedam
+  source: python_blog
+  metadata:
+    feed: Python Blog
+    author: Pradyun Gedam
+    published: Sun, 28 Jun 2026 00:00:00 GMT
+- section: official_news
+  title: Mitigated API authentication bypass for python.org download metadata
+  url: https://blog.python.org/2026/06/mitigated-api-bypass-for-download-metadata-python-dot-org/
+  summary: By Seth Larson
+  source: python_blog
+  metadata:
+    feed: Python Blog
+    author: Seth Larson
+    published: Tue, 23 Jun 2026 00:00:00 GMT
+- section: official_news
+  title: Python 3.15.0 beta 3 is here!
+  url: https://blog.python.org/2026/06/python-3150-beta-3/
+  summary: By Hugo van Kemenade
+  source: python_blog
+  metadata:
+    feed: Python Blog
+    author: Hugo van Kemenade
+    published: Tue, 23 Jun 2026 00:00:00 GMT
+- section: official_news
+  title: Thinking about running for the PSF Board? Let’s talk!
+  url: https://pyfound.blogspot.com/2026/07/thinking-about-running-for-psf-board.html
+  summary: By Marie Nordin
+  source: python_blog
+  metadata:
+    feed: Python Software Foundation News
+    author: Marie Nordin
+    published: Thu, 02 Jul 2026 13:07:22 +0000
+- section: pep_updates
+  title: 'PEP 752: Implicit namespaces for package repositories'
+  url: https://peps.python.org/pep-0752/
+  summary: ''
+  source: peps
+  metadata:
+    pep_number: 752
+    status: Accepted
+    pr_url: https://github.com/python/peps/pull/5009
+- section: pep_updates
+  title: 'PEP 810: Explicit lazy imports'
+  url: https://peps.python.org/pep-0810/
+  summary: ''
+  source: peps
+  metadata:
+    pep_number: 810
+    status: Final
+    pr_url: https://github.com/python/peps/pull/4943
+- section: pep_updates
+  title: 'PEP 799: A dedicated `profiling` package for organizing Python profiling
+    tools'
+  url: https://peps.python.org/pep-0799/
+  summary: ''
+  source: peps
+  metadata:
+    pep_number: 799
+    status: Final
+    pr_url: https://github.com/python/peps/pull/4942
+- section: pep_updates
+  title: 'PEP 836: JIT Go Brrr: The Path to a Supported JIT Compiler for CPython'
+  url: https://peps.python.org/pep-0836/
+  summary: ''
+  source: peps
+  metadata:
+    pep_number: 836
+    status: New
+    pr_url: https://github.com/python/peps/pull/5016
+- section: welcome
+  title: Pieter Eendebak promoted to core developer!
+  url: https://discuss.python.org/t/vote-to-promote-pieter-eendebak/107833
+  summary: ''
+  source: discourse
+  metadata:
+    topic_id: 107833
+    category: committers
+- section: merged_prs
+  title: Add `remove()` and `repack()` to `ZipFile`
+  url: https://github.com/python/cpython/pull/134627
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 134627
+    author: danny0838
+    labels:
+    - stale
+    - '3.16'
+    comments: 27
+    touches_whatsnew: true
+- section: merged_prs
+  title: Normalize all line endings (CR, CRLF, and LF) in `configparser`
+  url: https://github.com/python/cpython/pull/143929
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 143929
+    author: sethmlarson
+    labels:
+    - type-security
+    comments: 8
+    touches_whatsnew: false
+- section: merged_prs
+  title: Fix abrupt closing of empty comment in `HTMLParser`
+  url: https://github.com/python/cpython/pull/153007
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 153007
+    author: serhiy-storchaka
+    labels:
+    - type-security
+    comments: 4
+    touches_whatsnew: false
+- section: merged_prs
+  title: Limit trailer lines and interim responses read by `http.client`
+  url: https://github.com/python/cpython/pull/150741
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 150741
+    author: gpshead
+    labels:
+    - type-security
+    comments: 4
+    touches_whatsnew: false
+- section: merged_prs
+  title: Fix symlink escape via `tarfile` hardlink-extraction fallback
+  url: https://github.com/python/cpython/pull/151559
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 151559
+    author: StanFromIreland
+    labels: []
+    comments: 15
+    touches_whatsnew: false
+- section: merged_prs
+  title: Implement `BytesIO.peek()`
+  url: https://github.com/python/cpython/pull/150917
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 150917
+    author: marcelm
+    labels: []
+    comments: 14
+    touches_whatsnew: true
+- section: merged_prs
+  title: Fix `SyntaxError` message for `from x lazy import y`
+  url: https://github.com/python/cpython/pull/150877
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 150877
+    author: sobolevn
+    labels: []
+    comments: 18
+    touches_whatsnew: false
+- section: merged_prs
+  title: Improve `SyntaxError` message for `&&` and `||` operators
+  url: https://github.com/python/cpython/pull/150906
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 150906
+    author: Aniketsy
+    labels: []
+    comments: 18
+    touches_whatsnew: false
+- section: discussions
+  title: 'PEP 835: Shorthand Syntax for Annotated Type Metadata'
+  url: https://discuss.python.org/t/pep-835-shorthand-syntax-for-annotated-type-metadata/107814
+  summary: 🔥 122 new replies · 3.1k views
+  source: discourse
+  metadata:
+    topic_id: 107814
+    new_replies: 122
+    views: 3084
+- section: discussions
+  title: 'PEP 832: Virtual Environment Discovery'
+  url: https://discuss.python.org/t/pep-832-virtual-environment-discovery/106998
+  summary: 🔥 21 new replies · 8.3k views
+  source: discourse
+  metadata:
+    topic_id: 106998
+    new_replies: 21
+    views: 8269
+- section: discussions
+  title: 'PEP 836: JIT Go Brrr: The Path to a Supported JIT Compiler for CPython'
+  url: https://discuss.python.org/t/pep-836-jit-go-brrr-the-path-to-a-supported-jit-compiler-for-cpython/108010
+  summary: 🆕 🔥 15 new replies · 975 views
+  source: discourse
+  metadata:
+    topic_id: 108010
+    new_replies: 15
+    views: 975
+- section: discussions
+  title: 'PEP 822: Dedented Multiline String (d-string)'
+  url: https://discuss.python.org/t/pep-822-dedented-multiline-string-d-string/105519
+  summary: 2 new replies · 6.9k views
+  source: discourse
+  metadata:
+    topic_id: 105519
+    new_replies: 2
+    views: 6936
+- section: events
+  title: EuroPython 2026
+  url: https://ep2026.europython.eu/
+  summary: Jul 13
+  source: pycon_calendar
+  metadata:
+    date: '2026-07-13'
+    type: conference
+- section: events
+  title: SciPy 2026
+  url: https://www.scipy2026.scipy.org/
+  summary: Jul 13
+  source: pycon_calendar
+  metadata:
+    date: '2026-07-13'
+    type: conference
+- section: events
+  title: EuroSciPy 2026
+  url: https://euroscipy.org/
+  summary: Jul 18
+  source: pycon_calendar
+  metadata:
+    date: '2026-07-18'
+    type: conference
+- section: events
+  title: PyData PyCon Armenia 2026
+  url: https://pycon.am/
+  summary: Jul 24
+  source: pycon_calendar
+  metadata:
+    date: '2026-07-24'
+    type: conference
+- section: events
+  title: PyOhio 2026
+  url: https://pythondeadlin.es
+  summary: Jul 25
+  source: pycon_calendar
+  metadata:
+    date: '2026-07-25'
+    type: conference
+- section: events
+  title: 📋 PyCon France 2026 Deadline
+  url: https://www.pycon.fr/2026/en/
+  summary: Aug 01
+  source: python_deadlines
+  metadata:
+    date: '2026-08-01'
+    type: cfp
+- section: events
+  title: 📋 PyCon Ireland 2026 Deadline
+  url: https://2026.pycon.ie/
+  summary: Aug 01
+  source: python_deadlines
+  metadata:
+    date: '2026-08-01'
+    type: cfp
+- section: events
+  title: 📋 PyBay 2026 Deadline
+  url: https://pybay.org/
+  summary: Aug 01
+  source: python_deadlines
+  metadata:
+    date: '2026-08-01'
+    type: cfp
+- section: events
+  title: 📋 Plone Conference 2026 Deadline
+  url: https://2026.ploneconf.org/
+  summary: Aug 01
+  source: python_deadlines
+  metadata:
+    date: '2026-08-01'
+    type: cfp
+- section: events
+  title: 📋 PyData Global 2026 Workshop Deadline
+  url: https://pydata.org/global2026/
+  summary: Aug 04
+  source: python_deadlines
+  metadata:
+    date: '2026-08-04'
+    type: cfp
+- section: musings
+  title: Python 3.15’s Ultra-Low Overhead Interpreter Profiling Mode
+  url: https://fidget-spinner.github.io/posts/ultra-fast-tracing.html
+  summary: By Ken Jin
+  source: blog
+  metadata:
+    feed: Ken Jin
+    author: Ken Jin
+- section: musings
+  title: 'PEP 814: Add frozendict built-in type'
+  url: https://vstinner.github.io/pep-814-add-frozendict-builtin-type.html
+  summary: By Victor Stinner
+  source: blog
+  metadata:
+    feed: Victor Stinner
+    author: Victor Stinner
+- section: musings
+  title: 'Tachyon: Python 3.15''s sampling profiler'
+  url: https://youtu.be/f1x4X83CDSA
+  summary: By Pablo Galindo Salgado & Laszlo Kiss Kollar
+  source: manual
+  metadata:
+    author: Pablo Galindo Salgado, Laszlo Kiss Kollar
+    event: PyCon US 2026
+- section: musings
+  title: 'Free-threaded Python: past, present and future'
+  url: https://youtu.be/PZu6LyiZVbM
+  summary: By Thomas Wouters
+  source: manual
+  metadata:
+    author: Thomas Wouters
+    event: PyCon US 2026
+- section: musings
+  title: 'Rust for CPython: Making Python Safer and More Robust for Everyone'
+  url: https://youtu.be/42kibVnUHYE
+  summary: By Emma Smith
+  source: manual
+  metadata:
+    author: Emma Smith
+    event: PyCon US 2026
