@@ -16,8 +16,8 @@ editorial_notes: |
   performance expectations to interop and tooling compatibility.
 
   PyCon US 2026 talk recordings have also started landing, and we've pulled a few
-  from the core team into Core Team Musings below: Pablo Galindo Salgado and Laszlo
-  Kiss Kollar on Python 3.15's new [Tachyon sampling profiler](https://youtu.be/f1x4X83CDSA),
+  from the core team into Core Team Musings below: Pablo Galindo Salgado and László
+  Kiss Kollár on Python 3.15's new [Tachyon sampling profiler](https://youtu.be/f1x4X83CDSA),
   Thomas Wouters on the [past, present, and future of free-threaded Python](https://youtu.be/PZu6LyiZVbM),
   and Emma Smith on [Rust for CPython](https://youtu.be/42kibVnUHYE). Not everything
   is up yet, so expect more picks as the rest are published.
