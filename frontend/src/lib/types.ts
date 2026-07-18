@@ -11,6 +11,14 @@ export interface IssueQuote {
   lines?: QuoteLine[]; // multi-speaker exchange
 }
 
+export interface IssueImage {
+  url: string;
+  alt: string;
+  caption?: string;
+  credit?: string;
+  credit_url?: string;
+}
+
 export interface IssueCredit {
   name: string;
   url?: string;
@@ -23,7 +31,9 @@ export interface Issue {
   editorial_notes: string;
   period_start: string;
   period_end: string;
-  quote?: IssueQuote;
+  quote?: IssueQuote; // legacy single quote
+  quotes?: IssueQuote[]; // multiple independent quotes
+  image?: IssueImage; // optional standalone image for One More Thing
   credits?: IssueCredit[];
   items: Item[];
 }

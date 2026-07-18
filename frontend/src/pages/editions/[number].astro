@@ -32,7 +32,9 @@ const allSections: Section[] = ["upcoming_releases", ...sections, "musings", "pi
 const tocEntries: { id: string; label: string }[] = allSections
   .filter((s) => issue.items.some((i) => i.section === s))
   .map((s) => ({ id: s.replaceAll("_", "-"), label: SECTION_LABELS[s] }));
-if (issue.quote) tocEntries.push({ id: "one-more-thing", label: "One More Thing" });
+const hasOneMoreThing =
+  issue.quote || (issue.quotes && issue.quotes.length > 0) || issue.image;
+if (hasOneMoreThing) tocEntries.push({ id: "one-more-thing", label: "One More Thing" });
 ---
 
 <Layout title={issue.title} description={description}>
@@ -75,7 +77,7 @@ if (issue.quote) tocEntries.push({ id: "one-more-thing", label: "One More Thing"
     <SectionBlock section="picks" items={issue.items.filter((i) => i.section === "picks")} />
     <SectionBlock section="events" items={issue.items.filter((i) => i.section === "events")} />
 
-    {issue.quote && <QuoteOfTheWeek quote={issue.quote} />}
+    {hasOneMoreThing && <QuoteOfTheWeek quotes={issue.quotes} quote={issue.quote} image={issue.image} />}
     {issue.credits && issue.credits.length > 0 && <Credits credits={issue.credits} />}
 
     <div class="mt-14 flex items-center justify-between border-t border-border pt-6">

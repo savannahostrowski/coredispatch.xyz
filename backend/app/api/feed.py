@@ -109,36 +109,78 @@ def _render_issue_html(issue: dict) -> str:
                 parts.append(f"<li>{link}</li>")
         parts.append("</ul>")
 
-    quote = issue.get("quote") or {}
+    # Prefer the `quotes` list; fall back to the legacy singular `quote`.
+    raw_quotes = issue.get("quotes")
+    if isinstance(raw_quotes, list) and raw_quotes:
+        quote_entries = raw_quotes
+    else:
+        single = issue.get("quote")
+        quote_entries = [single] if single else []
+
     # Normalize legacy single quotes and multi-speaker exchanges into one shape.
-    raw_lines = quote.get("lines")
-    quote_lines = raw_lines if isinstance(raw_lines, list) else []
-    if not quote_lines and quote.get("text"):
-        quote_lines = [
-            {
-                "text": quote.get("text"),
-                "author": quote.get("author"),
-                "url": quote.get("url"),
-            }
-        ]
-    rendered = []
-    for line in quote_lines:
-        if not isinstance(line, dict):
+    quote_blocks = []
+    for quote in quote_entries:
+        if not isinstance(quote, dict):
             continue
-        text = (line.get("text") or "").replace("<!--", "").replace("-->", "").strip()
-        if not text or text.startswith("Add a quote"):
-            continue
-        text_html = escape(text)
-        author = escape((line.get("author") or "").strip())
-        url = escape((line.get("url") or "").strip())
-        attribution = f'<a href="{url}">{author}</a>' if url and author else author
-        if attribution:
-            rendered.append(f'<p>"{text_html}"</p><footer>— {attribution}</footer>')
-        else:
-            rendered.append(f'<p>"{text_html}"</p>')
-    if rendered:
+        raw_lines = quote.get("lines")
+        quote_lines = raw_lines if isinstance(raw_lines, list) else []
+        if not quote_lines and quote.get("text"):
+            quote_lines = [
+                {
+                    "text": quote.get("text"),
+                    "author": quote.get("author"),
+                    "url": quote.get("url"),
+                }
+            ]
+        rendered = []
+        for line in quote_lines:
+            if not isinstance(line, dict):
+                continue
+            text = (
+                (line.get("text") or "").replace("<!--", "").replace("-->", "").strip()
+            )
+            if not text or text.startswith("Add a quote"):
+                continue
+            text_html = escape(text)
+            author = escape((line.get("author") or "").strip())
+            url = escape((line.get("url") or "").strip())
+            attribution = f'<a href="{url}">{author}</a>' if url and author else author
+            if attribution:
+                rendered.append(f'<p>"{text_html}"</p><footer>— {attribution}</footer>')
+            else:
+                rendered.append(f'<p>"{text_html}"</p>')
+        if rendered:
+            quote_blocks.append("<blockquote>" + "".join(rendered) + "</blockquote>")
+
+    # Optional standalone image for One More Thing.
+    image_html = ""
+    image = issue.get("image")
+    if isinstance(image, dict) and (image.get("url") or "").strip():
+        src_raw = image["url"].strip()
+        # Absolutize root-relative asset paths so images resolve in email/RSS.
+        if src_raw.startswith("/"):
+            src_raw = f"{settings.site_url}{src_raw}"
+        src = escape(src_raw)
+        alt = escape((image.get("alt") or "").strip())
+        caption = escape((image.get("caption") or "").strip())
+        credit = escape((image.get("credit") or "").strip())
+        credit_url = escape((image.get("credit_url") or "").strip())
+        credit_html = (
+            f'<a href="{credit_url}">{credit}</a>' if credit_url and credit else credit
+        )
+        caption_parts = [p for p in (caption, credit_html) if p]
+        figcaption = (
+            f"<figcaption>{' — '.join(caption_parts)}</figcaption>"
+            if caption_parts
+            else ""
+        )
+        image_html = f'<figure><img src="{src}" alt="{alt}" />{figcaption}</figure>'
+
+    if quote_blocks or image_html:
         parts.append("<h3>One More Thing</h3>")
-        parts.append("<blockquote>" + "".join(rendered) + "</blockquote>")
+        parts.extend(quote_blocks)
+        if image_html:
+            parts.append(image_html)
 
     credits = issue.get("credits") or []
     if credits:
