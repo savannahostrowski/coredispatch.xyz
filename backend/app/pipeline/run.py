@@ -160,12 +160,22 @@ async def run_pipeline(issues_dir: Path, since: date | None = None):
 
     hand_curated_sections = {
         "editorial_notes": "<!-- Write your editorial notes here -->\n",
-        "quote": {"text": "<!-- Add a quote here -->", "author": "", "url": ""},
+        "quotes": [{"text": "<!-- Add a quote here -->", "author": "", "url": ""}],
         "credits": [],
     }
     hand_curated_items: list[dict] = []
+    optional_image = None
     if updateable_issue:
-        hand_curated_sections = {k: updateable_issue[k] for k in hand_curated_sections}
+        # Preserve hand-curated fields across regenerations, tolerating drafts
+        # that predate a field (e.g. the legacy singular `quote`).
+        hand_curated_sections = {
+            k: updateable_issue.get(k, default)
+            for k, default in hand_curated_sections.items()
+        }
+        # Carry over a legacy singular `quote` if no `quotes` list was set.
+        if not updateable_issue.get("quotes") and updateable_issue.get("quote"):
+            hand_curated_sections["quotes"] = [updateable_issue["quote"]]
+        optional_image = updateable_issue.get("image")
         hand_curated_items = [
             item
             for item in updateable_issue["items"]
@@ -179,8 +189,11 @@ async def run_pipeline(issues_dir: Path, since: date | None = None):
         "period_start": period_start.isoformat(),
         "period_end": period_end.isoformat(),
         **hand_curated_sections,
-        "items": all_generate_items + hand_curated_items,
     }
+    # Only include the optional standalone image when the edition has one.
+    if optional_image:
+        issue["image"] = optional_image
+    issue["items"] = all_generate_items + hand_curated_items
 
     # Use literal block style for multiline strings (editorial_notes)
     def _str_representer(dumper, data):

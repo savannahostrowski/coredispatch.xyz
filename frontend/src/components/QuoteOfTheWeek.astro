@@ -1,21 +1,28 @@
 ---
-import type { IssueQuote } from "../lib/types";
+import type { IssueQuote, IssueImage } from "../lib/types";
 
 interface Props {
-  quote: IssueQuote;
+  quotes?: IssueQuote[];
+  quote?: IssueQuote; // legacy single quote
+  image?: IssueImage;
 }
 
-const { quote } = Astro.props;
+const { quotes, quote, image } = Astro.props;
 
-// Normalize legacy single quotes and multi-speaker exchanges into one shape.
-// Fall back to the legacy fields only when `lines` is absent or empty, matching
-// the backend RSS renderer.
-const lines =
-  quote.lines && quote.lines.length > 0
-    ? quote.lines
-    : quote.text
-      ? [{ text: quote.text, author: quote.author ?? "", url: quote.url }]
-      : [];
+// Normalize into a list of quotes, each a list of lines. Prefer the `quotes`
+// list; fall back to the legacy singular `quote`. Within each quote, fall back
+// to the legacy single-line fields only when `lines` is absent or empty. This
+// mirrors the backend RSS renderer.
+const quoteList = quotes && quotes.length > 0 ? quotes : quote ? [quote] : [];
+const entries = quoteList
+  .map((q) =>
+    q.lines && q.lines.length > 0
+      ? q.lines
+      : q.text
+        ? [{ text: q.text, author: q.author ?? "", url: q.url }]
+        : [],
+  )
+  .filter((lines) => lines.length > 0);
 ---
 
 <section class="mb-10 scroll-mt-16" id="one-more-thing">
@@ -26,21 +33,47 @@ const lines =
     </div>
     <p class="mt-1 text-xs text-muted">Your favourite funny, informative, or mass-reply-inducing words.</p>
   </div>
-  <blockquote class="border-l-3 border-accent/40 pl-4 py-2 space-y-3">
-    {lines.map((line) => (
-      <div>
-        <p class="text-[15px] italic leading-relaxed text-foreground/90">{line.text}</p>
-        <p class="mt-1 text-sm text-muted">
-          {"— "}
-          {line.url ? (
-            <a href={line.url} class="text-accent hover:text-accent-hover transition-colors">{line.author}</a>
-          ) : (
-            line.author
-          )}
-        </p>
-      </div>
+  <div class="space-y-4">
+    {entries.map((lines) => (
+      <blockquote class="border-l-3 border-accent/40 pl-4 py-2 space-y-3">
+        {lines.map((line) => (
+          <div>
+            <p class="text-[15px] italic leading-relaxed text-foreground/90">{line.text}</p>
+            <p class="mt-1 text-sm text-muted">
+              {"— "}
+              {line.url ? (
+                <a href={line.url} class="text-accent hover:text-accent-hover transition-colors">{line.author}</a>
+              ) : (
+                line.author
+              )}
+            </p>
+          </div>
+        ))}
+      </blockquote>
     ))}
-  </blockquote>
+  </div>
+  {image && image.url && (
+    <figure class="mt-5">
+      <img
+        src={image.url}
+        alt={image.alt}
+        loading="lazy"
+        class="rounded-md border border-border max-w-full h-auto"
+      />
+      {(image.caption || image.credit) && (
+        <figcaption class="mt-1.5 text-xs text-muted">
+          {image.caption}
+          {image.caption && image.credit && " — "}
+          {image.credit &&
+            (image.credit_url ? (
+              <a href={image.credit_url} class="text-accent hover:text-accent-hover transition-colors">{image.credit}</a>
+            ) : (
+              image.credit
+            ))}
+        </figcaption>
+      )}
+    </figure>
+  )}
   <p class="mt-3 text-xs text-muted">
     Have a great quote?{" "}
     <a href="/submit"
