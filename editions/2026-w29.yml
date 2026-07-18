@@ -5,11 +5,12 @@ period_start: '2026-07-05'
 period_end: '2026-07-18'
 editorial_notes: |
   Welcome back to Core Dispatch! This edition covers July 5 through July 18, 2026.
-  Python 3.15.0 beta 4 lands today, July 18 (if all goes well! We're in the middle of releasing
-  it at the EuroPython sprints!), with 3.13.15 and 3.14.7 following on August 4.
+  Python 3.15.0 beta 4 landed today, July 18 (we just released
+  it at the EuroPython sprints!), with 3.13.15, 3.14.7 and the first 3.15
+  release candidate following on August 4.
 
   It's EuroPython week! Much of the core team has been gathered in one place for our annual
-  Language Summit (blog post to come!) and the conference. Recordings aren't up just yet,
+  Language Summit (blog posts to come!) and the conference. Recordings aren't up just yet,
   but as promised with the PyCon US talks, once they are, we'll pull talks and Language Summit
   coverage from the team into a future edition.
 
@@ -22,7 +23,7 @@ editorial_notes: |
   Don't miss the "One More Thing" at the bottom of this edition. This one's a little sillier
   (correction: more unhinged) than usual, but we think you'll enjoy it.
 
-  As always, if you maintain a package or just like living on the edge, give the latest
+  As always, if you maintain a package or just like living on the edge, give the final
   3.15 beta a spin and [file any issues](https://github.com/python/cpython/issues)
   you find.
 quotes:
@@ -40,7 +41,10 @@ image:
   caption: Pablo during one of his "EuroPython 2026" talks, as hallucinated by AI.
 credits:
 - name: Savannah Ostrowski
+- name: Savannah Ostrowski
   url: https://github.com/savannahostrowski
+- name: Hugo van Kemenade
+  url: https://github.com/hugovk
 items:
 - section: upcoming_releases
   title: Python 3.15.0 beta 4
