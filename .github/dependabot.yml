@@ -3,20 +3,32 @@ updates:
   - package-ecosystem: github-actions
     directory: /
     schedule:
-      interval: weekly
+      interval: monthly
+    groups:
+      actions:
+        patterns:
+          - "*"
     cooldown:
       default-days: 7
 
   - package-ecosystem: pip
     directory: /backend
     schedule:
-      interval: weekly
+      interval: monthly
+    groups:
+      pip:
+        patterns:
+          - "*"
     cooldown:
       default-days: 7
 
   - package-ecosystem: npm
     directory: /frontend
     schedule:
-      interval: weekly
+      interval: monthly
+    groups:
+      npm:
+        patterns:
+          - "*"
     cooldown:
       default-days: 7
