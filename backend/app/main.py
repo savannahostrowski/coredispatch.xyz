@@ -1,8 +1,10 @@
 import pathlib
+from collections.abc import Callable, Coroutine
+from typing import Any
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse, Response
+from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from opentelemetry.exporter.otlp.proto.http.metric_exporter import OTLPMetricExporter
 from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
@@ -52,17 +54,39 @@ if STATIC_DIR.exists():
             "/_astro", StaticFiles(directory=str(astro_static)), name="astro_static"
         )
 
-    # Catch-all: serve static files for known Astro routes only
-    @app.api_route("/{path:path}", methods=["GET", "HEAD"])
-    async def spa_fallback(path: str):
-        file_path = (STATIC_DIR / path).resolve()
-        if file_path.is_relative_to(STATIC_DIR) and file_path.is_file():
+    def static_endpoint(
+        file_path: pathlib.Path,
+    ) -> Callable[[], Coroutine[Any, Any, FileResponse]]:
+        async def serve_static_file() -> FileResponse:
             return FileResponse(file_path)
-        # Try path/index.html for Astro static routes
-        index_path = (STATIC_DIR / path / "index.html").resolve()
-        if index_path.is_relative_to(STATIC_DIR) and index_path.is_file():
-            return FileResponse(index_path)
-        not_found = STATIC_DIR / "404.html"
-        if not_found.is_file():
+
+        return serve_static_file
+
+    # Register the finite Astro build output as exact routes. OpenTelemetry
+    # records the matched route template, so a catch-all here would collapse
+    # every page into /{path:path} in HTTP metrics.
+    for file_path in STATIC_DIR.rglob("*"):
+        if not file_path.is_file() or "_astro" in file_path.parts:
+            continue
+
+        relative_path = file_path.relative_to(STATIC_DIR)
+        if relative_path.name == "index.html":
+            parent = relative_path.parent.as_posix()
+            route_path = "/" if parent == "." else f"/{parent}"
+        else:
+            route_path = f"/{relative_path.as_posix()}"
+
+        app.add_api_route(
+            route_path,
+            static_endpoint(file_path),
+            methods=["GET", "HEAD"],
+            include_in_schema=False,
+            name=f"static:{relative_path.as_posix()}",
+        )
+
+    not_found = STATIC_DIR / "404.html"
+    if not_found.is_file():
+
+        @app.exception_handler(404)
+        async def static_not_found(*_args: Any) -> FileResponse:
             return FileResponse(not_found, status_code=404)
-        return Response(status_code=404, content="Not found")
