@@ -15,6 +15,7 @@ export interface IssueImage {
   url: string;
   alt: string;
   caption?: string;
+  credit_prefix?: string;
   credit?: string;
   credit_url?: string;
 }

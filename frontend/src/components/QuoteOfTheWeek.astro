@@ -60,10 +60,11 @@ const entries = quoteList
         loading="lazy"
         class="rounded-md border border-border max-w-full h-auto"
       />
-      {(image.caption || image.credit) && (
+      {(image.caption || image.credit_prefix || image.credit) && (
         <figcaption class="mt-1.5 text-xs text-muted">
           {image.caption}
           {image.caption && image.credit && " — "}
+          {image.credit_prefix && <>{image.credit_prefix}{" "}</>}
           {image.credit &&
             (image.credit_url ? (
               <a href={image.credit_url} class="text-accent hover:text-accent-hover transition-colors">{image.credit}</a>
