@@ -147,6 +147,22 @@ items:
     pep_number: 837
     status: New
     pr_url: https://github.com/python/peps/pull/5031
+- section: steering_council
+  title: 2026-07-02 Python Steering Council meeting summary
+  url: https://discuss.python.org/t/2026-07-02-python-steering-council-meeting-summary/108421
+  summary: ''
+  source: discourse
+  metadata:
+    topic_id: 108421
+    category: committers
+- section: steering_council
+  title: 2026-06-25 Python Steering Council meeting summary
+  url: https://discuss.python.org/t/2026-06-25-python-steering-council-meeting-summary/108415
+  summary: ''
+  source: discourse
+  metadata:
+    topic_id: 108415
+    category: committers
 - section: welcome
   title: Stephen Rosen joins the triage team!
   url: https://github.com/python/core-workflow/issues/605
