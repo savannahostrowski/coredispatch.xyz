@@ -1,0 +1,478 @@
+number: 9
+title: 'Core Dispatch #9'
+slug: 2026-w32
+period_start: '2026-07-18'
+period_end: '2026-08-05'
+editorial_notes: |
+  Welcome back to Core Dispatch! This edition covers July 18 through August 5, 2026.
+  Python 3.15.0 release candidate 1 landed on August 4, followed by Python 3.14.7
+  and 3.13.15 on August 5. With the first release candidate here, 3.15 is firmly
+  in the home stretch.
+
+  Two new PEPs joined the queue this fortnight. [PEP 842](https://peps.python.org/pep-0842/)
+  proposes explicit module exports, while [PEP 837](https://peps.python.org/pep-0837/)
+  explores an extensible protocol for JSON serialization. Discussion is especially
+  lively around [PEP 841](https://peps.python.org/pep-0841/), which proposes
+  `frozen` syntax for immutable types. [PEP 828](https://peps.python.org/pep-0828/)
+  has also been accepted by its PEP delegate, clearing the way for `yield from`
+  in asynchronous generators.
+
+  Elsewhere, PyPI announced that releases will stop accepting new files after 14
+  days, nominations for the inaugural Python Packaging Council are about to open,
+  and core developer Petr Viktorin was named a PSF Fellow. If you missed
+  EuroPython, this edition's Core Team Musings includes the new CPython and
+  Steering Council panel recordings, along with the video edition of a very fun,
+  live `core.py` interview with Guido van Rossum.
+
+  Python 3.15 has now entered the release candidate phase, so this is the moment
+  for maintainers to test their projects and
+  [publish Python 3.15 wheels to PyPI](https://discuss.python.org/t/python-3-15-0-release-candidate-1-is-here/108395#p-298000-call-to-action-1).
+  Wheels built against the 3.15 release candidates will work with future 3.15
+  releases, and publishing them now helps downstream projects test too. Please
+  [file any CPython issues](https://github.com/python/cpython/issues) you find.
+image:
+  url: /images/dispatch-9-315.webp
+  alt: A still from Charli xcx's "360" music video with the yellow "360" title
+    replaced by "3.15".
+  credit_prefix: Meme creds go to
+  credit: Marco Burro
+  credit_url: https://github.com/buurro
+credits:
+- name: Hugo van Kemenade
+  url: https://github.com/hugovk
+items:
+- section: upcoming_releases
+  title: Python 3.15.0 release candidate 2
+  url: https://peps.python.org/pep-0790/
+  summary: Sep 01
+  source: release_schedule
+  metadata:
+    date: '2026-09-01'
+- section: official_news
+  title: Python 3.14.7 and 3.13.15 are now available!
+  url: https://blog.python.org/2026/08/python-3147-31315/
+  summary: By Thomas Wouters
+  source: python_blog
+  metadata:
+    feed: Python Blog
+    author: Thomas Wouters
+    published: Wed, 05 Aug 2026 00:00:00 GMT
+- section: official_news
+  title: Python 3.15.0 release candidate 1 is here!
+  url: https://blog.python.org/2026/08/python-3150-rc1/
+  summary: By Hugo van Kemenade
+  source: python_blog
+  metadata:
+    feed: Python Blog
+    author: Hugo van Kemenade
+    published: Tue, 04 Aug 2026 00:00:00 GMT
+- section: official_news
+  title: Releases now reject new files after 14 days
+  url: https://blog.pypi.org/posts/2026-07-22-releases-now-reject-new-files-after-14-days/
+  summary: By Seth Larson
+  source: python_blog
+  metadata:
+    feed: PyPI Blog
+    author: Seth Larson
+    published: Wed, 22 Jul 2026 12:00:00 +0000
+- section: official_news
+  title: Planned updates to the PyPI user interface
+  url: https://blog.pypi.org/posts/2026-07-22-ui-updates/
+  summary: By Nicole Harris
+  source: python_blog
+  metadata:
+    feed: PyPI Blog
+    author: Nicole Harris
+    published: Wed, 22 Jul 2026 06:09:00 +0000
+- section: official_news
+  title: 2026 Python Packaging Council nominations opening soon
+  url: https://blog.python.org/2026/07/2026-packaging-council-nominations/
+  summary: By Pradyun Gedam
+  source: python_blog
+  metadata:
+    feed: Python Blog
+    author: Pradyun Gedam
+    published: Thu, 23 Jul 2026 00:00:00 GMT
+- section: official_news
+  title: Announcing a 2026 PSF Grants Program funding round
+  url: https://pyfound.blogspot.com/2026/07/announcing-2026-psf-grants-program.html
+  summary: By Marie Nordin
+  source: python_blog
+  metadata:
+    feed: Python Software Foundation News
+    author: Marie Nordin
+    published: Tue, 28 Jul 2026 12:14:47 +0000
+- section: official_news
+  title: Announcing Python Software Foundation Fellow members for Q2 2026! 🎉
+  url: https://pyfound.blogspot.com/2026/07/announcing-python-software-foundation.html
+  summary: By Marie Nordin
+  source: python_blog
+  metadata:
+    feed: Python Software Foundation News
+    author: Marie Nordin
+    published: Mon, 27 Jul 2026 13:28:06 +0000
+- section: official_news
+  title: PSF Board nominations opening soon
+  url: https://pyfound.blogspot.com/2026/07/get-ready-psf-board-nominations-opening.html
+  summary: By Marie Nordin
+  source: python_blog
+  metadata:
+    feed: Python Software Foundation News
+    author: Marie Nordin
+    published: Thu, 23 Jul 2026 12:06:05 +0000
+- section: pep_updates
+  title: 'PEP 828: Supporting `yield from` in asynchronous generators'
+  url: https://peps.python.org/pep-0828/
+  summary: ''
+  source: manual
+  metadata:
+    pep_number: 828
+    status: Accepted
+    decision_url: https://discuss.python.org/t/pep-828-supporting-yield-from-in-asynchronous-generators/106459/58
+- section: pep_updates
+  title: 'PEP 842: Module Exports'
+  url: https://peps.python.org/pep-0842/
+  summary: ''
+  source: peps
+  metadata:
+    pep_number: 842
+    status: New
+    pr_url: https://github.com/python/peps/pull/5057
+- section: pep_updates
+  title: 'PEP 837: Extensible JSON serialization'
+  url: https://peps.python.org/pep-0837/
+  summary: ''
+  source: peps
+  metadata:
+    pep_number: 837
+    status: New
+    pr_url: https://github.com/python/peps/pull/5031
+- section: welcome
+  title: Stephen Rosen joins the triage team!
+  url: https://github.com/python/core-workflow/issues/605
+  summary: ''
+  source: manual
+  metadata:
+    issue_number: 605
+    repo: python/core-workflow
+    github_username: sirosen
+- section: merged_prs
+  title: Add `buffersize` to `multiprocessing.pool.imap()` and `imap_unordered()`
+  url: https://github.com/python/cpython/pull/136871
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 136871
+    author: obaltian
+    labels:
+    - type-feature
+    comments: 16
+    touches_whatsnew: true
+- section: merged_prs
+  title: Avoid quadratic behavior in `xml.etree.ElementPath` index predicates
+  url: https://github.com/python/cpython/pull/152676
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 152676
+    author: encukou
+    labels: []
+    comments: 13
+    touches_whatsnew: false
+- section: merged_prs
+  title: Allow stable `abi3` extensions to include a multiarch tuple in filenames
+  url: https://github.com/python/cpython/pull/152461
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 152461
+    author: stefanor
+    labels: []
+    comments: 15
+    touches_whatsnew: true
+- section: merged_prs
+  title: Add a `ctypes` decorator for generating function pointers using annotations
+  url: https://github.com/python/cpython/pull/153904
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 153904
+    author: ZeroIntensity
+    labels:
+    - sprint
+    - topic-ctypes
+    comments: 1
+    touches_whatsnew: true
+- section: merged_prs
+  title: Use a per-type method cache
+  url: https://github.com/python/cpython/pull/150160
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 150160
+    author: kumaraditya303
+    labels:
+    - topic-free-threading
+    comments: 10
+    touches_whatsnew: true
+- section: merged_prs
+  title: Reduce `LOAD_GLOBAL` specialization lock contention in free-threaded builds
+  url: https://github.com/python/cpython/pull/153720
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 153720
+    author: hawkinsp
+    labels:
+    - performance
+    - topic-free-threading
+    comments: 3
+    touches_whatsnew: false
+- section: merged_prs
+  title: Allow `memoryview.cast()` for F-contiguous views
+  url: https://github.com/python/cpython/pull/137803
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 137803
+    author: jamie2779
+    labels:
+    - sprint
+    comments: 8
+    touches_whatsnew: true
+- section: merged_prs
+  title: Add an `order` parameter to `memoryview.cast()`
+  url: https://github.com/python/cpython/pull/153663
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 153663
+    author: serhiy-storchaka
+    labels: []
+    comments: 1
+    touches_whatsnew: true
+- section: merged_prs
+  title: Add `mode` to `loop.create_unix_server()` and `asyncio.start_unix_server()`
+  url: https://github.com/python/cpython/pull/155086
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 155086
+    author: Dreamsorcerer
+    labels: []
+    comments: 2
+    touches_whatsnew: true
+- section: merged_prs
+  title: Remove `Tools/msi`, `Tools/nuget`, and legacy `py.exe` launcher sources
+  url: https://github.com/python/cpython/pull/153512
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 153512
+    author: zooba
+    labels: []
+    comments: 7
+    touches_whatsnew: true
+- section: merged_prs
+  title: Rewrite `csv.Sniffer` dialect detection using trial parsing
+  url: https://github.com/python/cpython/pull/153694
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 153694
+    author: serhiy-storchaka
+    labels: []
+    comments: 4
+    touches_whatsnew: true
+- section: merged_prs
+  title: Modernize `pydoc` HTML with dark mode and collapsible inherited members
+  url: https://github.com/python/cpython/pull/153909
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 153909
+    author: serhiy-storchaka
+    labels: []
+    comments: 1
+    touches_whatsnew: true
+- section: merged_prs
+  title: Generate default `AttributeError` messages from context
+  url: https://github.com/python/cpython/pull/153786
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 153786
+    author: bswck
+    labels:
+    - sprint
+    comments: 12
+    touches_whatsnew: false
+- section: merged_prs
+  title: Fix `asyncio.TaskGroup` interaction with `aclose()`
+  url: https://github.com/python/cpython/pull/154649
+  summary: ''
+  source: github
+  metadata:
+    pr_number: 154649
+    author: sullyj3
+    labels:
+    - needs backport to 3.13
+    - needs backport to 3.14
+    comments: 12
+    touches_whatsnew: false
+- section: discussions
+  title: 'PEP 841: Adding `frozen` Syntax to Make Immutable Types Optimizable'
+  url: https://discuss.python.org/t/pep-841-adding-frozen-syntax-to-make-immutable-types-optimizable/108219
+  summary: 🆕 🔥 85 new replies · 2.3k views
+  source: discourse
+  metadata:
+    topic_id: 108219
+    new_replies: 85
+    views: 2267
+- section: discussions
+  title: 'PEP 828: Supporting `yield from` in Asynchronous Generators'
+  url: https://discuss.python.org/t/pep-828-supporting-yield-from-in-asynchronous-generators/106459
+  summary: 🔥 16 new replies · 5.4k views
+  source: discourse
+  metadata:
+    topic_id: 106459
+    new_replies: 16
+    views: 5428
+- section: discussions
+  title: 'PEP 838: Adding `python-version` to `pyvenv.cfg`'
+  url: https://discuss.python.org/t/pep-838-adding-python-version-to-pyvenv-cfg/108234
+  summary: 🆕 🔥 11 new replies · 300 views
+  source: discourse
+  metadata:
+    topic_id: 108234
+    new_replies: 11
+    views: 300
+- section: discussions
+  title: 'PEP 822: Dedented Multiline String (`d`-string)'
+  url: https://discuss.python.org/t/pep-822-dedented-multiline-string-d-string/105519
+  summary: 7 new replies · 8.1k views
+  source: discourse
+  metadata:
+    topic_id: 105519
+    new_replies: 7
+    views: 8105
+- section: discussions
+  title: 'PEP 827: Type Manipulation'
+  url: https://discuss.python.org/t/pep-827-type-manipulation/106353
+  summary: 6 new replies · 9.2k views
+  source: discourse
+  metadata:
+    topic_id: 106353
+    new_replies: 6
+    views: 9188
+- section: discussions
+  title: 'PEP 832: Virtual Environment Discovery'
+  url: https://discuss.python.org/t/pep-832-virtual-environment-discovery/106998
+  summary: 4 new replies · 9.1k views
+  source: discourse
+  metadata:
+    topic_id: 106998
+    new_replies: 4
+    views: 9123
+- section: discussions
+  title: 'PEP 840: Name Resolution in Class Namespaces'
+  url: https://discuss.python.org/t/pep-840-name-resolution-in-class-namespaces/108166
+  summary: 4 new replies · 932 views
+  source: discourse
+  metadata:
+    topic_id: 108166
+    new_replies: 4
+    views: 932
+- section: discussions
+  title: 'PEP 835: Shorthand syntax for `Annotated` type metadata'
+  url: https://discuss.python.org/t/pep-835-shorthand-syntax-for-annotated-type-metadata/107814
+  summary: 3 new replies · 5.2k views
+  source: discourse
+  metadata:
+    topic_id: 107814
+    new_replies: 3
+    views: 5203
+- section: events
+  title: PyCon Indonesia 2026
+  url: https://pycon.id/
+  summary: Aug 08
+  source: pycon_calendar
+  metadata:
+    date: '2026-08-08'
+    type: conference
+- section: events
+  title: Python Nordeste 2026 (PyNE 2026)
+  url: https://2026.pythonnordeste.org/
+  summary: Aug 13
+  source: pycon_calendar
+  metadata:
+    date: '2026-08-13'
+    type: conference
+- section: events
+  title: 📋 PyCon South Africa 2026 Tutorial Deadline
+  url: https://za.pycon.org/
+  summary: Aug 14
+  source: python_deadlines
+  metadata:
+    date: '2026-08-14'
+    type: cfp
+- section: events
+  title: PyCon Korea 2026
+  url: https://2026.pycon.kr/
+  summary: Aug 15
+  source: pycon_calendar
+  metadata:
+    date: '2026-08-15'
+    type: conference
+- section: events
+  title: 📋 Django Day Copenhagen 2026 Deadline
+  url: https://2026.djangoday.dk/
+  summary: Aug 16
+  source: python_deadlines
+  metadata:
+    date: '2026-08-16'
+    type: cfp
+- section: events
+  title: PyCon Ghana 2026
+  url: https://gh.pycon.org/2026/
+  summary: Aug 20
+  source: pycon_calendar
+  metadata:
+    date: '2026-08-20'
+    type: conference
+- section: events
+  title: PyCon Latam 2026
+  url: https://www.pylatam.org/
+  summary: Aug 20
+  source: pycon_calendar
+  metadata:
+    date: '2026-08-20'
+    type: conference
+- section: musings
+  title: CPython panel at EuroPython 2026
+  url: https://www.youtube.com/watch?v=XSLFcr83ek4
+  summary: By EuroPython Conference
+  source: manual
+  metadata:
+    author: EuroPython Conference
+- section: musings
+  title: Python Steering Council update at EuroPython 2026
+  url: https://www.youtube.com/watch?v=yym0JwVCTlA
+  summary: By EuroPython Conference
+  source: manual
+  metadata:
+    author: EuroPython Conference
+- section: musings
+  title: Security and ethics in the age of generative AI at EuroPython 2026
+  url: https://www.youtube.com/watch?v=4cfgbo912rg
+  summary: By EuroPython Conference
+  source: manual
+  metadata:
+    author: EuroPython Conference
+- section: musings
+  title: Live `core.py` with Guido van Rossum at EuroPython 2026
+  url: https://www.youtube.com/watch?v=9ZuZfG8_jH8
+  summary: By Pablo Galindo and Łukasz Langa
+  source: manual
+  metadata:
+    author: Pablo Galindo and Łukasz Langa
