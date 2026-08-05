@@ -11,9 +11,9 @@ editorial_notes: |
 
   Two new PEPs joined the queue this fortnight. [PEP 842](https://peps.python.org/pep-0842/)
   proposes explicit module exports, while [PEP 837](https://peps.python.org/pep-0837/)
-  explores an extensible protocol for JSON serialization. Discussion is especially
-  lively around [PEP 841](https://peps.python.org/pep-0841/), which proposes
-  `frozen` syntax for immutable types. [PEP 828](https://peps.python.org/pep-0828/)
+  explores an extensible protocol for JSON serialization. There is also lively
+  [pre-PEP discussion around PEP 841](https://discuss.python.org/t/pep-841-adding-frozen-syntax-to-make-immutable-types-optimizable/108219),
+  which proposes `frozen` syntax for immutable types. [PEP 828](https://peps.python.org/pep-0828/)
   has also been accepted by its PEP delegate, clearing the way for `yield from`
   in asynchronous generators.
 
