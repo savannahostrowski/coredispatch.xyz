@@ -152,6 +152,11 @@ async def run_pipeline(issues_dir: Path, since: date | None = None):
         deduped.append(item)
     all_generate_items = deduped
 
+    # Limit to 10 events after deduplication
+    events = [i for i in all_generate_items if i["section"] == "events"][:10]
+    others = [i for i in all_generate_items if i["section"] != "events"]
+    all_generate_items = others + events
+
     issue_number = (
         _next_issue_number(repo_root)
         if not updateable_issue
