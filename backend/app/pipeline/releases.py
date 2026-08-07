@@ -142,6 +142,6 @@ async def fetch_events() -> list[dict]:
         except Exception as e:
             print(f"  Warning: PyCon events failed: {e}")
 
-    # Sort chronologically, limit to 10
+    # Sort chronologically
     items.sort(key=lambda i: i["metadata"]["date"])
-    return items[:10]
+    return items
