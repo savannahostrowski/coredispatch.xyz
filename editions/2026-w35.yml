@@ -2,9 +2,9 @@ number: 10
 title: 'Core Dispatch #10'
 slug: 2026-w35
 period_start: '2026-08-05'
-period_end: '2026-08-26'
+period_end: '2026-08-27'
 editorial_notes: |
-  Welcome back to Core Dispatch! This edition covers August 5 through August 26,
+  Welcome back to Core Dispatch! This edition covers August 5 through August 27,
   2026. Python 3.12.14, 3.11.16, and 3.10.21 shipped on August 12. Next up is
   Python 3.15.0 release candidate 2, due September 1.
 
