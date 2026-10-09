@@ -9,6 +9,8 @@ editorial_notes: |
   landed today after an extra release candidate for lazy-import blockers.
   Huge congrats to Hugo van Kemenade for getting the 3.14 and 3.15 feature
   releases out the door!
+  The [latest maintenance releases](https://blog.python.org/2026/10/python-31022-31117/)
+  also mark Python 3.10's end of life and 3.13's move to security-only support.
   Python 3.16.0 alpha 1 is expected on October 13.
 
   New PEPs revisit `None`-aware access, coalescing operators, incremental
