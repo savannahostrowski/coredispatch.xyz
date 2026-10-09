@@ -1,0 +1,350 @@
+number: 11
+title: 'Core Dispatch #11'
+slug: 2026-w41
+period_start: '2026-08-27'
+period_end: '2026-10-09'
+editorial_notes: |
+  Welcome back to Core Dispatch! This edition covers August 27 through October 9,
+  2026 (It's been a while 😅). [Python 3.15.0 final](https://www.python.org/downloads/release/python-3150/)
+  landed today after an extra release candidate for lazy-import blockers.
+  Huge congrats to Hugo van Kemenade for getting the 3.14 and 3.15 feature
+  releases out the door!
+  The [latest maintenance releases](https://blog.python.org/2026/10/python-31022-31117/)
+  also mark Python 3.10's end of life and 3.13's move to security-only support.
+  Python 3.16.0 alpha 1 is expected on October 13.
+
+  New PEPs revisit `None`-aware access, coalescing operators, incremental
+  garbage collection, and more expressive type annotations. PEP 755 was
+  withdrawn; PyPI's namespace rules will instead live in PyPI policy. On
+  CPython's main branch, notable merges improve free-threaded performance
+  and fix security and memory-safety issues.
+
+  The Python Language Summit writeups cover free-threading, garbage collection,
+  the buffer protocol, and Rust in CPython. The PSF Board and inaugural Python
+  Packaging Council election results are out, and Nathan Goldbaum and Sergey
+  Miryanov have joined the core team.
+
+  Please test your projects with Python 3.15.0 and publish compatible wheels
+  where applicable. If you find a bug,
+  [file a CPython issue](https://github.com/python/cpython/issues).
+credits:
+- name: Savannah Ostrowski
+  url: https://github.com/savannahostrowski
+items:
+- section: upcoming_releases
+  title: Python 3.16.0 alpha 1
+  url: https://peps.python.org/pep-0826/
+  summary: Oct 13
+  source: release_schedule
+- section: official_news
+  title: Python 3.15.0 final is here
+  url: https://blog.python.org/2026/10/python-3150-final-is-here/
+  summary: By Hugo van Kemenade
+  source: python_blog
+- section: official_news
+  title: Python 3.10.22, 3.11.17, 3.12.15, 3.13.16, and 3.14.8 are available
+  url: https://blog.python.org/2026/10/python-31022-31117/
+  summary: By Pablo Galindo
+  source: python_blog
+- section: official_news
+  title: PEP 827 and type manipulation at the Python Language Summit
+  url: https://blog.python.org/2026/09/language-summit-2026-pep-827-type-manipulation/
+  summary: By Seth Larson
+  source: python_blog
+- section: official_news
+  title: The next phase of free-threaded Python
+  url: https://blog.python.org/2026/09/language-summit-2026-free-threading-post-era/
+  summary: By Seth Larson
+  source: python_blog
+- section: official_news
+  title: Rust for CPython at the Python Language Summit
+  url: https://blog.python.org/2026/09/language-summit-2026-rust-for-cpython/
+  summary: By Seth Larson
+  source: python_blog
+- section: official_news
+  title: Revisiting Python’s memory buffer protocol
+  url: https://blog.python.org/2026/09/language-summit-2026-memory-buffer-protocol/
+  summary: By Seth Larson
+  source: python_blog
+- section: official_news
+  title: Generational and incremental garbage collection
+  url: https://blog.python.org/2026/09/language-summit-2026-garbage-collection-generational-incremental-both/
+  summary: By Seth Larson
+  source: python_blog
+- section: official_news
+  title: 2026 PSF Board election results
+  url: https://pyfound.blogspot.com/2026/09/announcing-2026-psf-board-election.html
+  summary: By Marie Nordin
+  source: python_blog
+- section: official_news
+  title: Inaugural Python Packaging Council election results
+  url: https://pyfound.blogspot.com/2026/09/announcing-2026-python-packaging.html
+  summary: By Deb Nicholson
+  source: python_blog
+- section: pep_updates
+  title: 'PEP 755: Implicit namespace policy for PyPI'
+  url: https://peps.python.org/pep-0755/
+  summary: Withdrawn; PyPI will maintain the namespace policy separately
+  source: peps
+  metadata:
+    status: Withdrawn
+- section: pep_updates
+  title: 'PEP 848: Generational incremental garbage collection'
+  url: https://peps.python.org/pep-0848/
+  summary: ''
+  source: peps
+  metadata:
+    status: New
+- section: pep_updates
+  title: 'PEP 849: More expressive type expressions'
+  url: https://peps.python.org/pep-0849/
+  summary: ''
+  source: peps
+  metadata:
+    status: New
+- section: pep_updates
+  title: 'PEP 823: `None`-aware access operators'
+  url: https://peps.python.org/pep-0823/
+  summary: ''
+  source: peps
+  metadata:
+    status: New
+- section: pep_updates
+  title: 'PEP 824: `None`-coalescing operators'
+  url: https://peps.python.org/pep-0824/
+  summary: ''
+  source: peps
+  metadata:
+    status: New
+- section: pep_updates
+  title: 'PEP 845: Leading-dot value patterns'
+  url: https://peps.python.org/pep-0845/
+  summary: ''
+  source: peps
+  metadata:
+    status: New
+- section: pep_updates
+  title: 'PEP 846: Docstrings for type aliases'
+  url: https://peps.python.org/pep-0846/
+  summary: ''
+  source: peps
+  metadata:
+    status: New
+- section: steering_council
+  title: 2026-09-10 Steering Council meeting summary
+  url: https://discuss.python.org/t/2026-09-10-python-steering-council-meeting-summary/109404
+  summary: ''
+  source: discourse
+- section: steering_council
+  title: 2026-09-03 Steering Council meeting summary
+  url: https://discuss.python.org/t/2026-09-03-python-steering-council-meeting-summary/109153
+  summary: ''
+  source: discourse
+- section: steering_council
+  title: 2026-08-27 Steering Council meeting summary
+  url: https://discuss.python.org/t/2026-08-27-python-steering-council-meeting-summary/108982
+  summary: ''
+  source: discourse
+- section: steering_council
+  title: 2026-08-20 Steering Council meeting summary
+  url: https://discuss.python.org/t/2026-08-20-python-steering-council-meeting-summary/108960
+  summary: ''
+  source: discourse
+- section: steering_council
+  title: 2026-08-13 Steering Council meeting summary
+  url: https://discuss.python.org/t/2026-08-13-python-steering-council-meeting-summary/108915
+  summary: ''
+  source: discourse
+- section: welcome
+  title: Nathan Goldbaum promoted to core developer!
+  url: https://discuss.python.org/t/vote-to-promote-nathan-goldbaum/108739
+  summary: ''
+  source: manual
+- section: welcome
+  title: Sergey Miryanov promoted to core developer!
+  url: https://discuss.python.org/t/vote-to-promote-sergey-miryanov/109283
+  summary: ''
+  source: manual
+- section: merged_prs
+  title: Validate `http.client` response lengths and chunk sizes
+  url: https://github.com/python/cpython/pull/150752
+  summary: ''
+  source: manual
+  metadata:
+    author: metsw24-max
+- section: merged_prs
+  title: Fix a crash in `bytes.join()` when a list is mutated concurrently
+  url: https://github.com/python/cpython/pull/158910
+  summary: ''
+  source: manual
+  metadata:
+    author: christianaurichzm
+- section: merged_prs
+  title: Fix a use-after-free in `io.TextIOWrapper` during reentrant detach
+  url: https://github.com/python/cpython/pull/157370
+  summary: ''
+  source: manual
+  metadata:
+    author: ashm-dev
+- section: merged_prs
+  title: Soft-deprecate C APIs that modify `str` objects
+  url: https://github.com/python/cpython/pull/157711
+  summary: ''
+  source: manual
+  metadata:
+    author: vstinner
+- section: merged_prs
+  title: Speed up `list.insert()` and indexed deletion in free-threaded builds
+  url: https://github.com/python/cpython/pull/158791
+  summary: ''
+  source: manual
+  metadata:
+    author: hetaozdh
+- section: merged_prs
+  title: Speed up deallocation of non-GC objects
+  url: https://github.com/python/cpython/pull/158645
+  summary: ''
+  source: manual
+  metadata:
+    author: corona10
+- section: merged_prs
+  title: Validate `SSLContext.wrap_bio()` arguments when hostname checks are enabled
+  url: https://github.com/python/cpython/pull/158503
+  summary: ''
+  source: github
+  metadata:
+    author: sethmlarson
+- section: merged_prs
+  title: Fix a use-after-free in server-side `SSLContext` callbacks
+  url: https://github.com/python/cpython/pull/158504
+  summary: ''
+  source: github
+  metadata:
+    author: sethmlarson
+- section: merged_prs
+  title: Prevent a symlink race during `TemporaryDirectory` cleanup
+  url: https://github.com/python/cpython/pull/157580
+  summary: ''
+  source: github
+  metadata:
+    author: StanFromIreland
+- section: merged_prs
+  title: Fix an out-of-bounds write in `mmap.mmap.__setitem__()`
+  url: https://github.com/python/cpython/pull/157438
+  summary: ''
+  source: manual
+  metadata:
+    author: Joekrry
+- section: merged_prs
+  title: Honor `tarfile` filters when extracting link fallbacks
+  url: https://github.com/python/cpython/pull/157266
+  summary: ''
+  source: manual
+  metadata:
+    author: encukou
+- section: merged_prs
+  title: Correct submodule binding for `lazy import a.b as c`
+  url: https://github.com/python/cpython/pull/158092
+  summary: ''
+  source: manual
+  metadata:
+    author: brittanyrey
+- section: merged_prs
+  title: Make `Py_InitializeFromConfig()` return without exiting Python
+  url: https://github.com/python/cpython/pull/158085
+  summary: ''
+  source: manual
+  metadata:
+    author: vstinner
+- section: merged_prs
+  title: Prevent thread starvation during free-threaded stop-the-world pauses
+  url: https://github.com/python/cpython/pull/152826
+  summary: ''
+  source: manual
+  metadata:
+    author: tpn
+- section: discussions
+  title: 'PEP 823: `None`-aware access operators'
+  url: https://discuss.python.org/t/pep-823-none-aware-access-operators/109159
+  summary: New PEP discussion
+  source: manual
+- section: discussions
+  title: 'PEP 824: `None`-coalescing operators'
+  url: https://discuss.python.org/t/pep-824-none-coalescing-operators/109161
+  summary: New PEP discussion
+  source: manual
+- section: discussions
+  title: 'PEP 848: Generational incremental garbage collection'
+  url: https://discuss.python.org/t/pep-848-generational-incremental-garbage-collection/109214
+  summary: New PEP discussion
+  source: manual
+- section: discussions
+  title: 'PEP 843: `export` statement for DRY re-exports'
+  url: https://discuss.python.org/t/pep-843-export-statement-for-dry-re-exports/108687
+  summary: 🔥 69 new replies · 4.0k views
+  source: discourse
+- section: discussions
+  title: 'PEP 805: Safe parallel Python'
+  url: https://discuss.python.org/t/pep-805-safe-parallel-python/108670
+  summary: 🔥 43 new replies · 8.5k views
+  source: discourse
+- section: discussions
+  title: 'PEP 832: Virtual environment discovery'
+  url: https://discuss.python.org/t/pep-832-virtual-environment-discovery/106998
+  summary: 🔥 30 new replies · 13.9k views
+  source: discourse
+- section: discussions
+  title: 'PEP 836: Path to a supported CPython JIT'
+  url: https://discuss.python.org/t/pep-836-jit-go-brrr-the-path-to-a-supported-jit-compiler-for-cpython/108010
+  summary: 🔥 11 new replies · 7.9k views
+  source: discourse
+- section: musings
+  title: Why `re.match()` was soft-deprecated
+  url: https://hugovk.dev/blog/2026/soft-deprecating-re.match/
+  summary: By Hugo van Kemenade
+  source: blog
+- section: events
+  title: PyCon Greece 2026
+  url: https://pycon.gr/
+  summary: Oct 12
+  source: pycon_calendar
+- section: events
+  title: 📋 PyCon Wrocław 2026 CFP deadline (extended)
+  url: https://cfp.pyconwroclaw.com/pycon-wroclaw-2026/cfp
+  summary: Oct 15
+  source: python_deadlines
+- section: events
+  title: PyCon NL 2026
+  url: https://www.pycon-nl.org/
+  summary: Oct 15
+  source: pycon_calendar
+- section: events
+  title: PyCon Taiwan 2026
+  url: https://tw.pycon.org/2026/en-us
+  summary: Oct 17
+  source: pycon_calendar
+- section: events
+  title: 📋 SciPy India 2026 CFP deadline
+  url: https://scipy.in/2026/
+  summary: Oct 19
+  source: python_deadlines
+- section: events
+  title: PyCon Panamá 2026
+  url: https://pycon.pa/2026/
+  summary: Oct 22
+  source: pycon_calendar
+- section: events
+  title: Swiss Python Summit 2026
+  url: https://www.python-summit.ch/
+  summary: Oct 22
+  source: pycon_calendar
+- section: events
+  title: PyHo 2026
+  url: https://2026.pythonho.com/
+  summary: Oct 22–24
+  source: pycon_calendar
+- section: events
+  title: PyBeach 2026
+  url: https://2026.pybeach.org/
+  summary: Oct 24
+  source: pycon_calendar
