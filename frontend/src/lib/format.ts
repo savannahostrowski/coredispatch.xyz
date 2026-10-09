@@ -16,11 +16,23 @@ export function formatDateRange(start: string, end: string): string {
   return `${formatDate(start)} \u2013 ${formatDate(end)}`;
 }
 
+export function formatEditorialExcerpt(text: string): string {
+  return text
+    .replace(/<!--[\s\S]*?-->/g, "")
+    .replace(/!?\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/`([^`]+)`/g, "$1")
+    .replace(/\*\*(.+?)\*\*/g, "$1")
+    .replace(/\*(.+?)\*/g, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 export function formatTrimmedDescription(description: string): string {
+  const plainText = formatEditorialExcerpt(description);
   const limit = 160;
-  if (description.length <= limit) {
-    return description;
+  if (plainText.length <= limit) {
+    return plainText;
   }
-  const trimmed = description.substring(0, limit);
+  const trimmed = plainText.substring(0, limit);
   return trimmed.substring(0, trimmed.lastIndexOf(" ")) + "\u2026";
 }
