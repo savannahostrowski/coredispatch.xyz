@@ -1,6 +1,6 @@
 ---
 import type { Issue } from "../lib/types";
-import { formatDateRange } from "../lib/format";
+import { formatDateRange, formatEditorialExcerpt } from "../lib/format";
 
 interface Props {
   issue: Issue;
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const { issue, basePath = "/editions" } = Astro.props;
-const editorial = issue.editorial_notes?.replace(/<!--[\s\S]*?-->/g, "").trim();
+const editorial = issue.editorial_notes && formatEditorialExcerpt(issue.editorial_notes);
 ---
 
 <a href={`${basePath}/${issue.number}`}
