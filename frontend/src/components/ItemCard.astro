@@ -46,7 +46,7 @@ if (section === "pep_updates" && "status" in meta) {
 } else if ("author" in meta) {
   const author = String(meta.author);
   const parts = author.split(/,\s*/);
-  const allHandles = parts.every(p => /^[a-zA-Z0-9_-]+$/.test(p));
+  const allHandles = section !== "musings" && parts.every(p => /^[a-zA-Z0-9_-]+$/.test(p));
   rightText = allHandles ? parts.map(p => `@${p}`).join(", ") : `by ${author}`;
   rightClass = `shrink-0 text-xs text-muted ${allHandles ? "font-mono" : ""}`;
 } else if (item.summary) {
