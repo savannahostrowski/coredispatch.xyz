@@ -414,7 +414,7 @@ items:
     author: Mariatta
 - section: musings
   title: Documenting certificate distribution pain points for the Python ecosystem
-  url: https://sethmlarson.dev/python-cert-dist-pain-points?utm_campaign=rss
+  url: https://sethmlarson.dev/python-cert-dist-pain-points
   summary: By Seth Larson
   source: blog
   metadata:
