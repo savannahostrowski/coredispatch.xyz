@@ -11,23 +11,23 @@ updates:
     cooldown:
       default-days: 7
 
-  - package-ecosystem: pip
+  - package-ecosystem: uv
     directory: /backend
     schedule:
       interval: monthly
     groups:
-      pip:
+      uv:
         patterns:
           - "*"
     cooldown:
       default-days: 7
 
-  - package-ecosystem: npm
+  - package-ecosystem: bun
     directory: /frontend
     schedule:
       interval: monthly
     groups:
-      npm:
+      bun:
         patterns:
           - "*"
     cooldown:
