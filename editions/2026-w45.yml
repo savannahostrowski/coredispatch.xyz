@@ -466,14 +466,6 @@ items:
     submitted_by: savannahostrowski
     topic_id: 109717
 - section: events
-  title: PyCon ES 2026
-  url: https://2026.es.pycon.org/
-  summary: Nov 06
-  source: pycon_calendar
-  metadata:
-    date: '2026-11-06'
-    type: conference
-- section: events
   title: 📋 PyCascades 2027 CFP deadline (extended)
   url: https://2027.pycascades.com/
   summary: Nov 09
@@ -532,14 +524,14 @@ items:
 - section: events
   title: 📋 PyDay Lima 2026 CFP deadline
   url: https://www.pylimaperu.org/pyday
-  summary: Nov 16
+  summary: Nov 15
   source: python_deadlines
   metadata:
-    date: '2026-11-16'
+    date: '2026-11-15'
     type: cfp
 - section: events
   title: XtremePython 2026
-  url: https://xtremepython.dev/
+  url: https://xtremepython.dev/2026/
   summary: Nov 17
   source: pycon_calendar
   metadata:
