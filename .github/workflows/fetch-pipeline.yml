@@ -12,6 +12,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
 
       - name: Skip on even ISO weeks
         if: github.event_name == 'schedule'
@@ -49,12 +51,14 @@ jobs:
 
       - name: Push draft branch
         if: steps.check.outputs.changed == 'true'
+        env:
+          EDITION_NUMBER: ${{ steps.edition.outputs.number }}
+          GH_TOKEN: ${{ github.token }}
         run: |
-          NUM="${{ steps.edition.outputs.number }}"
           git config user.name "Core Dispatch Bot"
           git config user.email "bot@coredispatch.xyz"
-          BRANCH="dispatch/$NUM"
+          BRANCH="dispatch/$EDITION_NUMBER"
           git checkout -b "$BRANCH"
           git add drafts/
-          git commit -m "📝 Draft: Core Dispatch $NUM"
-          git push -u origin "$BRANCH"
+          git commit -m "📝 Draft: Core Dispatch $EDITION_NUMBER"
+          git -c credential.helper= -c 'credential.https://github.com.helper=!gh auth git-credential' push -u origin "$BRANCH"

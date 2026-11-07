@@ -18,7 +18,7 @@ export function formatDateRange(start: string, end: string): string {
 
 export function formatEditorialExcerpt(text: string): string {
   return text
-    .replace(/<!--[\s\S]*?-->/g, "")
+    .replace(/<!--[\s\S]*?-->/g, " ")
     .replace(/!?\[([^\]]+)\]\([^)]+\)/g, "$1")
     .replace(/`([^`]+)`/g, "$1")
     .replace(/\*\*(.+?)\*\*/g, "$1")
