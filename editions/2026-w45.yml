@@ -33,9 +33,12 @@ editorial_notes: |
   Please test your projects with Python 3.16.0 alpha 1 and
   [file any CPython issues](https://github.com/python/cpython/issues) you find.
 quotes:
-- text: <!-- Add a quote here -->
-  author: ''
-  url: ''
+- text: We are not going to establish a social credit system on discuss.python.org!
+  author: Emma Smith
+  url: https://github.com/emmatyping
+- text: Yeah we messed up and left your time machine in Monday by accident. I’m asking research for a loaner so we can go back and get it.
+  author: Brandt Bucher
+  url: https://github.com/brandtbucher
 credits:
 - name: Savannah Ostrowski
   url: https://github.com/savannahostrowski
