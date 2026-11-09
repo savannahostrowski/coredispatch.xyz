@@ -1,10 +1,9 @@
 """Fetch recent posts from official Python blogs."""
 
-from datetime import datetime, timedelta, timezone
+import os
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from xml.etree import ElementTree
-
-import os
 
 import httpx
 import yaml
@@ -33,7 +32,7 @@ def _parse_rss_date(date_str: str) -> datetime | None:
         try:
             dt = datetime.strptime(date_str.strip(), fmt)
             if dt.tzinfo is None:
-                dt = dt.replace(tzinfo=timezone.utc)
+                dt = dt.replace(tzinfo=UTC)
             return dt
         except ValueError:
             continue
@@ -42,7 +41,7 @@ def _parse_rss_date(date_str: str) -> datetime | None:
 
 async def fetch_official_news(days: int = 14) -> list[dict]:
     """Fetch recent posts from official Python blogs."""
-    cutoff = datetime.now(timezone.utc) - timedelta(days=days)
+    cutoff = datetime.now(UTC) - timedelta(days=days)
     items: list[dict] = []
 
     async with httpx.AsyncClient(timeout=30, follow_redirects=True) as client:
@@ -88,7 +87,9 @@ async def fetch_official_news(days: int = 14) -> list[dict]:
                             },
                         }
                     )
-            except Exception as e:
-                print(f"  Warning: failed to fetch {feed['name']}: {e}")
+            except (httpx.HTTPError, ElementTree.ParseError, KeyError) as e:
+                print(
+                    f"  Warning: failed to fetch {feed.get('name', '<unknown>')}: {e}"
+                )
 
     return items

@@ -1,7 +1,7 @@
 """Fetch new core team member announcements from discuss.python.org/c/committers."""
 
 import re
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 
 import httpx
 
@@ -19,7 +19,7 @@ WELCOME_PATTERNS = [
 
 async def fetch_welcome(days: int = 14) -> list[dict]:
     """Fetch recent welcome/promotion topics from the committers category."""
-    cutoff = datetime.now(timezone.utc) - timedelta(days=days)
+    cutoff = datetime.now(UTC) - timedelta(days=days)
     items: list[dict] = []
 
     async with httpx.AsyncClient(timeout=30, follow_redirects=True) as client:
@@ -37,7 +37,7 @@ async def fetch_welcome(days: int = 14) -> list[dict]:
 
             created_at = topic.get("created_at", "")
             if created_at:
-                created_dt = datetime.fromisoformat(created_at.replace("Z", "+00:00"))
+                created_dt = datetime.fromisoformat(created_at)
                 if created_dt < cutoff:
                     continue
 

@@ -1,8 +1,8 @@
+import logging
 import re
 from html import escape
 from pathlib import Path
 
-import logging
 import yaml
 from fastapi import APIRouter, Request
 from fastapi.responses import Response

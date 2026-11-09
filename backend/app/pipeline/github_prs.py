@@ -4,12 +4,15 @@ Uses GitHub Search API with targeted queries to find significant PRs,
 plus a file-based search for PRs that touch Doc/whatsnew/ (user-facing changes).
 """
 
+import logging
 import re
 from datetime import date, timedelta
 
 import httpx
 
 from app.config import settings
+
+logger = logging.getLogger(__name__)
 
 CPYTHON_REPO = "python/cpython"
 GITHUB_API = "https://api.github.com"
@@ -57,10 +60,7 @@ def _should_skip(pr: dict) -> bool:
     label_set = {lbl.lower() for lbl in labels}
     if label_set & SKIP_LABELS:
         return True
-    if any(pat in title_lower for pat in SKIP_TITLE_PATTERNS):
-        return True
-
-    return False
+    return bool(any(pat in title_lower for pat in SKIP_TITLE_PATTERNS))
 
 
 def _pr_to_item(pr: dict, touches_whatsnew: bool = False) -> dict:
@@ -133,16 +133,18 @@ async def _find_whatsnew_prs(client: httpx.AsyncClient, since: date) -> list[dic
                 f"{GITHUB_API}/repos/{CPYTHON_REPO}/pulls/{pr_number}/files",
                 params={"per_page": 100},
             )
-            if resp.status_code != 200:
-                continue
-            files = [f["filename"] for f in resp.json()]
-            if any("whatsnew" in f for f in files):
-                # Only include if it touches more than just whatsnew (actual code change)
-                non_doc_files = [f for f in files if not f.startswith("Doc/")]
-                if non_doc_files:
-                    whatsnew_prs.append(pr)
-        except Exception:
+        except httpx.HTTPError:
+            logger.exception("Failed to fetch files for CPython PR #%s", pr_number)
             continue
+
+        if resp.status_code != 200:
+            continue
+        files = [f["filename"] for f in resp.json()]
+        if any("whatsnew" in f for f in files):
+            # Only include if it touches more than just whatsnew (actual code change)
+            non_doc_files = [f for f in files if not f.startswith("Doc/")]
+            if non_doc_files:
+                whatsnew_prs.append(pr)
 
     return whatsnew_prs
 
@@ -167,7 +169,7 @@ async def fetch_github_prs(since: date | None = None) -> list[dict]:
         for query in SEARCH_QUERIES:
             try:
                 prs = await _search_prs(client, query, since)
-            except Exception as e:
+            except httpx.HTTPError as e:
                 print(f"  Warning: search query failed ({query}): {e}")
                 continue
 
@@ -189,7 +191,7 @@ async def fetch_github_prs(since: date | None = None) -> list[dict]:
                     continue
                 seen.add(pr["number"])
                 items.append(_pr_to_item(pr, touches_whatsnew=True))
-        except Exception as e:
+        except httpx.HTTPError as e:
             print(f"  Warning: whatsnew search failed: {e}")
 
     # Rank and take top 10
