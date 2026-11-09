@@ -45,9 +45,10 @@ def _scan_yml_dir(directory: Path) -> list[dict]:
             continue
         try:
             data = yaml.safe_load(f.read_text())
-            if data and isinstance(data.get("number"), int):
+            if isinstance(data, dict) and isinstance(data.get("number"), int):
                 results.append(data)
-        except Exception:
+        except (OSError, UnicodeError, yaml.YAMLError) as exc:
+            print(f"  !! Could not read {f}: {exc}")
             continue
     return results
 
@@ -120,7 +121,7 @@ async def run_pipeline(issues_dir: Path, since: date | None = None):
             items = await coro
             print(f"  -> {len(items)} {name}")
             all_generate_items.extend(items)
-        except Exception as e:
+        except (TimeoutError, OSError, ValueError, RuntimeError) as e:
             print(f"  !! {name} failed: {e}")
 
     # Seed seen URLs from recent editions to avoid cross-edition duplicates

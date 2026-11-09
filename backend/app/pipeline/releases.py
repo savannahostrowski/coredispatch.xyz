@@ -65,7 +65,7 @@ async def fetch_upcoming_releases() -> list[dict]:
                         "metadata": {"date": event_date.isoformat()},
                     }
                 )
-        except Exception as e:
+        except (httpx.HTTPError, ValueError) as e:
             print(f"  Warning: release schedule failed: {e}")
 
     items.sort(key=lambda i: i["metadata"]["date"])
@@ -103,7 +103,7 @@ async def fetch_events() -> list[dict]:
                         "metadata": {"date": event_date.isoformat(), "type": "cfp"},
                     }
                 )
-        except Exception as e:
+        except (httpx.HTTPError, ValueError) as e:
             print(f"  Warning: CFP deadlines failed: {e}")
 
         # Conferences
@@ -139,7 +139,7 @@ async def fetch_events() -> list[dict]:
                         },
                     }
                 )
-        except Exception as e:
+        except (httpx.HTTPError, ValueError) as e:
             print(f"  Warning: PyCon events failed: {e}")
 
     # Sort chronologically

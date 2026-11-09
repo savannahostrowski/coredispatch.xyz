@@ -1,6 +1,6 @@
 """Fetch Steering Council meeting summaries from discuss.python.org/c/committers."""
 
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 
 import httpx
 
@@ -10,7 +10,7 @@ COMMITTERS_CATEGORY_ID = 5
 
 async def fetch_steering_council(days: int = 14) -> list[dict]:
     """Fetch recent PSC Meeting Summary topics from the committers category."""
-    cutoff = datetime.now(timezone.utc) - timedelta(days=days)
+    cutoff = datetime.now(UTC) - timedelta(days=days)
     items: list[dict] = []
 
     async with httpx.AsyncClient(timeout=30, follow_redirects=True) as client:
@@ -32,7 +32,7 @@ async def fetch_steering_council(days: int = 14) -> list[dict]:
 
             created_at = topic.get("created_at", "")
             if created_at:
-                created_dt = datetime.fromisoformat(created_at.replace("Z", "+00:00"))
+                created_dt = datetime.fromisoformat(created_at)
                 if created_dt < cutoff:
                     continue
 

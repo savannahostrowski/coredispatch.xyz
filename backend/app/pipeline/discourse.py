@@ -1,6 +1,6 @@
 """Fetch active PEP discussions from discuss.python.org/c/peps."""
 
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 
 import httpx
 
@@ -40,7 +40,7 @@ async def _count_recent_posts(
             for post in posts:
                 created = post.get("created_at", "")
                 if created:
-                    post_dt = datetime.fromisoformat(created.replace("Z", "+00:00"))
+                    post_dt = datetime.fromisoformat(created)
                     if post_dt >= cutoff:
                         batch_count += 1
 
@@ -51,13 +51,13 @@ async def _count_recent_posts(
                 break
 
         return count
-    except Exception:
+    except httpx.HTTPError, ValueError:
         return 0
 
 
 async def fetch_pep_discussions(days: int = 14) -> list[dict]:
     """Fetch PEP discussions with the most new replies in the last 2 weeks."""
-    cutoff = datetime.now(timezone.utc) - timedelta(days=days)
+    cutoff = datetime.now(UTC) - timedelta(days=days)
     candidates: list[dict] = []
 
     async with httpx.AsyncClient(timeout=30, follow_redirects=True) as client:
@@ -81,9 +81,7 @@ async def fetch_pep_discussions(days: int = 14) -> list[dict]:
                 if not last_posted:
                     continue
 
-                last_posted_dt = datetime.fromisoformat(
-                    last_posted.replace("Z", "+00:00")
-                )
+                last_posted_dt = datetime.fromisoformat(last_posted)
                 if last_posted_dt < cutoff:
                     found_old = True
                     continue
@@ -106,7 +104,7 @@ async def fetch_pep_discussions(days: int = 14) -> list[dict]:
             created_at = topic.get("created_at", "")
             is_new_pep = False
             if created_at:
-                created_dt = datetime.fromisoformat(created_at.replace("Z", "+00:00"))
+                created_dt = datetime.fromisoformat(created_at)
                 if created_dt >= cutoff:
                     is_new_pep = True
 

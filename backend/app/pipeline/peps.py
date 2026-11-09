@@ -1,11 +1,14 @@
 """Fetch recently accepted/rejected PEPs from the python/peps repo."""
 
+import logging
 import re
 from datetime import date, timedelta
 
 import httpx
 
 from app.config import settings
+
+logger = logging.getLogger(__name__)
 
 GITHUB_API = "https://api.github.com"
 PEPS_REPO = "python/peps"
@@ -47,8 +50,8 @@ async def fetch_pep_updates(since: date | None = None) -> list[dict]:
             resp.raise_for_status()
             for num, data in resp.json().items():
                 pep_titles[int(num)] = data.get("title", "")
-        except Exception:
-            pass
+        except (httpx.HTTPError, ValueError) as exc:
+            logger.warning("Could not fetch PEP titles: %s", exc)
         for query_term in ["Accepted", "Active", "Final", "Rejected", "Withdrawn"]:
             for verb in ["Mark", "Set status"]:
                 resp = await client.get(

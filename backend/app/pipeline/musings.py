@@ -1,10 +1,9 @@
 """Fetch recent posts from core team personal blogs for the Core Dev Musings section."""
 
-from datetime import datetime, timedelta, timezone
+import os
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from xml.etree import ElementTree
-
-import os
 
 import httpx
 import yaml
@@ -29,7 +28,7 @@ def _parse_rss_date(date_str: str) -> datetime | None:
         try:
             dt = datetime.strptime(date_str.strip(), fmt)
             if dt.tzinfo is None:
-                dt = dt.replace(tzinfo=timezone.utc)
+                dt = dt.replace(tzinfo=UTC)
             return dt
         except ValueError:
             continue
@@ -136,7 +135,7 @@ def _load_feeds() -> list[dict]:
 
 async def fetch_musings(days: int = 14) -> list[dict]:
     """Fetch recent posts from core team personal blogs."""
-    cutoff = datetime.now(timezone.utc) - timedelta(days=days)
+    cutoff = datetime.now(UTC) - timedelta(days=days)
     feeds = _load_feeds()
     all_items: list[dict] = []
 
@@ -147,7 +146,7 @@ async def fetch_musings(days: int = 14) -> list[dict]:
                 resp.raise_for_status()
                 items = _parse_feed(resp.text, feed["name"], cutoff)
                 all_items.extend(items)
-            except Exception as e:
+            except (httpx.HTTPError, ElementTree.ParseError, KeyError) as e:
                 print(f"  Warning: failed to fetch {feed['name']}: {e}")
 
     # Deduplicate by title (cross-posts)
