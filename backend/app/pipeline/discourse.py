@@ -51,7 +51,7 @@ async def _count_recent_posts(
                 break
 
         return count
-    except (httpx.HTTPError, ValueError):
+    except httpx.HTTPError, ValueError:
         return 0
 
 
